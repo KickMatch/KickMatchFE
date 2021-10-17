@@ -9,14 +9,31 @@ import RegistrationAthlete from '../RegistrationAthlete/RegistrationAthlete';
 import RegistrationTeam from '../RegistrationTeam/RegistrationTeam';
 import Team from '../Team/Team';
 
-
-
 const App = () => {
 
-  
   return (
     <main>
-      
+      <Switch>
+        <Route exact path='/' 
+          component={Login}
+        />
+        <Route exact path='/registration-athlete' 
+          component={RegistrationAthlete}
+        />
+        <Route exact path='/registration-team' 
+          component={RegistrationTeam}
+        />
+        <Route exact path='/athlete' 
+          render={() => 
+            <Athlete />
+          }
+        />
+        <Route exact path='/team' 
+          render={() => 
+            <Team />
+          }
+        />
+      </Switch>     
     </main>
   );
 }
