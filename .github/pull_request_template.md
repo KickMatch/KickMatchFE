@@ -3,14 +3,13 @@
   - [ ] Bug Fix  
 
 ### Overview:
-
 #### What does this PR do?
 - 
 
 #### How should this be tested?
-- [ ] Console
-- [ ] Intergration
-- [ ] Cyress
+- [ ] npm start
+- [ ] Cypress
+- [ ] RSpec
 
 #### Any background context you want to provide?
 -
