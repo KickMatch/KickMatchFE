@@ -5,9 +5,9 @@ import './Login.css';
 const Login = () => {
 
   const athletes = [
-    {name: 'Will', age: 24, position: 'Forward', id: 1},
-    {name: 'Andrey', age: 26, position: 'Goalee', id: 2},
-    {name: 'Steven', age: 32, position: 'Striker', id: 3}
+    {cagetory: 'athlete', name: 'Will', age: 24, position: 'Forward', id: 1},
+    {cagetory: 'athlete', name: 'Andrey', age: 26, position: 'Goalee', id: 2},
+    {cagetory: 'athlete', name: 'Steven', age: 32, position: 'Striker', id: 3}
   ]
 
   const teams = [
