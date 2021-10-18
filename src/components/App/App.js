@@ -33,15 +33,14 @@ const App = () => {
         <Route exact path='/registration-team' 
           component={RegistrationTeam}
         />
-        <Route path='/athlete/:id' render={() => <AthleteProfile /> } />
-        <Route exact path='/athlete/search' render={() => <AthleteSearch /> } />
-        <Route exact path='/athlete/interested-teams' render={() => <AthleteInterestedTeams /> } />
+        <Route exact path='/athlete/:id' render={() => <AthleteProfile /> } />
+        <Route exact path='/athlete/:id/search' render={() => <AthleteSearch /> } />
+        <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteInterestedTeams /> } />
        
-       
-        <Route exact path='/team' render={() => <Team />} />
-          <Route exact path='/team/profile' render={() => <TeamProfile /> } />
-          <Route exact path='/team/search' render={() => <TeamSearch /> } />
-          <Route exact path='/team/interested-athletes' render={() => <TeamInterestedAthletes /> } />
+        {/* <Route exact path='/team' render={() => <Team />} /> */}
+          <Route exact path='/team/:id/profile' render={() => <TeamProfile /> } />
+          <Route exact path='/team/:id/search' render={() => <TeamSearch /> } />
+          <Route exact path='/team/:id/interested-athletes' render={() => <TeamInterestedAthletes /> } />
         <Route component={Error} />
       </Switch>     
     </main>
