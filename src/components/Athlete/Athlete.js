@@ -9,7 +9,10 @@ const Athlete = () => {
 
   
   return (
-    
+    <section>
+      <Header />
+      <AthleteProfile />
+    </section>
   );
 }
 
