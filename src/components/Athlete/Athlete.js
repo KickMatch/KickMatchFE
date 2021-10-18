@@ -5,13 +5,13 @@ import AthleteProfile from '../AthleteProfile/AthleteProfile';
 import AthleteSearch from '../AthleteSearch/AthleteSearch';
 import Header from '../Header/Header';
 
-const Athlete = ({props}) => {
+const Athlete = () => {
 
   // const test = 'athlete'
-  // console.log(props.props.match.path, ' prop');
+  // console.log('props.props in athlete: ', props.props);
   return (
     <section>
-      <Header site={props.props.match.path}/>
+      <Header />
       <AthleteProfile />
     </section>
   );
