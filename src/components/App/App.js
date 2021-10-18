@@ -16,7 +16,7 @@ import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedT
 import AthleteProfile from '../AthleteProfile/AthleteProfile';
 
 const App = () => {
-
+  // console.log(match.path, ' :match.path');
   return (
     <main>
       <Switch>
@@ -29,7 +29,7 @@ const App = () => {
         <Route exact path='/registration-team' 
           component={RegistrationTeam}
         />
-        <Route exact path='/athlete' render={() => <Athlete />} />
+        <Route exact path='/athlete' render={(props) => {return ( <Athlete props={{props}}/>)}} />
           <Route exact path='/athlete/profile' render={() => <AthleteProfile /> } />
           <Route exact path='/athlete/search' render={() => <AthleteSearch /> } />
           <Route exact path='/athlete/interested-teams' render={() => <AthleteInterestedTeams /> } />
