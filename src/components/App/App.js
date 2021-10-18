@@ -17,24 +17,9 @@ import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedT
 import AthleteProfile from '../AthleteProfile/AthleteProfile';
 
 const App = () => {
-  const [id, setId] = useState({})
+  // const [id, setId] = useState({})
   // i want it to read the state that i have now and supply the athlete/#id(profile) page with thier info
-  const person = {
-    id: 1,
-    firstName: 'Tom',
-    lastName: 'Guy',
-    age: 24,
-    position: 'Goalee'
-  }
 
-  const setIt = () => {
-    setId(person)
-  }
-
-  useEffect(() => {
-    setIt()
-
-  }, [])
   // console.log(match.path, ' :match.path');
   return (
     <main>
