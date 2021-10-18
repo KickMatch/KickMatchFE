@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 
 const AthleteInterestedTeams = () => {
 
-  
+  // console.log('props in interested teams: ', props);
   return (
     <section>
       <Header />
