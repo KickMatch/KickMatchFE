@@ -5,7 +5,7 @@ const AthleteProfile = () => {
 
   
   return (
-    
+    <h1>athelete profile</h1>
   );
 }
 
