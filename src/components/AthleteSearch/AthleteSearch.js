@@ -10,7 +10,7 @@ const AthleteSearch = () => {
   return (
     <section>
       <Header />
-      <h1>athelete search id: {id}</h1>
+      <h1>athelete SEARCH id: {id}</h1>
     </section>
   );
 }
