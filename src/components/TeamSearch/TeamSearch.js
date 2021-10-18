@@ -5,7 +5,7 @@ const TeamSearch = () => {
 
   
   return (
-    
+    <h1>Team search</h1>
   );
 }
 

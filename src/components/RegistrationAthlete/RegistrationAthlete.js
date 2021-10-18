@@ -5,7 +5,7 @@ const RegistrationAthlete = () => {
 
   
   return (
-    
+    <h1>registration athelete</h1>
   );
 }
 
