@@ -5,7 +5,7 @@ const TeamInterestedAthletes = () => {
 
   
   return (
-    
+    <h1>Team interseted athletes</h1>
   );
 }
 

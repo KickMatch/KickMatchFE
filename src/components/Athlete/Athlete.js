@@ -7,9 +7,13 @@ import Header from '../Header/Header';
 
 const Athlete = () => {
 
-  
+  // const test = 'athlete'
+  // console.log('props.props in athlete: ', props.props);
   return (
-    
+    <section>
+      <Header />
+      <AthleteProfile />
+    </section>
   );
 }
 
