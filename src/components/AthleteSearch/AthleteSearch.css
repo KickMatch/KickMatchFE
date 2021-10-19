@@ -13,3 +13,7 @@ input {
   margin: 1%;
   border-radius: 10%;
 }
+
+.SearchedTeamsContainer {
+  text-align: center;
+}
