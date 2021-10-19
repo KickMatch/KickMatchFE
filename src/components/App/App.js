@@ -18,19 +18,14 @@ import AthleteProfile from '../AthleteProfile/AthleteProfile';
 import { useQuery } from '@apollo/client';
 import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
 
-// const errorLink = onError(( {graphqlErrors, networkErrors }) => {
-//   if(graphqlErrors) {
-//     graphqlErrors.map(({message, location, path}) => {
-//       alert(`GraphQL Error: ${message}`)
-//     })
-//   }
-// })
-
-// const link = from([
-//   new HttpLink({uri: "https://frozen-waters-94259.herokuapp.com/"})
-// ])
-
-
+const PrintQuery = () => {
+  const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
+  return(
+    <>
+     <div>{console.log(data)}</div>
+     </>
+  )
+}
 
 const App = () => {
   // const [id, setId] = useState({})
@@ -39,9 +34,7 @@ const App = () => {
   // console.log(match.path, ' :match.path');
 
 
-  const PrintQuery = () => {
-    const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
-  }
+
 
   return (
     
