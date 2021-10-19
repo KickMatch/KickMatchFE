@@ -6,7 +6,6 @@ import { useParams } from 'react-router';
 
 const AthleteSearch = () => {
   const {id} = useParams()
-  // console.log('match in search: ', match);
   return (
     <section class='AthleteSearch'>
       <form class='AthleteForm'>
