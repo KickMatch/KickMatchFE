@@ -2,7 +2,7 @@ import './AthleteSearch.css';
 import React from 'react';
 import Header from '../Header/Header';
 import { useParams } from 'react-router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 
 const AthleteSearch = () => {
@@ -10,11 +10,23 @@ const AthleteSearch = () => {
   const [teamName, setTeamName] = useState("");
   const [teamLocation, setTeamLocation] = useState("");
 
+  const getFormInfo = (event) => {
+    event.preventDefault();
+    console.log(teamName);
+    console.log(teamLocation)
+    clearInputs();
+  }
+
+  const clearInputs = () => {
+    setTeamLocation("");
+    setTeamName("");
+  }
+
   return (
     <section>
       <Header />
-      <section class='AthleteSearch'>
-        <form class='AthleteForm'>
+      <section className='AthleteSearch'>
+        <form className='AthleteForm'>
           <h3>Search by:</h3>
           <input
             type='text'
@@ -29,7 +41,7 @@ const AthleteSearch = () => {
             <option value='100'>100 Miles</option>
             <option value='150'>150 or more</option>
           </select>
-          <button className='SearchBtn'>Search Teams</button>
+          <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
         <div className='SearchedTeamsContainer'>
           <h3>This is where the Team Component and carousel should be</h3>
