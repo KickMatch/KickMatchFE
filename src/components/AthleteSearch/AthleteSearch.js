@@ -8,9 +8,15 @@ const AthleteSearch = () => {
   const {id} = useParams()
   // console.log('match in search: ', match);
   return (
-    <section>
-      <Header />
-      <h1>athelete SEARCH id: {id}</h1>
+    <section class='AthleteSearch'>
+      <form class='AthleteForm'>
+        <input
+          type='text'
+          placeholder='Sport Club Name'
+          name='sportClub'
+          value={sportClubName}
+        />
+      </form>
     </section>
   );
 }
