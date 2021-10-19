@@ -22,10 +22,10 @@ const AthleteSearch = () => {
           <option>100 Miles</option>
           <option>150 or more</option>
         </select>
-        <button>Search Teams</button>
+        <button className='SearchBtn'>Search Teams</button>
       </form>
       <div className='SearchedTeamsContainer'>
-        
+        <h3>This is where the Team Component and carousel should be</h3>
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ input {
   margin: 2%;
 }
 
-button {
+.SearchBtn {
   margin: 1%;
+  border-radius: 10%;
 }
