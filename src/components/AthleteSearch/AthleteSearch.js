@@ -24,6 +24,9 @@ const AthleteSearch = () => {
         </select>
         <button>Search Teams</button>
       </form>
+      <div className='SearchedTeamsContainer'>
+        
+      </div>
     </section>
   );
 }
