@@ -1,5 +1,5 @@
 import React from 'react';
-import './TeamInterestedAthletes.css';
+// import './TeamInterestedAthletes.css';
 
 const TeamInterestedAthletes = () => {
 

@@ -23,7 +23,7 @@ const AthleteProfile = ( ) => {
         </li>
       </ul>
       <Switch>
-        <Route exact path={`${url}/editprofile`} component={EditPlayerProfile}/>
+        <Route exact path={`${path}/editprofile`} component={EditPlayerProfile}/>
       </Switch>
     </>
   );
