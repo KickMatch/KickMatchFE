@@ -1,5 +1,5 @@
 import React from 'react';
-import './AthleteInterestedTeams.css';
+// import './AthleteInterestedTeams.css';
 import Header from '../Header/Header';
 
 const AthleteInterestedTeams = () => {
