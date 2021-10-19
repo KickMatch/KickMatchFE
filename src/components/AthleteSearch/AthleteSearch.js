@@ -9,12 +9,20 @@ const AthleteSearch = () => {
   return (
     <section class='AthleteSearch'>
       <form class='AthleteForm'>
+        <h3>Search by:</h3>
         <input
           type='text'
           placeholder='Sport Club Name'
           name='sportClub'
-          value={sportClubName}
+          // value={sportClubName}
         />
+        <select>
+          <option>20 Miles</option>
+          <option>50 Miles</option>
+          <option>100 Miles</option>
+          <option>150 or more</option>
+        </select>
+        <button>Search Teams</button>
       </form>
     </section>
   );
