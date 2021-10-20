@@ -12,6 +12,11 @@ main {
   border: 2px solid green;
 }
 
+.image-container { 
+  display: flex;
+  align-items: center;
+}
+
 .avatar {
   height: 14rem;
 }
@@ -23,4 +28,8 @@ main {
   flex-direction: column;
   justify-content: center;
   border: 2px solid blue;
+}
+
+.list { 
+  line-height: .5rem;
 }
