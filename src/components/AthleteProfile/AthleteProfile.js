@@ -15,7 +15,7 @@ const AthleteProfile = ({athlete}) => {
   return (
     <>
       <Header />
-      <main>
+      <main className='main'>
         <article className='player-card'>
           <div className='image-container'>
             <img alt='avatar' className='avatar' src={avatar} />
@@ -40,22 +40,18 @@ const AthleteProfile = ({athlete}) => {
           <h3>Vertical Jump: {vertJump}</h3>
           <h3>40 Yard Dash: {fortyYard}</h3>
           <h3>Personal Juggling Record: {personJugRec}</h3>
-          <h3>Talents: {talents.map(talent => {
+          <h3>Talents: <ul>{talents.map((talent, index) => {
             return (
-                <ul>
-                  <li className='talent-list list'>{talent}</li>
-                </ul>
+                  <li key={index} className='talent-list list'>{talent}</li>
                 )
               })
-             }</h3>
-          <h3>Awards: {awards.map(award => {
+             }</ul></h3>
+          <h3>Awards: <ul> {awards.map((award, index) => {
             return (
-                <ul>
-                  <li className='award-list list'>{award}</li>
-                </ul>
+                  <li key={index} className='award-list list'>{award}</li>
                 )
               })
-             }</h3>
+             } </ul></h3>
         </section>
       </main>
 
