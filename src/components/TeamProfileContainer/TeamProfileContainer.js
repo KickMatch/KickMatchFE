@@ -5,7 +5,11 @@ import TeamProfile from '../TeamProfile/TeamProfile';
 import { useState, useEffect } from 'react';
 
 const TeamProfileContainer = () => {
-  console.log(teamsMockData)
+  const [allTeams, setAllTeams] = useState(teamsMockData) // this is where would be the query fort all teams data 
+  const [filteredTeams, setFilteredTeams] = useState([])
+  const [nameSearched, setNameSearched] = useState('')
+  const [distanceSearched, setDistanceSearched] = useState('')
+  console.log(allTeams)
   
   return (
     <section className='TeamProfileContainer'>
