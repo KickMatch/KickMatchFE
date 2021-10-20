@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Header/Header';
 import { useParams } from 'react-router';
 import { useState } from 'react';
+import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
 
 
 const AthleteSearch = () => {
@@ -20,6 +21,10 @@ const AthleteSearch = () => {
   const clearInputs = () => {
     setTeamLocation("");
     setTeamName("");
+  }
+
+  const getuserId = () => {
+    console.log('userId:', id)
   }
 
   return (
@@ -44,7 +49,8 @@ const AthleteSearch = () => {
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
         <div className='SearchedTeamsContainer'>
-          <h3>This is where the Team Component and carousel should be</h3>
+          <TeamProfileContainer />
+          <button onClick={getuserId}>Interested</button>
         </div>
       </section>
     </section>
