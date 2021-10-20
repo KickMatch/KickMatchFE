@@ -10,6 +10,13 @@ const TeamProfileContainer = () => {
   const [nameSearched, setNameSearched] = useState('')
   const [distanceSearched, setDistanceSearched] = useState('')
   console.log(allTeams)
+
+
+  const findTeams = () => {
+    console.log('allTeams:', allTeams)
+    console.log('nameSearched:', nameSearched)
+    console.log('distanceSearched:', distanceSearched)
+  }
   
   return (
     <section className='TeamProfileContainer'>
