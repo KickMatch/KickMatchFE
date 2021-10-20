@@ -15,34 +15,36 @@ import TeamSearch from '../TeamSearch/TeamSearch';
 import AthleteSearch from '../AthleteSearch/AthleteSearch';
 import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedTeams';
 import AthleteProfile from '../AthleteProfile/AthleteProfile';
-import { useQuery } from '@apollo/client';
-import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
+// import { useQuery } from '@apollo/client';
+// import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
 
-const PrintQuery = () => {
-  const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
-  return(
-    <>
-     <div>{console.log(data)}</div>
-     </>
-  )
-}
+// const PrintQuery = () => {
+//   const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
+//   return(
+//     <>
+//      <div>{console.log(data)}</div>
+//      </>
+//   )
+// }
 
 const App = () => {
-  // const [id, setId] = useState({})
+  const [user, setUser] = useState({})
   // i want it to read the state that i have now and supply the athlete/#id(profile) page with thier info
 
   // console.log(match.path, ' :match.path');
 
-
+  const getUser = (user) => {
+    setUser(user)
+  }
 
 
   return (
     
-      <main>
-        <PrintQuery />
+      <>
+        {/* <PrintQuery /> */}
         <Switch>
           <Route exact path='/' 
-            component={Login}
+            render={() => <Login getUser={getUser} />}
           />
           <Route exact path='/registration-athlete' 
             component={RegistrationAthlete}
@@ -60,7 +62,7 @@ const App = () => {
             <Route exact path='/team/:id/interested-athletes' render={() => <TeamInterestedAthletes /> } />
           <Route component={Error} />
         </Switch>     
-      </main>
+      </>
   );
 }
 
