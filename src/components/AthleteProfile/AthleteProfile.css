@@ -1,5 +1,11 @@
-main {
+.main {
   display: flex;
+  background-image: url('../../assets/soccer_background.png');
+  /* height: 500px; You must set a specified height */
+  /* background-position: center; Center the image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-position: 0% 50%;
   justify-content: space-around;
   border: 2px solid black;
 }
@@ -9,7 +15,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid green;
+  background-color: rgb(128,128,128, 0.5);
 }
 
 .image-container { 
@@ -27,9 +33,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid blue;
+  background-color: rgb(128,128,128, 0.5);
 }
 
 .list { 
-  line-height: .5rem;
+  line-height: 1.5em;
 }
