@@ -9,8 +9,10 @@ const TeamProfileContainer = () => {
   const [filteredTeams, setFilteredTeams] = useState([])
   const [nameSearched, setNameSearched] = useState('')
   const [distanceSearched, setDistanceSearched] = useState('')
-  console.log(allTeams)
 
+  useEffect(() => {
+    findTeams()
+  }, [])
 
   const findTeams = () => {
     console.log('allTeams:', allTeams)
