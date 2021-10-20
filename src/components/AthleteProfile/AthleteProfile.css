@@ -1,0 +1,22 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+}
+
+.player-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid green;
+}
+
+.avatar {
+  height: 8rem;
+}
+
+.stat-card {
+  display: flex;
+  justify-content: center;
+  border: 2px solid blue;
+}
