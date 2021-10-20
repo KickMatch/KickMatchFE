@@ -9,12 +9,11 @@ import { useQuery } from '@apollo/client';
 import avatar from '../../assets/avatar.png'
 
 
-const AthleteProfile = () => {
-
+const AthleteProfile = ({athlete}) => {
   const { path, url } = useRouteMatch()
-  console.log('path: ', path)
-  console.log('url: ', `${url}/editprofile`)
-  // console.log(useRef())
+
+  const { name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipCode, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+
   return (
     <>
       <Header />
@@ -25,12 +24,36 @@ const AthleteProfile = () => {
           <Switch>
             <Route exact path={`${path}/editprofile`} component={EditPlayerProfile}/>
           </Switch>
+          <h3>{name}</h3>
+          <h3>Age: {age}</h3>
+          <h3>Primary Position: {primaryPosition}</h3>
+          <h3>Secondary Position: {secondaryPosition}</h3>
+          <h3>Dominat Foot: {dominantFoot}</h3>
+          <h3>Zipcode: {zipCode}</h3>
         </article>
         <section className='stat-card'>
-          <h3>Height</h3>
-          <h3></h3>
-          <h3></h3>
-          <h3></h3>
+          <h3>Height: {height}</h3>
+          <h3>Weight: {weight}</h3>
+          <h3>Goals Last Season: {goalsMadeLast}</h3>
+          <h3>Vertical Jump: {vertJump}</h3>
+          <h3>40 Yard Dash: {fortyYard}</h3>
+          <h3>Personal Juggling Record: {personJugRec}</h3>
+          <h3>Talents: {talents.map(talent => {
+            return (
+                <ul>
+                  <li>{talent}</li>
+                </ul>
+                )
+              })
+             }</h3>
+          <h3>Awards: {awards.map(award => {
+            return (
+                <ul>
+                  <li>{award}</li>
+                </ul>
+                )
+              })
+             }</h3>
         </section>
       </main>
 
