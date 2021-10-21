@@ -32,8 +32,12 @@ const AthleteSearch = () => {
   }
 
   const getuserId = () => {
-    // This function will help in order to sne dan object for the psot request
-    console.log('userId:', id)
+    // This function will help in order to sne dan object for the post request
+    const matchObj = {
+      talent_id: parseInt(id),
+      sport_club_id: 3
+    }
+    console.log('Obj to send to create a match:', matchObj)
   }
 
   return (
@@ -76,6 +80,7 @@ export default AthleteSearch;
 
 const teamsMockData = [
   {
+    id: 1,
     teamName: 'F.C. Denver',
     teamLocation: '1730 Blake St - Denver, CO, 80220',
     teamInfo: [{
@@ -88,6 +93,7 @@ const teamsMockData = [
     openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
   },
   {
+    id: 2,
     teamName: 'F.C. Boulder',
     teamLocation: '1730 Blake St - Denver, CO, 80220',
     teamInfo: [{
@@ -100,6 +106,7 @@ const teamsMockData = [
     openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
   },
   {
+    id: 3,
     teamName: 'F.C. Forth Collins',
     teamLocation: '1730 Blake St - Denver, CO, 80220',
     teamInfo: [{
@@ -112,6 +119,7 @@ const teamsMockData = [
     openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
   },
   {
+    id: 4,
     teamName: 'F.C. Golden',
     teamLocation: '1730 Blake St - Denver, CO, 80220',
     teamInfo: [{
@@ -124,6 +132,7 @@ const teamsMockData = [
     openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
   },
   {
+    id: 5,
     teamName: 'F.C. Greenwood',
     teamLocation: '1730 Blake St - Denver, CO, 80220',
     teamInfo: [{

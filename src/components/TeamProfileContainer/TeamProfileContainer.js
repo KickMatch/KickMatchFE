@@ -1,7 +1,6 @@
 import React from 'react';
 import './TeamProfileContainer.css';
 import TeamProfile from '../TeamProfile/TeamProfile';
-// import { useState, useEffect } from 'react';
 import Carousel from 'react-elastic-carousel';
 
 const TeamProfileContainer = ({filteredTeams}) => {
@@ -12,7 +11,6 @@ const TeamProfileContainer = ({filteredTeams}) => {
         <TeamProfile teamInfo={teamInfo}/>
       )
     })
-    // console.log(teamsProfile)
     return (
       <Carousel>
         {teamsProfile}
@@ -22,8 +20,8 @@ const TeamProfileContainer = ({filteredTeams}) => {
   
   return (
     <section className='TeamProfileContainer'>
-      {/* {!filteredTeams ? renderTeamsProfiles() : <h2>Sorry no teams find it !</h2>} */}
-      {renderTeamsProfiles()}
+      {filteredTeams ? renderTeamsProfiles() : <h2>Sorry no teams find it !</h2>}
+      {/* {renderTeamsProfiles()} */}
     </section>
   );
 }
