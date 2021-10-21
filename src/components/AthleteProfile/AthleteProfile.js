@@ -13,7 +13,7 @@ const AthleteProfile = ({ data }) => {
       <main>
         <AthleteStatContainer athlete={data} />
         <div className='divider'></div>
-        <CarouselComp />
+        <CarouselComp data={data}/>
         <div className='divider'></div>
         <Bio data={data} />
       </main>
