@@ -1,7 +1,12 @@
 import React from 'react';
 import './TeamProfile.css';
 
-const TeamProfile = ({teamInfo}) => {  
+const TeamProfile = ({teamInfo, getId}) => {  
+
+  const getIdTeam = () => {
+    getId(teamInfo.id)
+  }
+
   return (
     <section className='teamProfile'>
       <div className='teamContactInfo'>
@@ -25,6 +30,7 @@ const TeamProfile = ({teamInfo}) => {
           <p><i>{teamInfo.openPositions[0]}</i></p>
           <p><i>{teamInfo.openPositions[1]}</i></p>
           <p><i>{teamInfo.openPositions[2]}</i></p>
+      <button onClick={getIdTeam}>Interested</button>
       </div>
     </section>
   );

@@ -12,6 +12,7 @@ const AthleteSearch = () => {
   const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
   const [teamLocation, setTeamLocation] = useState("");
+  const [teamId, setTeamId] = useState("");
 
   const getFormInfo = (event) => {
     // console.log(teamName);
@@ -28,14 +29,15 @@ const AthleteSearch = () => {
 
   const findTeams = () => {
   setFilteredTeams(allTeams.filter(team => team.teamName.includes(teamName)))
-  console.log('filteredTeams:', filteredTeams)
+  // console.log('filteredTeams:', filteredTeams)
   }
 
-  const getuserId = () => {
+  const getId = (choseTeamId) => {
     // This function will help in order to sne dan object for the post request
+    setTeamId(choseTeamId)
     const matchObj = {
       talent_id: parseInt(id),
-      sport_club_id: 3
+      sport_club_id: choseTeamId
     }
     console.log('Obj to send to create a match:', matchObj)
   }
@@ -62,8 +64,8 @@ const AthleteSearch = () => {
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
         <div className='SearchedTeamsContainer'>
-          <TeamProfileContainer filteredTeams={filteredTeams} />
-          <button onClick={getuserId}>Interested</button>
+          <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>
+          {/* <button onClick={getuserId}>Interested</button> */}
         </div>
       </section>
     </section>

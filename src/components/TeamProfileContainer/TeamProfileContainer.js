@@ -3,12 +3,12 @@ import './TeamProfileContainer.css';
 import TeamProfile from '../TeamProfile/TeamProfile';
 import Carousel from 'react-elastic-carousel';
 
-const TeamProfileContainer = ({filteredTeams}) => {
+const TeamProfileContainer = ({filteredTeams, getId}) => {
 
   const renderTeamsProfiles = () => {
     const teamsProfile = filteredTeams.map(teamInfo => {
       return(
-        <TeamProfile teamInfo={teamInfo}/>
+        <TeamProfile teamInfo={teamInfo} getId={getId}/>
       )
     })
     return (
