@@ -10,6 +10,9 @@
 
 .player-card {
   line-height: 0rem;
+  width: 30%;
+  border-radius: 5%;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,6 +21,9 @@
 
 .stat-card {
   line-height: 0rem;
+  width: 30%;
+  border-radius: 5%;
+  color: white;
   border: 0;
   display: flex;
   flex-direction: column;
@@ -32,6 +38,7 @@
 
 .avatar {
   height: 14rem;
+  border-radius: 50%;
 }
 
 .list { 
