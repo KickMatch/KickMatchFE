@@ -4,7 +4,7 @@ const Bio = ({data}) => {
   const { bio } = data
 
   return (
-    <div>
+    <div className='bio-container'>
       {bio}
     </div>
   )

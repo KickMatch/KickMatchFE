@@ -14,6 +14,7 @@ const AthleteProfile = ({ data }) => {
         <AthleteStatContainer athlete={data} />
         <div className='divider'></div>
         <CarouselComp />
+        <div className='divider'></div>
         <Bio data={data} />
       </main>
 
