@@ -64,6 +64,7 @@ const AthleteProfile = ({data}) => {
               } </ul></h3>
           </section>
         </section>
+        <div className='divider'></div>
         <CarouselComp />
       </main>
 
