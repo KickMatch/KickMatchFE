@@ -25,11 +25,16 @@ const TeamProfileContainer = ({filteredTeams}) => {
   // console.log('filteredTeams:', filteredTeams)
   // }
 
-  console.log(filteredTeams, 'asdfas')
+  const renderTeamsProfiles = () => {
+    console.log('test')
+  }
+
+  // console.log(filteredTeams, 'asdfas')
   
   return (
     <section className='TeamProfileContainer'>
-      <p>Team Profile Container</p>
+      {/* {!filteredTeams ? renderTeamsProfiles() : <h2>Sorry no teams find it !</h2>} */}
+      {renderTeamsProfiles()}
     </section>
   );
 }
