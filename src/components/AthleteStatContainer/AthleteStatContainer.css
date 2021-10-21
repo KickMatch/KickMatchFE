@@ -1,44 +1,70 @@
 .player-stat-container {
   width: 65vw;
   display: flex;
+  position: relative;
+  /* background-image: url('../../assets/soccer_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60% 37%; */
+  justify-content: space-around;
+}
+
+.player-stat-container::before {
   background-image: url('../../assets/soccer_background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 60% 37%;
-  justify-content: space-around;
+  position: absolute;
+  opacity: .1;
 }
 
 .player-card {
   line-height: 0rem;
   width: 30%;
   border-radius: 5%;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(128,128,128, 0.5);
+  /* background-color: rgb(128,128,128, 0.5); */
 }
 
 .stat-card {
   line-height: 0rem;
   width: 30%;
   border-radius: 5%;
-  color: white;
+  color: greenyellow;
   border: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(128,128,128, 0.5);
+  /* background-color: rgb(128,128,128, 0.5); */
+  /* background-color: black; */
 }
 
 .image-container { 
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .avatar {
   height: 14rem;
   border-radius: 50%;
+}
+
+.name-container {
+  margin-left: 2rem;
+  color: blue;
+}
+
+.attribute-container {
+  line-height: 1rem;
+  color: firebrick;
+  margin-left: 3rem;
+}
+
+.edit-profile {
+  margin-left: 2rem;
 }
 
 .list { 

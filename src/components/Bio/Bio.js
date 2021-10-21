@@ -4,9 +4,9 @@ const Bio = ({data}) => {
   const { bio } = data
 
   return (
-    <div className='bio-container'>
+    <article className='bio-container'>
       {bio}
-    </div>
+    </article>
   )
 }
 
