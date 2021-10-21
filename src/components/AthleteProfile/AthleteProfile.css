@@ -13,11 +13,19 @@ main {
   background-size: cover;
   background-position: 60% 37%;
   justify-content: space-around;
-  border: 2px solid black;
 }
 
 .player-card {
   line-height: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(128,128,128, 0.5);
+}
+
+.stat-card {
+  line-height: 0rem;
+  border: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,15 +41,12 @@ main {
   height: 14rem;
 }
 
-.stat-card {
-  line-height: 0rem;
-  border: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgb(128,128,128, 0.5);
-}
-
 .list { 
   line-height: 1.5em;
+}
+
+.divider {
+  background-color: black;
+  height: 2px;
+  width: 65vw;
 }
