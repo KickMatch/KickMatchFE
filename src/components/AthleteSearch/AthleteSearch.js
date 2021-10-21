@@ -8,13 +8,16 @@ import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
 
 const AthleteSearch = () => {
   const {id} = useParams();
+  const [allTeams, setAllTeams] = useState(teamsMockData);
+  const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
   const [teamLocation, setTeamLocation] = useState("");
 
   const getFormInfo = (event) => {
+    // console.log(teamName);
+    // console.log(teamLocation);
     event.preventDefault();
-    console.log(teamName);
-    console.log(teamLocation)
+    findTeams()
     clearInputs();
   }
 
@@ -23,7 +26,13 @@ const AthleteSearch = () => {
     setTeamName("");
   }
 
+  const findTeams = () => {
+  const filteredTeams = allTeams.filter(team => team.teamName.includes(teamName))
+  console.log('filteredTeams:', filteredTeams)
+  }
+
   const getuserId = () => {
+    // This function will help in order to sne dan object for the psot request
     console.log('userId:', id)
   }
 
@@ -58,3 +67,72 @@ const AthleteSearch = () => {
 }
 
 export default AthleteSearch;
+
+
+
+
+
+
+
+const teamsMockData = [
+  {
+    teamName: 'F.C. Denver',
+    teamLocation: '1730 Blake St - Denver, CO, 80220',
+    teamInfo: [{
+      email: 'fc.denver@gmail.com',
+      phone: '722-223-2365'
+    }],
+    league: 'US Football League',
+    tournaments: 'US Football Tournament',
+    couchResume: 'Tim Nord: For more than 20 years as a Football Coach for multiple teams around the country, he is our main couch',
+    openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
+  },
+  {
+    teamName: 'F.C. Boulder',
+    teamLocation: '1730 Blake St - Denver, CO, 80220',
+    teamInfo: [{
+      email: 'fc.denver@gmail.com',
+      phone: '722-223-2365'
+    }],
+    league: 'US Football League',
+    tournaments: 'US Football Tournament',
+    couchResume: 'Tim Nord: For more than 20 years as a Football Coach for multiple teams around the country, he is our main couch',
+    openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
+  },
+  {
+    teamName: 'F.C. Forth Collins',
+    teamLocation: '1730 Blake St - Denver, CO, 80220',
+    teamInfo: [{
+      email: 'fc.denver@gmail.com',
+      phone: '722-223-2365'
+    }],
+    league: 'US Football League',
+    tournaments: 'US Football Tournament',
+    couchResume: 'Tim Nord: For more than 20 years as a Football Coach for multiple teams around the country, he is our main couch',
+    openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
+  },
+  {
+    teamName: 'F.C. Golden',
+    teamLocation: '1730 Blake St - Denver, CO, 80220',
+    teamInfo: [{
+      email: 'fc.denver@gmail.com',
+      phone: '722-223-2365'
+    }],
+    league: 'US Football League',
+    tournaments: 'US Football Tournament',
+    couchResume: 'Tim Nord: For more than 20 years as a Football Coach for multiple teams around the country, he is our main couch',
+    openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
+  },
+  {
+    teamName: 'F.C. Greenwood',
+    teamLocation: '1730 Blake St - Denver, CO, 80220',
+    teamInfo: [{
+      email: 'fc.denver@gmail.com',
+      phone: '722-223-2365'
+    }],
+    league: 'US Football League',
+    tournaments: 'US Football Tournament',
+    couchResume: 'Tim Nord: For more than 20 years as a Football Coach for multiple teams around the country, he is our main couch',
+    openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
+  }
+]

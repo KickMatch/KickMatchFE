@@ -5,22 +5,25 @@ import TeamProfile from '../TeamProfile/TeamProfile';
 import { useState, useEffect } from 'react';
 
 const TeamProfileContainer = ({teamName, teamLocation}) => {
-  const [allTeams, setAllTeams] = useState(teamsMockData) // this is where would be the query fort all teams data 
-  const [filteredTeams, setFilteredTeams] = useState([])
-  const [nameSearched, setNameSearched] = useState('')
-  const [locationSearched, setLocationSearched] = useState('')
+  // const [allTeams, setAllTeams] = useState(teamsMockData) // this is where would be the query fort all teams data 
+  // const [filteredTeams, setFilteredTeams] = useState([])
+  // const [nameSearched, setNameSearched] = useState(teamName)
+  // const [locationSearched, setLocationSearched] = useState(teamLocation)
 
-  useEffect(() => {
-    findTeams()
-  }, [])
+  // useEffect(() => {
+  //   findTeams()
+  // }, [])
 
-  const findTeams = () => {
-    setNameSearched(teamName)
-    setLocationSearched(teamLocation)
-    console.log('allTeams:', allTeams)
-    console.log('nameSearched:', nameSearched)
-    console.log('distanceSearched:', teamLocation)
-  }
+  // const findTeams = () => {
+  //   // console.log('allTeams:', allTeams)
+  //   // console.log('nameSearched:', nameSearched)
+  //   // console.log('distanceSearched:', teamLocation)
+
+  // // const filteredTeams = allTeams.filter(team => team.teamName.includes(teamName))
+
+  // const filteredTeams = allTeams.filter(team => team.teamName === 'F.C. Boulder')
+  // console.log('filteredTeams:', filteredTeams)
+  // }
   
   return (
     <section className='TeamProfileContainer'>
