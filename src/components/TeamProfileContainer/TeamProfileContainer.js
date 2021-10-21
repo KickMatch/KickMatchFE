@@ -4,7 +4,7 @@ import './TeamProfileContainer.css';
 import TeamProfile from '../TeamProfile/TeamProfile';
 import { useState, useEffect } from 'react';
 
-const TeamProfileContainer = ({teamName, teamLocation}) => {
+const TeamProfileContainer = ({filteredTeams}) => {
   // const [allTeams, setAllTeams] = useState(teamsMockData) // this is where would be the query fort all teams data 
   // const [filteredTeams, setFilteredTeams] = useState([])
   // const [nameSearched, setNameSearched] = useState(teamName)
@@ -24,6 +24,8 @@ const TeamProfileContainer = ({teamName, teamLocation}) => {
   // const filteredTeams = allTeams.filter(team => team.teamName === 'F.C. Boulder')
   // console.log('filteredTeams:', filteredTeams)
   // }
+
+  console.log(filteredTeams, 'asdfas')
   
   return (
     <section className='TeamProfileContainer'>
