@@ -7,12 +7,9 @@ main {
   width: 65vw;
   display: flex;
   background-image: url('../../assets/soccer_background.png');
-  /* height: 500px; You must set a specified height */
-  /* background-position: center; Center the image */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 60% 37%;
-  /* width: 50%; */
   justify-content: space-around;
   border: 2px solid black;
 }
