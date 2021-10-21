@@ -49,7 +49,7 @@ const AthleteSearch = () => {
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
         <div className='SearchedTeamsContainer'>
-          <TeamProfileContainer />
+          <TeamProfileContainer teamName={teamName} teamLocation={teamLocation}/>
           <button onClick={getuserId}>Interested</button>
         </div>
       </section>

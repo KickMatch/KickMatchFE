@@ -4,20 +4,22 @@ import './TeamProfileContainer.css';
 import TeamProfile from '../TeamProfile/TeamProfile';
 import { useState, useEffect } from 'react';
 
-const TeamProfileContainer = () => {
+const TeamProfileContainer = ({teamName, teamLocation}) => {
   const [allTeams, setAllTeams] = useState(teamsMockData) // this is where would be the query fort all teams data 
   const [filteredTeams, setFilteredTeams] = useState([])
   const [nameSearched, setNameSearched] = useState('')
-  const [distanceSearched, setDistanceSearched] = useState('')
+  const [locationSearched, setLocationSearched] = useState('')
 
   useEffect(() => {
     findTeams()
   }, [])
 
   const findTeams = () => {
+    setNameSearched(teamName)
+    setLocationSearched(teamLocation)
     console.log('allTeams:', allTeams)
     console.log('nameSearched:', nameSearched)
-    console.log('distanceSearched:', distanceSearched)
+    console.log('distanceSearched:', teamLocation)
   }
   
   return (
