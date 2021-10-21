@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './AthleteProfile.css';
 import Header from '../Header/Header';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import EditPlayerProfile from './EditPlayerProfile/EditPlayerProfile';
 import { Link } from 'react-router-dom';
 import avatar from '../../assets/avatar.png'
+import CarouselComp from '../Carousel/Carousel';
 
-
-const AthleteProfile = ({athlete}) => {
+const AthleteProfile = ({data}) => {
+  const [user, setUser] = useState({})
   const { path, url } = useRouteMatch()
 
-  const { firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, zipCode, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+  const { firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, zipCode, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = data
+
+  const loadUser = () => {
+    setUser(data)
+  }
+
+  useEffect(() => {
+    loadUser()
+  }, [])
 
   return (
     <>
@@ -55,6 +64,7 @@ const AthleteProfile = ({athlete}) => {
               } </ul></h3>
           </section>
         </section>
+        <CarouselComp />
       </main>
 
     </>
