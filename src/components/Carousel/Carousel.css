@@ -1,8 +1,11 @@
-.caro-container {
-  display: flex;
+.main-slide {
+  width: 65vw;
+}
+
+.carousel .slider-wrapper {
+  width: 50%;
 }
 
 .caro-img {
-  width: 60px;
-  height: 60px;
+  height: 15rem;
 }

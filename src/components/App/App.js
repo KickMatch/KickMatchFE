@@ -15,6 +15,7 @@ import TeamSearch from '../TeamSearch/TeamSearch';
 import AthleteSearch from '../AthleteSearch/AthleteSearch';
 import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedTeams';
 import AthleteProfile from '../AthleteProfile/AthleteProfile';
+import AthleteStatContainer from '../AthleteStatContainer/AthleteStatContainer';
 
 const App = () => {
   const [user, setUser] = useState({})
@@ -38,7 +39,7 @@ const App = () => {
           <Route exact path='/registration-team' 
             component={RegistrationTeam}
           />
-          <Route exact path='/athlete/:id' render={() => <AthleteProfile data={user}/> } />
+          <Route exact path='/athlete/:id' render={() => <AthleteProfile> <AthleteStatContainer data={user}/> </AthleteProfile> } />
           <Route exact path='/athlete/:id/search' render={() => <AthleteSearch /> } />
           <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteInterestedTeams /> } />
         
