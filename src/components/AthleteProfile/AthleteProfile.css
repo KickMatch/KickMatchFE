@@ -5,47 +5,8 @@ main {
   justify-content: center;
 }
 
-.player-stat-container {
-  width: 65vw;
-  display: flex;
-  background-image: url('../../assets/soccer_background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 60% 37%;
-  justify-content: space-around;
-}
-
-.player-card {
-  line-height: 0rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgb(128,128,128, 0.5);
-}
-
-.stat-card {
-  line-height: 0rem;
-  border: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgb(128,128,128, 0.5);
-}
-
-.image-container { 
-  display: flex;
-  align-items: center;
-}
-
-.avatar {
-  height: 14rem;
-}
-
-.list { 
-  line-height: 1.5em;
-}
-
 .divider {
+  margin: 13px 0 13px 0;
   background-color: black;
   height: 4px;
   width: 65vw;
