@@ -4,10 +4,22 @@ import CarouselComp from '../Carousel/Carousel';
 import AthleteStatContainer from '../AthleteStatContainer/AthleteStatContainer';
 import Bio from '../Bio/Bio';
 import MobileAthleteStat from './MobileAthleteStat/MobileAthleteStat'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useWindowWidth } from '@react-hook/window-size'
 
 const AthleteProfile = ({ data }) => {
-  const [mobile, setMobile] = useState('3')
+  const [windowWidth, setWindowWidth] = useState(0)
+  const [mobile, setMobile] = useState(false)
+
+  const size = useWindowWidth()
+  
+  const handleWindow = () => {
+    setWindowWidth(size)
+  }
+
+  useEffect(() => {
+    handleWindow()
+  }, [size])
 
   
   return (
