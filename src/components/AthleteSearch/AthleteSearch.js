@@ -18,6 +18,7 @@ const AthleteSearch = () => {
     // console.log(teamName);
     // console.log(teamLocation);
     event.preventDefault();
+    getData();
     findTeams()
     clearInputs();
   }
@@ -40,6 +41,16 @@ const AthleteSearch = () => {
       sport_club_id: choseTeamId
     }
     console.log('Obj to send to create a match:', matchObj)
+  }
+
+  const getData = () => {
+    const apiKey = 'W9C9POYVGMP5IHH4X8E9'
+    const zipcode = '80202'
+    // const maxRadius = 20
+
+    fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${zipcode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
+      .then(res => res.json())
+      .then(data => console.log('data: ', data))
   }
 
   return (
@@ -92,7 +103,8 @@ const teamsMockData = [
     league: 'US Football League',
     tournaments: 'US Football Tournament',
     couchResume: 'Tim Nord: For more than 20 years as a Football Coach for multiple teams around the country, he is our main couch',
-    openPositions: ['Goalkeeper', 'Left Center', 'Right Foward']
+    openPositions: ['Goalkeeper', 'Left Center', 'Right Foward'],
+    zipcode: 92145
   },
   {
     id: 2,
