@@ -15,12 +15,13 @@ const AthleteProfile = ({ data }) => {
   
   const handleWindow = () => {
     setWindowWidth(size)
+    windowWidth >= 600 ? setMobile(false) : setMobile(true)
   }
 
   useEffect(() => {
     handleWindow()
+    console.log('useEffect invoked');
   }, [size])
-
   
   return (
     <>
