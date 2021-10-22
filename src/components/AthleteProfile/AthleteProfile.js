@@ -20,8 +20,7 @@ const AthleteProfile = ({ data }) => {
 
   useEffect(() => {
     handleWindow()
-    console.log('useEffect invoked');
-  }, [size])
+  }, [windowWidth, size])
   
   return (
     <>
