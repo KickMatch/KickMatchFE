@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import Athlete from '../Athlete/Athlete';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
@@ -16,6 +16,7 @@ import AthleteSearch from '../AthleteSearch/AthleteSearch';
 import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedTeams';
 import AthleteProfile from '../AthleteProfile/AthleteProfile';
 import AthleteStatContainer from '../AthleteStatContainer/AthleteStatContainer';
+import EditPlayerProfile from '../AthleteStatContainer/EditPlayerProfile/EditPlayerProfile';
 
 const App = () => {
   const [user, setUser] = useState({})
@@ -42,7 +43,8 @@ const App = () => {
           <Route exact path='/athlete/:id' render={() => <AthleteProfile data={user}/> }/>
           <Route exact path='/athlete/:id/search' render={() => <AthleteSearch /> } />
           <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteInterestedTeams /> } />
-        
+          <Route exact path='/athlete/:id/editprofile' component={EditPlayerProfile}/>
+          
           {/* <Route exact path='/team' render={() => <Team />} /> */}
             <Route exact path='/team/:id/profile' render={() => <TeamProfile /> } />
             <Route exact path='/team/:id/search' render={() => <TeamSearch /> } />
