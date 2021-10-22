@@ -6,7 +6,7 @@ import { useState } from 'react';
 import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
 
 
-const AthleteSearch = () => {
+const AthleteSearch = ({data}) => {
   const {id} = useParams();
   const [allTeams, setAllTeams] = useState(teamsMockData);
   const [filteredTeams, setFilteredTeams] = useState([]);
