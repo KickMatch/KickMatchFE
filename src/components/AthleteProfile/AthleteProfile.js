@@ -23,7 +23,7 @@ const AthleteProfile = ({ data }) => {
               <Bio data={data} />
             </main>
           : 
-            <MobileAthleteStat />
+            <MobileAthleteStat athlete={data}/>
         }
     </>
   );

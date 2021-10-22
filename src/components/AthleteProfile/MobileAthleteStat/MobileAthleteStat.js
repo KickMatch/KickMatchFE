@@ -1,9 +1,14 @@
 import './MobileAthleteStat.css';
 
-const MobileAthleteStat = () => {
+const MobileAthleteStat = ({ athlete }) => {
+
+  // const { firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, zipCode, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+  
+  // console.log('athlete: ', athlete);
+  
   return (
-    <main className='player-stat-container'>
-      <h1> MOBILE ATHLETE STAT</h1>
+    <main className='mobile-player-stat-container'>
+      
     </main>
   )
 }
