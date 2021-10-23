@@ -39,6 +39,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: rgb(128,128,128, 0.5);
+  overflow: wrap;
 }
 
 .image-container { 
@@ -49,11 +50,11 @@
 
 .avatar {
   height: 14rem;
-  border-radius: 50%;
+  border-radius: 25%;
 }
 
 .name-container {
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   color: blue;
 }
 
@@ -63,92 +64,14 @@
   margin-left: 3rem;
 }
 
+p {
+  word-break: break-all;
+}
+
 .edit-profile {
   margin-left: 2rem;
 }
 
 .list { 
   line-height: 1.5em;
-}
-
-@media only screen and (max-width: 600px) {
-
-  .player-stat-container {
-    /* position: relative; 
-    width: 65vw; 
-    height: 40vh;
-    display: flex; 
-    justify-content: space-around; 
-    z-index: 1; */
-  } 
-
-  .name-container {
-  }
-  
-  .player-stat-container::before {
-    /* content: ""; 
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background-image: url('../../assets/soccer_background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 60% 37%; 
-    position: absolute;  */
-    /* content: "";
-    background-color: black; */
-  } 
-  
-  .player-card {
-    /* line-height: 0rem;
-    width: 30%;
-    border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(128,128,128, 0.5); */
-  }
-  
-  .stat-card {
-    /* line-height: 0rem;
-    width: 30%;
-    border-radius: 5%;
-    color: greenyellow;
-    border: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(128,128,128, 0.5); */
-  }
-  
-  .image-container { 
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-  }
-  
-  .avatar {
-    /* height: 14rem;
-    border-radius: 50%; */
-  }
-  
-  .name-container {
-    /* margin-left: 2rem;
-    color: blue; */
-  }
-  
-  .attribute-container {
-    /* line-height: 1rem;
-    color: firebrick;
-    margin-left: 3rem; */
-  }
-  
-  .edit-profile {
-    /* margin-left: 2rem; */
-  }
-  
-  .list { 
-    /* line-height: 1.5em; */
-  }
-  
 }
