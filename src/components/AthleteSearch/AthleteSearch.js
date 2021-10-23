@@ -24,7 +24,10 @@ const AthleteSearch = ({data1}) => {
 
   const addMatch = () => {
     createMatch({
-      variables: {}
+      variables: {
+        talent_id: id,
+        sport_club_id: teamId
+      }
     })
     if (error) {
       console.log(error)
