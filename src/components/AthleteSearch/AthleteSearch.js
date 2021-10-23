@@ -16,6 +16,8 @@ const AthleteSearch = ({data}) => {
   const [teamLocation, setTeamLocation] = useState("");
   const [teamId, setTeamId] = useState("");
 
+  const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
+
   const getFormInfo = (event) => {
     event.preventDefault();
     getData();
