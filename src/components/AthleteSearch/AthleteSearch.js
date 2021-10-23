@@ -3,20 +3,25 @@ import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
 import React from 'react';
 import Header from '../Header/Header';
 import { useParams } from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { LOAD_ALL_TALENT } from '../GraphQL/Queries'
+import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
 
 
-const AthleteSearch = ({data}) => {
+const AthleteSearch = ({data1}) => {
   const {id} = useParams();
   const [allTeams, setAllTeams] = useState(teamsMockData);
   const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
   const [teamLocation, setTeamLocation] = useState("");
   const [teamId, setTeamId] = useState("");
+  const [queryTest, setQueryTest] = useState("");
 
   const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
+
+  useEffect(() => {
+    console.log(data)
+  }, [data])
 
   const getFormInfo = (event) => {
     event.preventDefault();
