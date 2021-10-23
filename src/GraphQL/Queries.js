@@ -14,3 +14,14 @@ export const LOAD_ALL_TALENT = gql `
       }
     }
   `
+
+export const LOAD_ALL_CLUBS = gql `
+  query {
+    allClubs {
+      id,
+      name,
+      location,
+      league
+    }
+  }
+`

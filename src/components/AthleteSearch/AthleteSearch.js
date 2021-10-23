@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
+import { LOAD_ALL_TALENT, LOAD_ALL_CLUBS } from '../../GraphQL/Queries';
 
 
 const AthleteSearch = ({data1}) => {
@@ -17,7 +17,8 @@ const AthleteSearch = ({data1}) => {
   const [teamId, setTeamId] = useState("");
   const [queryTest, setQueryTest] = useState("");
 
-  const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
+  // const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
+  const {error, loading, data} = useQuery(LOAD_ALL_CLUBS)
 
   useEffect(() => {
     console.log(data)
