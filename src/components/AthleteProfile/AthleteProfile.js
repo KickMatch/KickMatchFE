@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import CarouselComp from '../Carousel/Carousel';
 import AthleteStatContainer from '../AthleteStatContainer/AthleteStatContainer';
 import Bio from '../Bio/Bio';
-import MobileAthleteStat from './MobileAthleteStat/MobileAthleteStat'
+import MobileAthleteStat from '../AthleteStatContainer/MobileAthleteStat/MobileAthleteStat'
 import { useEffect, useState } from 'react';
 import { useWindowWidth } from '@react-hook/window-size'
 

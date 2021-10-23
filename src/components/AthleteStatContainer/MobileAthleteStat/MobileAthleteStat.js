@@ -2,7 +2,7 @@ import './MobileAthleteStat.css';
 
 const MobileAthleteStat = ({ athlete }) => {
 
-  const { avatar, playerNum, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, zipCode, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+  const { avatar, playerNum, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
   
   // console.log('athlete: ', athlete);
   return (
@@ -18,7 +18,7 @@ const MobileAthleteStat = ({ athlete }) => {
           <h1>{height} | {weight} | {age}</h1>
         </span>
         <span className='mobile-attribute-container' >
-          <p>Zipcode: {zipCode}</p>
+          <p>Zipcode: {location}</p>
           <p>Primary Position: {primaryPosition}</p>
           <p>Secondary Position: {secondaryPosition}</p>
           <p>Dominat Foot: {dominantFoot}</p>
