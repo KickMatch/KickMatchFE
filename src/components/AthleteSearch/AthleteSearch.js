@@ -20,7 +20,16 @@ const AthleteSearch = ({data1}) => {
   const [queryTest, setQueryTest] = useState("");
 
   // MUTATION Function
-  const [createMatch, {error}] = useMutation(CREATE_MATCH)
+  const [createMatch, {error}] = useMutation(CREATE_MATCH);
+
+  const addMatch = () => {
+    createMatch({
+      variables: {}
+    })
+    if (error) {
+      console.log(error)
+    }
+  }
 
 
   // const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
