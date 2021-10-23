@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Header/Header';
 import { useParams } from 'react-router';
 import { useState } from 'react';
+import { useQuery, gql } from '@apollo/client'
 import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
 
 
