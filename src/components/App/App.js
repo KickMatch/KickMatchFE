@@ -40,7 +40,7 @@ const App = () => {
             component={RegistrationTeam}
           />
           <Route exact path='/athlete/:id' render={() => <AthleteProfile data={user}/> }/>
-          <Route exact path='/athlete/:id/search' render={() => <AthleteSearch /> } />
+          <Route exact path='/athlete/:id/search' render={() => <AthleteSearch data={user}/> } />
           <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteInterestedTeams /> } />
         
           {/* <Route exact path='/team' render={() => <Team />} /> */}

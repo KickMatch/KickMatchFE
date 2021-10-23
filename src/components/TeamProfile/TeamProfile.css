@@ -1,0 +1,17 @@
+.teamProfile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2%;;
+}
+
+.teamContactInfo {
+  /* text-align: center; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.teamSportingInfo {
+  /* text-align: center; */
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
