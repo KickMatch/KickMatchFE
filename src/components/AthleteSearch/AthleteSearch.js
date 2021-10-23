@@ -15,7 +15,6 @@ const AthleteSearch = ({data}) => {
   const [teamId, setTeamId] = useState("");
 
   const getFormInfo = (event) => {
-    // console.log(teamName);
     // console.log(teamLocation);
     event.preventDefault();
     getData();
