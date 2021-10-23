@@ -5,7 +5,7 @@ import './AthleteStatContainer.css'
 const AthleteStatContainer = ({athlete}) => {
   const { path, url } = useRouteMatch()
 
-  const { avatar, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, zipCode, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+  const { avatar, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
   
   const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
 
@@ -23,19 +23,19 @@ const AthleteStatContainer = ({athlete}) => {
           <span className='attribute-container'>
             <p className='edit-profile'><Link to={`${url}/editprofile`} >Edit Profile</Link></p>
             <h3>{height} | {weight} | {age}</h3>
-            <h3>Primary Position: {primaryPosition}</h3>
-            <h3>Secondary Position: {secondaryPosition}</h3>
-            <h3>Dominat Foot: {dominantFoot}</h3>
-            <h3>Zipcode: {zipCode}</h3>
+            <p>Primary Position: {primaryPosition}</p>
+            <p>Secondary Position: {secondaryPosition}</p>
+            <p>Dominat Foot: {dominantFoot}</p>
+            <p>Zipcode: {location}</p>
           </span>
         </aside>
         <aside className='stat-card'>
-          <h3>Goals Last Season: {goalsMadeLast}</h3>
-          <h3>Vertical Jump: {vertJump}</h3>
-          <h3>40 Yard Dash: {fortyYard}</h3>
-          <h3>Personal Juggling Record: {personJugRec}</h3>
-          <h3>Talents: <ul>{handleMap(talents)}</ul></h3>
-          <h3>Awards: <ul> {handleMap(awards)} </ul></h3>
+          <p>Goals Last Season: {goalsMadeLast}</p>
+          <p>Vertical Jump: {vertJump}</p>
+          <p>40 Yard Dash: {fortyYard}</p>
+          <p>Personal Juggling Record: {personJugRec}</p>
+          <h4>Talents: <ul>{handleMap(talents)}</ul></h4>
+          <h4>Awards: <ul> {handleMap(awards)} </ul></h4>
         </aside>
       </section>
     </>
