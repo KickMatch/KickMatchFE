@@ -8,10 +8,10 @@ const Header = () => {
 
   return (
     <header>
-      <Link to={`/athlete/${id}`}> <h1>Profile</h1> </Link>
-      <Link to={`/athlete/${id}/search`}> <h1>Search</h1> </Link>
-      <Link to={`/athlete/${id}/interested-teams`}> <h1>Interested Parties</h1> </Link>
-      <Link to='/'> <h1>Log Out</h1></Link>
+      <Link to={`/athlete/${id}`}> <h3>Profile</h3> </Link>
+      <Link to={`/athlete/${id}/search`}> <h3>Search</h3> </Link>
+      <Link to={`/athlete/${id}/interested-teams`}> <h3>Interested Parties</h3> </Link>
+      <Link to='/'> <h3>Log Out</h3></Link>
     </header>
   );
 }
