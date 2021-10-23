@@ -14,7 +14,7 @@ import TeamProfile from '../TeamProfile/TeamProfile';
 import TeamSearch from '../TeamSearch/TeamSearch';
 import AthleteSearch from '../AthleteSearch/AthleteSearch';
 import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedTeams';
-import AthleteProfile from '../AthleteProfile/AthleteProfile';
+import Athlete from '../Athlete/Athlete';
 // import AthleteStatContainer from '../AthleteStatContainer/AthleteStatContainer';
 import EditPlayerProfile from '../AthleteStatContainer/EditPlayerProfile/EditPlayerProfile';
 
@@ -39,7 +39,7 @@ const App = () => {
           <Route exact path='/registration-team' 
             component={RegistrationTeam}
           />
-          <Route exact path='/athlete/:id' render={() => <AthleteProfile data={user}/> }/>
+          <Route exact path='/athlete/:id' render={() => <Athlete data={user}/> }/>
           <Route exact path='/athlete/:id/search' render={() => <AthleteSearch /> } />
           <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteInterestedTeams /> } />
           <Route exact path='/athlete/:id/editprofile' component={EditPlayerProfile}/>

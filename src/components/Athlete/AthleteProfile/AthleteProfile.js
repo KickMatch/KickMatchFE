@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useRouteMatch } from 'react-router';
-import './AthleteStatContainer.css'
+import './AthleteProfile.css'
 
-const AthleteStatContainer = ({athlete}) => {
+const AthleteProfile = ({athlete}) => {
   const { path, url } = useRouteMatch()
 
   const { avatar, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
@@ -42,4 +42,4 @@ const AthleteStatContainer = ({athlete}) => {
   )
 }
 
-export default AthleteStatContainer;
+export default AthleteProfile;

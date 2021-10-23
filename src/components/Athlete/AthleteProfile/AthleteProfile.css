@@ -12,7 +12,7 @@
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: url('../../assets/soccer_background.png');
+  background-image: url('../../../assets/soccer_background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 60% 37%; 
