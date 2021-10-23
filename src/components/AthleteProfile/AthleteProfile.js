@@ -10,12 +10,15 @@ import { useWindowWidth } from '@react-hook/window-size'
 const AthleteProfile = ({ data }) => {
   const [windowWidth, setWindowWidth] = useState(0)
   const [mobile, setMobile] = useState(false)
-
+  // const [tablet, setTablet] = useState(false)
   const size = useWindowWidth()
   
+  
   const handleWindow = () => {
+
     setWindowWidth(size)
     windowWidth >= 600 ? setMobile(false) : setMobile(true)
+    // windowWidth <= 1024 ? setTablet(false) : setTablet(true)
   }
 
   useEffect(() => {
