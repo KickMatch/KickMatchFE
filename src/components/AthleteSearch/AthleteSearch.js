@@ -36,11 +36,11 @@ const AthleteSearch = ({data1}) => {
 
 
   // const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
-  const {error, loading, data} = useQuery(LOAD_ALL_CLUBS)
+  // const {error, loading, data} = useQuery(LOAD_ALL_CLUBS)
 
-  useEffect(() => {
-    console.log(data)
-  }, [data])
+  // useEffect(() => {
+  //   console.log(data)
+  // }, [data])
 
   const getFormInfo = (event) => {
     event.preventDefault();
