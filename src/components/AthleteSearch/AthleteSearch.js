@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { LOAD_ALL_TALENT, LOAD_ALL_CLUBS } from '../../GraphQL/Queries';
 import { CREATE_MATCH } from '../../GraphQL/Mutations';
+import { useMutation } from '@apollo/client';
 
 
 const AthleteSearch = ({data1}) => {
@@ -17,6 +18,10 @@ const AthleteSearch = ({data1}) => {
   const [teamLocation, setTeamLocation] = useState("");
   const [teamId, setTeamId] = useState("");
   const [queryTest, setQueryTest] = useState("");
+
+  // MUTATION Function
+  const [createMatch, {error}] = useMutation(CREATE_MATCH)
+
 
   // const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
   const {error, loading, data} = useQuery(LOAD_ALL_CLUBS)
