@@ -43,3 +43,17 @@ button {
   line-height: 1.1;
 }
 
+button:hover,
+button:focus {
+    background: #3AFDF6;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
