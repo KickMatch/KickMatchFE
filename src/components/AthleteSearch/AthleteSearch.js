@@ -1,18 +1,50 @@
 import './AthleteSearch.css';
+import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
 import React from 'react';
 import Header from '../Header/Header';
 import { useParams } from 'react-router';
-import { useState } from 'react';
-import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
+import { useState, useEffect } from 'react';
+import { useQuery, gql } from '@apollo/client';
+import { LOAD_ALL_TALENT, LOAD_ALL_CLUBS } from '../../GraphQL/Queries';
+import { CREATE_MATCH } from '../../GraphQL/Mutations';
+import { useMutation } from '@apollo/client';
 
 
-const AthleteSearch = ({data}) => {
+const AthleteSearch = ({data1}) => {
   const {id} = useParams();
   const [allTeams, setAllTeams] = useState(teamsMockData);
   const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
   const [teamLocation, setTeamLocation] = useState("");
   const [teamId, setTeamId] = useState("");
+  const [queryTest, setQueryTest] = useState("");
+
+  // MUTATION Function
+  // const [createMatch, {error}] = useMutation(CREATE_MATCH);
+
+  // const addMatch = () => {
+  //   createMatch({
+  //     variables: {
+  //       talent_id: id,
+  //       sport_club_id: teamId
+  //     }
+  //   })
+  //   if (error) {
+  //     console.log(error)
+  //   }
+  // }
+
+
+  // const {error, loading, data} = useQuery(LOAD_ALL_TALENT); 
+  // useEffect(() => {
+  //   console.log('testing query for athletes:', data)
+  // }, [data])
+
+  const {error, loading, data} = useQuery(LOAD_ALL_CLUBS);
+  useEffect(() => {
+    console.log('testing query for teams:', data)
+  }, [data])
+
 
   const getFormInfo = (event) => {
     event.preventDefault();
@@ -47,7 +79,7 @@ const AthleteSearch = ({data}) => {
 
     fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${zipcode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
       .then(res => res.json())
-      .then(data => console.log('data: ', data))
+      // .then(data => console.log('data: ', data))
   }
 
   return (
@@ -55,15 +87,16 @@ const AthleteSearch = ({data}) => {
       <Header />
       <section className='AthleteSearch'>
         <form className='AthleteForm'>
-          <h3>Search by:</h3>
+          <h3 className="search-text">Search by:</h3>
           <input
+            className= 'team-name-search'
             type='text'
             placeholder='Sport Club Name'
             name='sportClub'
             value={teamName}
             onChange={(event) => setTeamName(event.target.value)}
           />
-          <select onChange={(event) => setTeamLocation(event.target.value)}>
+          <select className="select-radius-location" onChange={(event) => setTeamLocation(event.target.value)}>
             <option value='20'>20 Miles</option>
             <option value='50'>50 Miles</option>
             <option value='100'>100 Miles</option>

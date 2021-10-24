@@ -12,7 +12,7 @@ const TeamProfileContainer = ({filteredTeams, getId}) => {
       )
     })
     return (
-      <Carousel>
+      <Carousel className="matchCarousel">
         {teamsProfile}
       </Carousel>
     )
