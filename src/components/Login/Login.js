@@ -41,7 +41,11 @@ const Login = ({ getUser }) => {
           {athleteLoginButtons}
           <Link to='/registration-athlete'><button className='registration-button'>New Athlete</button></Link>
         </div>
-       
+        <div className='login-containers'>
+          <h2>Team Login</h2>
+          {teamLoginButtons}
+          <Link to='/registration-team'><button className='registration-button'>New Team</button></Link>
+        </div>
       </section>
     </section>
   );
