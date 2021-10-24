@@ -25,3 +25,19 @@ const RegistrationTeam = () => {
     zipCode: '',
   }); 
 
+  useEffect(() => {
+    setRegistrationTeam(otherState => ({ ...otherState, location: `${address.street} ${address.city}, ${address.state} ${address.zipCode}`}))
+  }, [address])
+
+  
+  const [checkedPosition, setCheckedPosition] = useState(new Array(positionList.length).fill(false))
+
+  const handlePosition = (spot) => {
+    const updatedCheckedPosition = checkedPosition.map((item, index) =>
+      index === spot ? !item : item
+    );
+
+    setCheckedPosition(updatedCheckedPosition)
+  }
+
+  
