@@ -10,7 +10,7 @@ const TeamProfile = ({teamInfo, getId}) => {
   return (
     <section className='teamProfile'>
       <div className='teamContactInfo'>
-        <p>IMG</p>
+        <img className='team-prof-logo' src='https://upload.wikimedia.org/wikipedia/commons/4/4f/United_States_women%27s_national_soccer_team_logo.svg'></img>
         <p className='team-prof-title'><b>Team Name:</b></p>
         <p className='team-prof-info'>{teamInfo.teamName}</p>
         <p className='team-prof-title'><b>Location:</b></p>
