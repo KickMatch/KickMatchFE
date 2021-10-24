@@ -50,10 +50,18 @@
   color: #7b0303;
 }
 
+.team-prof-title:hover {
+  opacity: 0.60;
+}
+
 .team-prof-info {
   font-family: Arial, Helvetica, sans-serif;
   font-size:130%;
   color: rgb(108, 3, 3);
+}
+
+.team-prof-info:hover {
+  opacity: 0.60;
 }
 
 .match-btn {
