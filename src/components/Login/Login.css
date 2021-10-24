@@ -57,3 +57,11 @@ button:active {
     transform: scale(0.99);
 }
 
+.registration-button {
+  background: #3AFDF6;
+}
+
+.registration-button:hover,
+.registration-button:focus {
+    background: #34E3AC;
+}
