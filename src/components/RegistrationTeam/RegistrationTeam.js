@@ -40,4 +40,14 @@ const RegistrationTeam = () => {
     setCheckedPosition(updatedCheckedPosition)
   }
 
-  
+  const handleAddress = (e) => {
+    setAddress(otherState => ({ ...otherState, [e.target.name]: e.target.value}))
+  }
+
+  const handleChange = (e) => {
+    setRegistrationTeam(otherState => ({ ...otherState, [e.target.name]: e.target.value}))
+  }
+
+ 
+
+export default RegistrationTeam;
