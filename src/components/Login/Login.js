@@ -35,7 +35,14 @@ const Login = ({ getUser }) => {
   return (
     <section className='login-page'>
       <h1>Kick Match</h1>
-      
+      <section className='login-section'>
+        <div className='login-containers'>
+          <h2>Athlete Login</h2>
+          {athleteLoginButtons}
+          <Link to='/registration-athlete'><button className='registration-button'>New Athlete</button></Link>
+        </div>
+       
+      </section>
     </section>
   );
 }
