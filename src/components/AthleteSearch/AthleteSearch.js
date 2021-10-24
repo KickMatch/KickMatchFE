@@ -87,7 +87,7 @@ const AthleteSearch = ({data1}) => {
       <Header />
       <section className='AthleteSearch'>
         <form className='AthleteForm'>
-          <h3>Search by:</h3>
+          <h3 className="search-text">Search by:</h3>
           <input
             className= 'team-name-search'
             type='text'
