@@ -35,9 +35,22 @@ const RegistrationAthlete = () => {
   }
   
   return (
-    <header>
+    <section className='registration-page'>
+      <header>
         <h1>Create a New Athlete Profiile</h1>
       </header>
+      <section className='form'>
+        <label>First Name -
+          <input type='text' name='firstName' value={registration.firstName} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>Last Name - 
+          <input type='text' name='lastName' value={registration.lastName} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>Email - 
+          <input type='email' name='email' value={registration.email} onChange={e => handleChange(e)}></input>
+        </label>
+       
+    </section>
   );
 }
 
