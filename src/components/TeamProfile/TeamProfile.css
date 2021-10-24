@@ -65,6 +65,10 @@
 }
 
 .match-btn {
-  color: #7b0303;
-  background: #7b0303;
+  color: rgb(108, 3, 3);
+  background: whitesmoke; 
+  font-size: x-large;
+  border-color: rgb(108, 3, 3);
+  margin: 2%;
+  font-weight: bolder;
 }
