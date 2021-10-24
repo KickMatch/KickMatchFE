@@ -29,6 +29,13 @@
   border-radius: 10%;
 }
 
+.SearchBtn:hover {
+  color: whitesmoke;
+  background: rgb(108, 3, 3);
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
 .SearchedTeamsContainer {
   text-align: center;
   border: 2px solid whitesmoke;
@@ -64,6 +71,7 @@
 .team-name-search:focus {
   outline: none;
   color:rgb(108, 3, 3);
+  font-family: monospace;
 }
 
 .select-radius-location {
