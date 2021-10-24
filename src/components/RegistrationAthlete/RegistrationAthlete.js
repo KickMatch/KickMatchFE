@@ -99,7 +99,20 @@ const RegistrationAthlete = () => {
             <option value='ambidextrous'>Ambidextrous</option>
           </select>
         </label>
+        <label>Goals Made Last Season - 
+        <input type='number' name='goalsMadeLast' value={registration.goalsMadeLast} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>Vertical Jump (in) - 
+        <input type='number' step='0.1' name='vertJump' value={registration.vertJump} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>40 Yard Dash (sec) - 
+        <input type='number' step='0.01' name='fortyYard' value={registration.fortyYard} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>Personal Juggling Record (# of kicks) - 
+        <input type='number' name='personJugRec' value={registration.personJugRec} onChange={e => handleChange(e)}></input>
+        </label>
         
+    </section>
   );
 }
 
