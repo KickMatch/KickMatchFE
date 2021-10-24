@@ -1,0 +1,9 @@
+.registration-page {
+  padding: 40px;
+}
+
+.form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+} 
