@@ -70,9 +70,28 @@ const RegistrationAthlete = () => {
             <option value='18'>18</option>
           </select>
         </label>
-      
-    </section>
-  );
+        <label>Primary Position - 
+          <select name='primaryPosition' value={registration.primaryPosition} onChange={e => handleChange(e)}>
+            <option value='goalie'>Goalie</option>
+            <option value='fullback'>Fullback</option>
+            <option value='sweeper/stopper'>Sweeper/Stopper</option>
+            <option value='centerMid'>Center Midfielder</option>
+            <option value='outsideMid'>Outside Midfielder</option>
+            <option value='striker'>Striker</option>
+          </select>
+        </label>
+        <label>Secondary Position - 
+        <select name='secondaryPosition' value={registration.secondaryPosition} onChange={e => handleChange(e)}>
+          <option value=''>- Select One-</option>
+          <option value='goalie'>Goalie</option>
+          <option value='fullback'>Fullback</option>
+          <option value='sweeper/stopper'>Sweeper/Stopper</option>
+          <option value='centerMid'>Center Midfielder</option>
+          <option value='outsideMid'>Outside Midfielder</option>
+          <option value='striker'>Striker</option>
+        </select>
+        </label>
+        
 }
 
 export default RegistrationAthlete;
