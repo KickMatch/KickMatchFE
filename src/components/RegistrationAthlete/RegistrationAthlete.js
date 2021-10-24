@@ -1,6 +1,8 @@
 import React from 'react';
 import './RegistrationAthlete.css';
 
+const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
+
 const RegistrationAthlete = () => {
 
   
