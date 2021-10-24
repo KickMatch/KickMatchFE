@@ -83,3 +83,7 @@
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
 }
+
+.team-prof-logo {
+  height: 15rem;
+}
