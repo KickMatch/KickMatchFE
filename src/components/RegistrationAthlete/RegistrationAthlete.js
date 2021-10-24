@@ -35,7 +35,9 @@ const RegistrationAthlete = () => {
   }
   
   return (
-    <h1>registration athelete</h1>
+    <header>
+        <h1>Create a New Athlete Profiile</h1>
+      </header>
   );
 }
 
