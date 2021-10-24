@@ -23,28 +23,28 @@ export const LOAD_ALL_TALENT = gql `
     }
   `
 
-  export const LOAD_ALL_TALENT = gql `
-    query {
-      allTalent {
-        id,
-        name,
-        age,
-        height,
-        weight,
-        videoUrl,
-        zipcode,
-        email,
-        dominantFoot,
-        goalsMadeLs,
-        verticalJump,
-        fortyDash,
-        jugglingRecord,
-        talents,
-        primaryPosition,
-        secondaryPosition
-      }
-    }
-  `
+  // export const LOAD_TALENT = gql `
+  //   query {
+  //     Talent(id:) {
+  //       id,
+  //       name,
+  //       age,
+  //       height,
+  //       weight,
+  //       videoUrl,
+  //       zipcode,
+  //       email,
+  //       dominantFoot,
+  //       goalsMadeLs,
+  //       verticalJump,
+  //       fortyDash,
+  //       jugglingRecord,
+  //       talents,
+  //       primaryPosition,
+  //       secondaryPosition
+  //     }
+  //   }
+  // `
 
 export const LOAD_ALL_CLUBS = gql `
   query {
@@ -62,4 +62,50 @@ export const LOAD_ALL_CLUBS = gql `
     }
   }
 `
+
+// export const LOAD_CLUB = gql `
+// query {
+//   Club(id:) {
+//     id,
+//     name,
+//     age,
+//     height,
+//     weight,
+//     videoUrl,
+//     zipcode,
+//     email,
+//     dominantFoot,
+//     goalsMadeLs,
+//     verticalJump,
+//     fortyDash,
+//     jugglingRecord,
+//     talents,
+//     primaryPosition,
+//     secondaryPosition
+//   }
+// }
+// `
+
+// export const CREATE_TALENT = gql `
+// query {
+//   Club(id:) {
+//     id,
+//     name,
+//     age,
+//     height,
+//     weight,
+//     videoUrl,
+//     zipcode,
+//     email,
+//     dominantFoot,
+//     goalsMadeLs,
+//     verticalJump,
+//     fortyDash,
+//     jugglingRecord,
+//     talents,
+//     primaryPosition,
+//     secondaryPosition
+//   }
+// }
+// `
 
