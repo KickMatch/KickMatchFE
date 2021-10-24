@@ -8,9 +8,7 @@ export const LOAD_ALL_TALENT = gql `
         age,
         height,
         weight,
-        primaryPosition,
-        secondaryPosition,
-        videoUrl
+        videoUrl,
       }
     }
   `
@@ -25,3 +23,22 @@ export const LOAD_ALL_CLUBS = gql `
     }
   }
 `
+
+/*
+        id,
+        name,
+        age,
+        height,
+        weight,
+        videoUrl,
+        zipcode,
+        email,
+        dominantFoot,
+        goalsMadeLs,
+        verticalJump,
+        fortyDash,
+        jugglingRecord,
+        talents,
+        primaryPosition,
+        secondaryPosition
+*/

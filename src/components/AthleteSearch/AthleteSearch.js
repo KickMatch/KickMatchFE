@@ -20,27 +20,31 @@ const AthleteSearch = ({data1}) => {
   const [queryTest, setQueryTest] = useState("");
 
   // MUTATION Function
-  const [createMatch, {error}] = useMutation(CREATE_MATCH);
+  // const [createMatch, {error}] = useMutation(CREATE_MATCH);
 
-  const addMatch = () => {
-    createMatch({
-      variables: {
-        talent_id: id,
-        sport_club_id: teamId
-      }
-    })
-    if (error) {
-      console.log(error)
-    }
-  }
+  // const addMatch = () => {
+  //   createMatch({
+  //     variables: {
+  //       talent_id: id,
+  //       sport_club_id: teamId
+  //     }
+  //   })
+  //   if (error) {
+  //     console.log(error)
+  //   }
+  // }
 
 
-  // const {error, loading, data} = useQuery(LOAD_ALL_TALENT)
-  // const {error, loading, data} = useQuery(LOAD_ALL_CLUBS)
-
+  // const {error, loading, data} = useQuery(LOAD_ALL_TALENT); 
   // useEffect(() => {
-  //   console.log(data)
+  //   console.log('testing query for athletes:', data)
   // }, [data])
+
+  const {error, loading, data} = useQuery(LOAD_ALL_CLUBS);
+  useEffect(() => {
+    console.log('testing query for teams:', data)
+  }, [data])
+
 
   const getFormInfo = (event) => {
     event.preventDefault();
@@ -75,7 +79,7 @@ const AthleteSearch = ({data1}) => {
 
     fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${zipcode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
       .then(res => res.json())
-      .then(data => console.log('data: ', data))
+      // .then(data => console.log('data: ', data))
   }
 
   return (
@@ -85,6 +89,7 @@ const AthleteSearch = ({data1}) => {
         <form className='AthleteForm'>
           <h3>Search by:</h3>
           <input
+            className= 'team-name-search'
             type='text'
             placeholder='Sport Club Name'
             name='sportClub'
