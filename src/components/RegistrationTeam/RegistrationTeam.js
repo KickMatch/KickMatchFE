@@ -57,6 +57,21 @@ const RegistrationTeam = () => {
         <label>Team Name -
           <input type='text' name='name' value={registrationTeam.name} onChange={e => handleChange(e)}></input>
         </label>
+        <label>Street - 
+          <input type='text' name='street' value={address.street} onChange={e => handleAddress(e)}></input>
+        </label>
+        <label>City - 
+          <input type='text' name='city' value={address.city} onChange={e => handleAddress(e)}></input>
+        </label>
+        <label>State - 
+          <select name='state' value={address.state} onChange={e => handleAddress(e)}>
+            <option value='' disabled>- Select One-</option>
+            {states.map((state, index) => <option key={index} value={state}>{state}</option>)}
+          </select>
+        </label>
+        <label>Zip Code -
+          <input type='text' name='zipCode' value={address.zipCode} onChange={e => handleAddress(e)}></input>
+        </label>
         
       </section>
     </section>
