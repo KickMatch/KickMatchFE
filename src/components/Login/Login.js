@@ -32,6 +32,16 @@ const Login = ({ getUser }) => {
     )
   });
 
+  const teamLoginButtons = teams.map(team => {
+    return (
+        <Link to={`/team/${team.id}`} key={team.id}>
+          <button>
+            {team.name}
+          </button>
+        </Link>
+    )
+  });
+  
   return (
     <section className='login-page'>
       <h1>Kick Match</h1>
