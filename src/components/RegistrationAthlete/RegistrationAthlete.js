@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './RegistrationAthlete.css';
+
 
 const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
 
@@ -33,7 +34,7 @@ const RegistrationAthlete = () => {
       setTalents([e.target.value, ...talents])
     }
   }
-  
+
   return (
     <section className='registration-page'>
       <header>
