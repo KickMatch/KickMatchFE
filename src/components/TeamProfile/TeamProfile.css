@@ -12,7 +12,8 @@
   grid-column-end: 2;
   color: black;
   background: whitesmoke;
-  opacity: 0.40;
+  opacity: 0.60;
+  margin: 10%;
 }
 
 .teamSportingInfo {
@@ -20,5 +21,24 @@
   grid-column-end: 4;
   color: black;
   background: whitesmoke;
-  opacity: 0.40;
+  opacity: 0.70;
+  width: 80%;
+  margin: 5%;
+}
+
+.team-prof-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size:170%;
+  color: #7b0303;
+}
+
+.team-prof-info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:130%;
+  color: rgb(108, 3, 3);
+}
+
+.match-btn {
+  color: #7b0303;
+  background: #7b0303;
 }
