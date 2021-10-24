@@ -1,0 +1,44 @@
+/* main {
+  display: flex;
+
+} */
+
+.mobile-player-stat-container {
+  
+}
+
+.mobile-name-container {
+  display: flex;
+}
+
+.mobile-avatar {
+  height: 20em;
+}
+
+/* .mobile-player-stats-attributes-container {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid red;
+} */
+
+.mobile-attribute-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(128,128,128, 0.5);
+  width: 70%;
+  border-radius: 5%;
+  line-height: 0em;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.mobile-stat-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(128,128,128, 0.5);
+  width: 70%;
+  border-radius: 5%;
+  line-height: 0em;
+  align-items: center;  
+  /* border: 2px solid blue; */
+}

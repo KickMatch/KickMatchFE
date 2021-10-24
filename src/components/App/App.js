@@ -39,7 +39,7 @@ const App = () => {
           <Route exact path='/registration-team' 
             component={RegistrationTeam}
           />
-          <Route exact path='/athlete/:id' render={() => <AthleteProfile data={user}/> }/>
+          <Route exact path='/athlete/:id' render={() => <Athlete data={user}/> }/>
           <Route exact path='/athlete/:id/search' render={() => <AthleteSearch data={user}/> } />
           <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteInterestedTeams /> } />
         
