@@ -1,7 +1,6 @@
 .player-stat-container {
   position: relative; 
-  width: 65vw; 
-  height: 40vh;
+  width: 65vw;
   display: flex; 
   justify-content: space-around; 
   z-index: 1;
@@ -22,6 +21,7 @@
 .player-card {
   line-height: 0rem;
   width: 30%;
+  height: 100%;
   border-radius: 5%;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,7 @@
 }
 
 .stat-card {
+  height: 100%;
   line-height: 0rem;
   width: 30%;
   border-radius: 5%;
@@ -54,7 +55,7 @@
 }
 
 .name-container {
-  /* margin-left: 2rem; */
+  margin-left: 2rem;
   color: blue;
 }
 
@@ -64,7 +65,7 @@
   margin-left: 3rem;
 }
 
-p {
+.paragraph {
   word-break: break-all;
 }
 

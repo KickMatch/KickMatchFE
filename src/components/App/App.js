@@ -14,8 +14,6 @@ import TeamProfile from '../TeamProfile/TeamProfile';
 import TeamSearch from '../TeamSearch/TeamSearch';
 import AthleteSearch from '../AthleteSearch/AthleteSearch';
 import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedTeams';
-import AthleteProfile from '../AthleteProfile/AthleteProfile';
-import AthleteStatContainer from '../AthleteStatContainer/AthleteStatContainer';
 
 const App = () => {
   const [user, setUser] = useState({})

@@ -30,7 +30,7 @@ const Athlete = ({ data }) => {
       <Header />
         {
           !mobile ? 
-            <main>
+            <main className='athlete-main'>
               <AthleteProfile athlete={data} />
               <div className='divider'></div>
               <CarouselComp data={data}/>
