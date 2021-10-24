@@ -121,7 +121,9 @@ const RegistrationAthlete = () => {
           )
         })}
         </label>
-        
+        <label>Awards - 
+        <input type='text' name='awards' value={registration.awards} onChange={e => handleChange(e)}></input>
+        </label>
       </section>
     </section>
   );
