@@ -38,7 +38,7 @@ const RegistrationAthlete = () => {
   return (
     <section className='registration-page'>
       <header>
-        <h1>Create a New Athlete Profiile</h1>
+        <h1>Create a New Athlete Profile</h1>
       </header>
       <section className='form'>
         <label>First Name -
