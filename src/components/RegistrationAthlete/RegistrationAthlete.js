@@ -91,7 +91,16 @@ const RegistrationAthlete = () => {
           <option value='striker'>Striker</option>
         </select>
         </label>
+        <label>Dominant Foot - 
+          <select name='dominantFoot' value={registration.dominantFoot} onChange={e => handleChange(e)}>
+            <option value=''>- Select One-</option>
+            <option value='right'>Right</option>
+            <option value='left'>Left</option>
+            <option value='ambidextrous'>Ambidextrous</option>
+          </select>
+        </label>
         
+  );
 }
 
 export default RegistrationAthlete;
