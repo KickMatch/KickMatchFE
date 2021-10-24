@@ -53,18 +53,18 @@
 }
 
 .team-prof-title:hover {
-  opacity: 0.60;
+  opacity: 0.70;
 }
 
 .team-prof-info {
   font-family: Arial, Helvetica, sans-serif;
   font-size:130%;
-  color: rgb(108, 3, 3);
+  color: rgb(107, 3, 3);
   font-weight: bold;
 }
 
 .team-prof-info:hover {
-  opacity: 0.60;
+  opacity: 0.80;
 }
 
 .match-btn {
