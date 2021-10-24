@@ -1,3 +1,67 @@
-li {
-  line-height: 2rem;
+.login-page {
+  padding: 40px;
+  text-align: center;
+}
+
+.login-heading {
+  font-size: 50px;
+}
+
+.login-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-containers {
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 20px 60px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+}
+
+.login-container-heading {
+  font-size: 35px;
+}
+
+.login-buttons {
+  font-size: 20px;
+  margin: 15px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #34E3AC;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 20px 10px;
+  min-width: 20ch;
+  min-height: 44px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.login-buttons:hover,
+.login-buttons:focus {
+  background: #3AFDF6;
+}
+
+.login-buttons:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.login-buttons:active {
+  transform: scale(0.99);
+}
+
+.register-buttons {
+  background: #3AFDF6;
+}
+
+.register-buttons:hover,
+.register-buttons:focus {
+    background: #34E3AC;
 }
