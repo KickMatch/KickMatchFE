@@ -1,11 +1,13 @@
+import { StoreWriter } from '@apollo/client/cache/inmemory/writeToStore';
 import React, { useState } from 'react';
 import './RegistrationAthlete.css';
 
+const positionList = ['Goalie', 'Fullback', 'Sweeper/Stopper', 'Center Midfielder', 'Outside Midfielder', 'Striker'];
 
 const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
 
 const RegistrationAthlete = () => {
-  const [registration, setRegistration] = useState({
+  const [registrationAthlete, setRegistrationAthlete] = useState({
     firstName: '', 
     lastName: '', 
     email: '',
@@ -20,44 +22,53 @@ const RegistrationAthlete = () => {
     vertJump: 0.0,
     fortyYard: 0.00,
     personJugRec: 0,
+    talents: [],
     awards: '',
   });
 
-  const [talents, setTalents] = useState([]);
+  const [checkedTalent, setCheckedTalent] = useState(new Array(talentList.length).fill(false))
+
+  const handleTalent = (position) => {
+    const updatedCheckedTalent = checkedTalent.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedTalent(updatedCheckedTalent)
+  }
 
   const handleChange = (e) => {
-    setRegistration(otherState => ({ ...otherState, [e.target.name]: e.target.value}))
+    setRegistrationAthlete(otherState => ({ ...otherState, [e.target.name]: e.target.value}))
   }
 
-  const handleTalent = (e) => {
-    if (talents.length < 3) {
-      setTalents([e.target.value, ...talents])
-    }
-  }
+  // useEffect(() => {
+  //   const resultingTalents =
+
+  //   setRegistrationAthlete(otherState => ({ ...otherState, talents: resultingTalents}))
+  // }, [checkedTalent])
 
   return (
-    <section className='registration-page'>
+    <section className='registration-athlete-page'>
       <header>
         <h1>Create a New Athlete Profile</h1>
       </header>
-      <section className='form'>
+      <section className='athlete-form'>
         <label>First Name -
-          <input type='text' name='firstName' value={registration.firstName} onChange={e => handleChange(e)}></input>
+          <input type='text' name='firstName' value={registrationAthlete.firstName} onChange={e => handleChange(e)}></input>
         </label>
         <label>Last Name - 
-          <input type='text' name='lastName' value={registration.lastName} onChange={e => handleChange(e)}></input>
+          <input type='text' name='lastName' value={registrationAthlete.lastName} onChange={e => handleChange(e)}></input>
         </label>
         <label>Email - 
-          <input type='email' name='email' value={registration.email} onChange={e => handleChange(e)}></input>
+          <input type='email' name='email' value={registrationAthlete.email} onChange={e => handleChange(e)}></input>
         </label>
         <label>Height (in) - 
-          <input type='number' name='height' value={registration.hweighteight} onChange={e => handleChange(e)}></input>
+          <input type='number' name='height' value={registrationAthlete.hweighteight} onChange={e => handleChange(e)}></input>
         </label>
         <label>Weight (lbs) - 
-          <input type='number' name='weight' value={registration.weight} onChange={e => handleChange(e)}></input>
+          <input type='number' name='weight' value={registrationAthlete.weight} onChange={e => handleChange(e)}></input>
         </label>
         <label>Age - 
-          <select name='age' value={registration.age} onChange={e => handleChange(e)}>
+          <select name='age' value={registrationAthlete.age} onChange={e => handleChange(e)}>
             <option value='8'>8</option>
             <option value='9'>9</option>
             <option value='10'>10</option>
@@ -72,58 +83,45 @@ const RegistrationAthlete = () => {
           </select>
         </label>
         <label>Primary Position - 
-          <select name='primaryPosition' value={registration.primaryPosition} onChange={e => handleChange(e)}>
-            <option value='goalie'>Goalie</option>
-            <option value='fullback'>Fullback</option>
-            <option value='sweeper/stopper'>Sweeper/Stopper</option>
-            <option value='centerMid'>Center Midfielder</option>
-            <option value='outsideMid'>Outside Midfielder</option>
-            <option value='striker'>Striker</option>
+          <select name='primaryPosition' value={registrationAthlete.primaryPosition} onChange={e => handleChange(e)}>
+            <option value='' disabled>- Select One-</option>
+            {positionList.map((position, index) => <option key={index} value={position}>{position}</option>)}
           </select>
         </label>
         <label>Secondary Position - 
-        <select name='secondaryPosition' value={registration.secondaryPosition} onChange={e => handleChange(e)}>
-          <option value=''>- Select One-</option>
-          <option value='goalie'>Goalie</option>
-          <option value='fullback'>Fullback</option>
-          <option value='sweeper/stopper'>Sweeper/Stopper</option>
-          <option value='centerMid'>Center Midfielder</option>
-          <option value='outsideMid'>Outside Midfielder</option>
-          <option value='striker'>Striker</option>
-        </select>
+          <select name='secondaryPosition' value={registrationAthlete.secondaryPosition} onChange={e => handleChange(e)}>
+            <option value='' disabled>- Select One-</option>
+            {positionList.map((position, index) => <option key={index} value={position}>{position}</option>)}
+          </select>
         </label>
         <label>Dominant Foot - 
-          <select name='dominantFoot' value={registration.dominantFoot} onChange={e => handleChange(e)}>
-            <option value=''>- Select One-</option>
+          <select name='dominantFoot' value={registrationAthlete.dominantFoot} onChange={e => handleChange(e)}>
+            <option value='' disabled>- Select One-</option>
             <option value='right'>Right</option>
             <option value='left'>Left</option>
             <option value='ambidextrous'>Ambidextrous</option>
           </select>
         </label>
+        <label>Zip Code -
+          <input type='text' name='zipCode' value={registrationAthlete.zipCode} onChange={e => handleChange(e)}></input>
+        </label>
         <label>Goals Made Last Season - 
-        <input type='number' name='goalsMadeLast' value={registration.goalsMadeLast} onChange={e => handleChange(e)}></input>
+        <input type='number' name='goalsMadeLast' value={registrationAthlete.goalsMadeLast} onChange={e => handleChange(e)}></input>
         </label>
         <label>Vertical Jump (in) - 
-        <input type='number' step='0.1' name='vertJump' value={registration.vertJump} onChange={e => handleChange(e)}></input>
+        <input type='number' step='0.1' name='vertJump' value={registrationAthlete.vertJump} onChange={e => handleChange(e)}></input>
         </label>
         <label>40 Yard Dash (sec) - 
-        <input type='number' step='0.01' name='fortyYard' value={registration.fortyYard} onChange={e => handleChange(e)}></input>
+        <input type='number' step='0.01' name='fortyYard' value={registrationAthlete.fortyYard} onChange={e => handleChange(e)}></input>
         </label>
         <label>Personal Juggling Record (# of kicks) - 
-        <input type='number' name='personJugRec' value={registration.personJugRec} onChange={e => handleChange(e)}></input>
+        <input type='number' name='personJugRec' value={registrationAthlete.personJugRec} onChange={e => handleChange(e)}></input>
         </label>
-        <label>Talents ({talents.length < 2 ? `Add up to ${3-talents.length} more talents` : talents.length === 2 ? `Add up to 1 more talent` : 'Only First 3 Talents Selected are Submitted'}) -
-        {talentList.map((talent, index) => {
-          return (
-            <label key={index}>
-              <input type='checkbox' name='talent' value={talent} onChange={e => handleTalent(e)}/>
-              {talent}
-            </label>
-          )
-        })}
+        <label>Talents -
+            {talentList.map((talent, index) => <label key={index}> <input type='checkbox' name={talent} value={talent} checked={checkedTalent[index]} onChange={() => handleTalent(index)}></input>{talent}</label>)}
         </label>
         <label>Awards - 
-        <input type='text' name='awards' value={registration.awards} onChange={e => handleChange(e)}></input>
+        <input type='text' name='awards' value={registrationAthlete.awards} onChange={e => handleChange(e)}></input>
         </label>
       </section>
     </section>
