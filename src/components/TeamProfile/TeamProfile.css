@@ -5,6 +5,7 @@
   background-image: url("https://populous.com/wp-content/uploads/2018/01/Tottenham-hotspur-stadium-hero-scaled.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  border: solid rgb(108, 3, 3) 5px;
 }
 
 .teamContactInfo {
@@ -14,6 +15,7 @@
   background: whitesmoke;
   opacity: 0.60;
   margin: 10%;
+  border: solid rgb(108, 3, 3) 5px;
 }
 
 .teamSportingInfo {
@@ -24,6 +26,7 @@
   opacity: 0.70;
   width: 80%;
   margin: 5%;
+  border: solid rgb(108, 3, 3) 5px;
 }
 
 .team-prof-title {
