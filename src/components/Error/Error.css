@@ -1,8 +1,7 @@
 .error-container {
   padding: 0px;
-  margin: 0px; 
-  display: flex;
   margin: 20px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
