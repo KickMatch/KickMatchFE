@@ -81,7 +81,15 @@ const RegistrationTeam = () => {
         <label>League - 
           <input type='text' name='league' value={registrationTeam.league} onChange={e => handleChange(e)}></input>
         </label>
-        
+        <label>Tournaments - 
+          <input type='text' name='tournaments' value={registrationTeam.tournaments} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>Coach Resume - 
+          <input type='text' name='coachResume' value={registrationTeam.coachResume} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>Positions Open -
+            {positionList.map((position, index) => <label><input type='checkbox' name={position} value={position} checked={checkedPosition[index]} onChange={() => handlePosition(index)}></input>{position}</label>)}
+        </label>
       </section>
     </section>
   );
