@@ -72,3 +72,10 @@
   margin: 2%;
   font-weight: bolder;
 }
+
+.match-btn:hover {
+  color: whitesmoke;
+  background: rgb(108, 3, 3);
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
