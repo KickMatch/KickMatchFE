@@ -48,6 +48,19 @@ const RegistrationTeam = () => {
     setRegistrationTeam(otherState => ({ ...otherState, [e.target.name]: e.target.value}))
   }
 
- 
+  return (
+    <section className='registration-team-page'>
+      <header>
+        <h1>Create a New Team Profile</h1>
+      </header>
+      <section className='team-form'>
+        <label>Team Name -
+          <input type='text' name='name' value={registrationTeam.name} onChange={e => handleChange(e)}></input>
+        </label>
+        
+      </section>
+    </section>
+  );
+}
 
 export default RegistrationTeam;
