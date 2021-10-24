@@ -87,3 +87,8 @@
 .team-prof-logo {
   height: 15rem;
 }
+
+.team-prof-logo:hover {
+  transform: scale(1.04);
+  transition: 0.3s ease-in-out;
+}
