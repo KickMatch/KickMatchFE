@@ -24,10 +24,6 @@
   background: rgb(32, 38, 36);
 }
 
-.team-name-search {
-  margin: 2%;
-}
-
 .SearchBtn {
   margin: 1%;
   border-radius: 10%;
@@ -55,6 +51,7 @@
 }
 
 .team-name-search {
+  margin: 2%;
   background: whitesmoke;
   color: #c6c6c6;
   font-size: 18px;
@@ -64,8 +61,9 @@
   margin-top: 3%;
 }
 
-.team-name-search:hover {
+.team-name-search:focus {
   outline: none;
+  color:rgb(108, 3, 3);
 }
 
 .select-radius-location {
