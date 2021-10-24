@@ -8,12 +8,11 @@
   flex-direction: column;
 } 
 
-input,
-select {
-  margin: 10px;
-}
+/* .form label {
+  margin-bottom: 10px;
+} */
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+/* .form input,
+.form select {
+  margin: 10px;
+} */
