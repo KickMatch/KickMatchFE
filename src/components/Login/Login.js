@@ -32,4 +32,12 @@ const Login = ({ getUser }) => {
     )
   });
 
+  return (
+    <section className='login-page'>
+      <h1>Kick Match</h1>
+      
+    </section>
+  );
+}
+
 export default Login;
