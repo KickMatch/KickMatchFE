@@ -111,7 +111,18 @@ const RegistrationAthlete = () => {
         <label>Personal Juggling Record (# of kicks) - 
         <input type='number' name='personJugRec' value={registration.personJugRec} onChange={e => handleChange(e)}></input>
         </label>
+        <label>Talents ({talents.length < 2 ? `Add up to ${3-talents.length} more talents` : talents.length === 2 ? `Add up to 1 more talent` : 'Only First 3 Talents Selected are Submitted'}) -
+        {talentList.map((talent, index) => {
+          return (
+            <label key={index}>
+              <input type='checkbox' name='talent' value={talent} onChange={e => handleTalent(e)}/>
+              {talent}
+            </label>
+          )
+        })}
+        </label>
         
+      </section>
     </section>
   );
 }
