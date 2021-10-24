@@ -1,17 +1,24 @@
 .teamProfile {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2%;;
+  grid-gap: 2%;
+  background-image: url("https://populous.com/wp-content/uploads/2018/01/Tottenham-hotspur-stadium-hero-scaled.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .teamContactInfo {
-  /* text-align: center; */
   grid-column-start: 1;
   grid-column-end: 2;
+  color: black;
+  background: whitesmoke;
+  opacity: 0.40;
 }
 
 .teamSportingInfo {
-  /* text-align: center; */
   grid-column-start: 2;
   grid-column-end: 4;
+  color: black;
+  background: whitesmoke;
+  opacity: 0.40;
 }
