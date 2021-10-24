@@ -4,7 +4,23 @@ import './RegistrationAthlete.css';
 const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
 
 const RegistrationAthlete = () => {
-
+  const [registration, setRegistration] = useState({
+    firstName: '', 
+    lastName: '', 
+    email: '',
+    height: 0, 
+    weight: 0, 
+    age: 0,
+    primaryPosition: '',
+    secondaryPosition: '',
+    dominantFoot: '',
+    zipCode: 0,
+    goalsMadeLast: 0,
+    vertJump: 0.0,
+    fortyYard: 0.00,
+    personJugRec: 0,
+    awards: '',
+  });
   
   return (
     <h1>registration athelete</h1>
