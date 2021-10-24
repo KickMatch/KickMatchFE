@@ -25,7 +25,7 @@ const Login = ({ getUser }) => {
   const athleteLoginButtons = athletes.map(athlete => {
     return (
         <Link to={`/athlete/${athlete.id}`} key={athlete.id}>
-          <button onClick={(e) => getUser(athlete)}>
+          <button className='login-buttons' onClick={(e) => getUser(athlete)}>
             {`${athlete.firstName} ${athlete.lastName}`}
           </button>
         </Link>
@@ -35,7 +35,7 @@ const Login = ({ getUser }) => {
   const teamLoginButtons = teams.map(team => {
     return (
         <Link to={`/team/${team.id}`} key={team.id}>
-          <button>
+          <button className='login-buttons'>
             {team.name}
           </button>
         </Link>
@@ -44,17 +44,21 @@ const Login = ({ getUser }) => {
   
   return (
     <section className='login-page'>
-      <h1>Kick Match</h1>
+      <h1 className='login-heading'>Kick Match</h1>
       <section className='login-section'>
         <div className='login-containers'>
-          <h2>Athlete Login</h2>
+          <h2 className='login-container-heading'>Athlete Login</h2>
           {athleteLoginButtons}
-          <Link to='/registration-athlete'><button className='registration-button'>New Athlete</button></Link>
+          <Link to='/registration-athlete'>
+            <button className='login-buttons register-buttons'>New Athlete</button>
+          </Link>
         </div>
         <div className='login-containers'>
-          <h2>Team Login</h2>
+          <h2 className='login-container-heading'>Team Login</h2>
           {teamLoginButtons}
-          <Link to='/registration-team'><button className='registration-button'>New Team</button></Link>
+          <Link to='/registration-team'>
+            <button className='login-buttons register-buttons'>New Team</button>
+          </Link>
         </div>
       </section>
     </section>
