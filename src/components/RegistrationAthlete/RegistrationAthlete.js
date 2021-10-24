@@ -21,6 +21,18 @@ const RegistrationAthlete = () => {
     personJugRec: 0,
     awards: '',
   });
+
+  const [talents, setTalents] = useState([]);
+
+  const handleChange = (e) => {
+    setRegistration(otherState => ({ ...otherState, [e.target.name]: e.target.value}))
+  }
+
+  const handleTalent = (e) => {
+    if (talents.length < 3) {
+      setTalents([e.target.value, ...talents])
+    }
+  }
   
   return (
     <h1>registration athelete</h1>
