@@ -3,12 +3,8 @@
   text-align: center;
 }
 
-h1 {
+.login-heading {
   font-size: 50px;
-}
-
-h2 {
-  font-size: 35px;
 }
 
 .login-section {
@@ -26,7 +22,11 @@ h2 {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 }
 
-button {
+.login-container-heading {
+  font-size: 35px;
+}
+
+.login-buttons {
   font-size: 20px;
   margin: 15px;
   border: none;
@@ -43,25 +43,25 @@ button {
   line-height: 1.1;
 }
 
-button:hover,
-button:focus {
-    background: #3AFDF6;
-}
-
-button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-}
-
-button:active {
-    transform: scale(0.99);
-}
-
-.registration-button {
+.login-buttons:hover,
+.login-buttons:focus {
   background: #3AFDF6;
 }
 
-.registration-button:hover,
-.registration-button:focus {
+.login-buttons:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.login-buttons:active {
+  transform: scale(0.99);
+}
+
+.register-buttons {
+  background: #3AFDF6;
+}
+
+.register-buttons:hover,
+.register-buttons:focus {
     background: #34E3AC;
 }
