@@ -72,6 +72,15 @@ const RegistrationTeam = () => {
         <label>Zip Code -
           <input type='text' name='zipCode' value={address.zipCode} onChange={e => handleAddress(e)}></input>
         </label>
+        <label>Email - 
+          <input type='email' name='email' value={registrationTeam.email} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>Phone Number - 
+          <input type='tel' name='phone' value={registrationTeam.phone} onChange={e => handleChange(e)}></input>
+        </label>
+        <label>League - 
+          <input type='text' name='league' value={registrationTeam.league} onChange={e => handleChange(e)}></input>
+        </label>
         
       </section>
     </section>
