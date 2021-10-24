@@ -9,22 +9,23 @@ export const LOAD_ALL_TALENT = gql `
         height,
         weight,
         videoUrl,
+        zipcode,
+        email,
+        dominantFoot,
+        goalsMadeLs,
+        verticalJump,
+        fortyDash,
+        jugglingRecord,
+        talents,
+        primaryPosition,
+        secondaryPosition
       }
     }
   `
 
-export const LOAD_ALL_CLUBS = gql `
-  query {
-    allClubs {
-      id,
-      name,
-      location,
-      league
-    }
-  }
-`
-
-/*
+  export const LOAD_ALL_TALENT = gql `
+    query {
+      allTalent {
         id,
         name,
         age,
@@ -41,4 +42,24 @@ export const LOAD_ALL_CLUBS = gql `
         talents,
         primaryPosition,
         secondaryPosition
-*/
+      }
+    }
+  `
+
+export const LOAD_ALL_CLUBS = gql `
+  query {
+    allClubs {
+      id,
+      name,
+      location,
+      league,
+      zipcode,
+      email,
+      phone,
+      tournaments,
+      coachResume,
+      currentlyLooking
+    }
+  }
+`
+
