@@ -63,7 +63,7 @@ const AthleteSearch = ({data1}) => {
 
     const teams = allTeams.allClubs;
     console.log('teams:', teams)
-    setFilteredTeams(teams.filter(team => team.name.includes(teamName)))
+    setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
     console.log('teamName:', teamName)
     console.log('filteredTeams:',filteredTeams)
   }
@@ -109,9 +109,9 @@ const AthleteSearch = ({data1}) => {
           </select>
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
-        <div className='SearchedTeamsContainer'>
-          {allTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
-        </div>
+          {allTeams && <div className='SearchedTeamsContainer'>
+          <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
+        </div>}
       </section>
     </section>
   );
