@@ -22,10 +22,19 @@ const AthleteSearch = ({userData}) => {
   const [userZipCode, setUserZipCode] = useState(userData);
   const [zipCodeRadius, setZipCodeRadius] = useState({})
 
-  // MUTATION Function
   const [createMatch, {error}] = useMutation(CREATE_MATCH);
 
   const getId = (choseTeamId) => {
+    createMatch({
+      variables: {
+        sportClubId: parseInt(choseTeamId),
+        talentId: parseInt(id)
+      }
+    })
+    if (error) {
+      console.log(error)
+    }
+
     // This function will help in order to sne dan object for the post request
     // setTeamId(choseTeamId)
     // const matchObj = {
@@ -33,15 +42,12 @@ const AthleteSearch = ({userData}) => {
     //   sport_club_id: choseTeamId
     // }
     // console.log('Obj to send to create a match:', matchObj)
-    createMatch({
-      variables: {
-        sportClubId: choseTeamId,
-        talentId: id
-      }
-    })
-    if (error) {
-      console.log(error)
-    }
+
+    // console.log(typeof id)
+    // console.log(id)
+    // console.log(typeof choseTeamId)
+    // console.log(choseTeamId)
+
   }
 
   const addMatch = () => {
