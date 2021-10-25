@@ -10,7 +10,7 @@ import { CREATE_MATCH } from '../../GraphQL/Mutations';
 import { useMutation } from '@apollo/client';
 
 
-const AthleteSearch = ({data1}) => {
+const AthleteSearch = ({userData}) => {
   const {id} = useParams();
   const [allTeams, setAllTeams] = useState({});
   const [filteredTeams, setFilteredTeams] = useState([]);
@@ -19,6 +19,7 @@ const AthleteSearch = ({data1}) => {
   const [teamId, setTeamId] = useState("");
   const [queryTest, setQueryTest] = useState("");
   const [searchStatus, setSearchStatus] = useState(true);
+  const [userZipCode, setUserZipCode] = useState(userData)
 
   // MUTATION Function
   // const [createMatch, {error}] = useMutation(CREATE_MATCH);
@@ -34,59 +35,59 @@ const AthleteSearch = ({data1}) => {
   //     console.log(error)
   //   }
   // }
-
-
+  
   // const {error, loading, data} = useQuery(LOAD_ALL_TALENT); 
   // useEffect(() => {
-  //   console.log('testing query for athletes:', data)
-  // }, [data])
-
-  const {error, loading, data} = useQuery(LOAD_ALL_CLUBS);
-  useEffect(() => {
-    setAllTeams(data)
-    // console.log('allTeams:', allTeams)
-  }, [data])
-
-
-  const getFormInfo = (event) => {
-    event.preventDefault();
-    setSearchStatus(false)
-    getData(); // Function to have a location radius
-    findTeams(); // Function to filter teams based on the user text filter
-    clearInputs();
-  }
-
-  const clearInputs = () => {
-    setTeamLocation("");
-    setTeamName("");
-  }
-
-  const findTeams = () => {
-
-    const teams = allTeams.allClubs;
-    console.log('teams:', teams)
-    setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
-    console.log('teamName:', teamName)
-    console.log('filteredTeams:',filteredTeams)
-  }
-
-  const getId = (choseTeamId) => {
-    // This function will help in order to sne dan object for the post request
-    setTeamId(choseTeamId)
-    const matchObj = {
-      talent_id: parseInt(id),
-      sport_club_id: choseTeamId
+    //   console.log('testing query for athletes:', data)
+    // }, [data])
+    
+    const {error, loading, data} = useQuery(LOAD_ALL_CLUBS);
+    useEffect(() => {
+      setAllTeams(data)
+      // console.log('allTeams:', allTeams)
+    }, [data])
+    
+    
+    const getFormInfo = (event) => {
+      event.preventDefault();
+      setSearchStatus(false)
+      getData(); // Function to have a location radius
+      findTeams(); // Function to filter teams based on the user text filter
+      clearInputs();
     }
-    console.log('Obj to send to create a match:', matchObj)
-  }
-
-  const getData = () => {
+    
+    const clearInputs = () => {
+      setTeamLocation("");
+      setTeamName("");
+    }
+    
+    const findTeams = () => {
+      
+      const teams = allTeams.allClubs;
+      setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
+      // console.log('teams:', teams)
+      // console.log('teamName:', teamName)
+      // console.log('filteredTeams:',filteredTeams)
+    }
+    
+    const getId = (choseTeamId) => {
+      // This function will help in order to sne dan object for the post request
+      setTeamId(choseTeamId)
+      const matchObj = {
+        talent_id: parseInt(id),
+        sport_club_id: choseTeamId
+      }
+      console.log('Obj to send to create a match:', matchObj)
+    }
+    
+    const getData = () => {
+    // console.log('userZipCode:', userZipCode.zipCode)
     const apiKey = 'W9C9POYVGMP5IHH4X8E9'
-    const zipcode = '80202'
+    // const zipcode = '80202'
 
-    fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${zipcode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
+    fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${userZipCode.zipCode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
       .then(res => res.json())
-      // .then(data => console.log('data: ', data))
+      .then(data => console.log('ZipCodeData: ', data))
   }
 
   return (
@@ -113,7 +114,7 @@ const AthleteSearch = ({data1}) => {
         </form>
           {searchStatus ? 
           <div className='no-search-founded'>
-            <h2 className="search-invitation-text">Search and discover for your next Team ⚽️⚽️⚽️</h2>
+            <h2 className="search-invitation-text">Search and discover your next Team ⚽️⚽️⚽️</h2>
             </div> :
             <div className='SearchedTeamsContainer'>
           {filteredTeams ? <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/> : 
