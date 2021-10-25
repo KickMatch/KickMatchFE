@@ -1,8 +1,45 @@
-header {
+.header {
   display: flex;
-  border: 2px solid red;
+  /* flex-direction: row; */
+  /* margin-top: -5px; */
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
 }
 
-h1 {
-  margin: 5px;
+.links-div {
+  display: flex;
+}
+
+.hover-span {
+  /* display: flex; */
+}
+
+.hover-span:hover { 
+  background-color: grey;
+}
+
+.header-logo {
+  width: 25%;
+}
+
+.header-logo:hover {
+  /* cursor: pointer; */
+}
+
+.header-text {
+  display: flex;
+  margin-right: 3vw;
+  text-decoration: none;
+  font-size:2vw;
+  text-align: center;
+  /* color: grey; */
+}
+
+.header-text:hover {
+  color: white;
+}
+
+.header-active {
+  color: white;
 }

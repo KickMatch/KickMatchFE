@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useRouteMatch } from 'react-router';
 import './AthleteProfile.css'
+import avatar from '../../../assets/avatar.png'
+
 
 const AthleteProfile = ({athlete}) => {
   const { url } = useRouteMatch()
 
-  const { avatar, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+  const { firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
   
   const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
   // console.log('avatar: ', avatar);

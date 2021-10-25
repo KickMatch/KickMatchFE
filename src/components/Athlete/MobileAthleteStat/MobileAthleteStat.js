@@ -1,8 +1,9 @@
 import './MobileAthleteStat.css';
+import avatar from '../../../assets/avatar.png'
 
 const MobileAthleteStat = ({ athlete }) => {
 
-  const { avatar, playerNum, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+  const { playerNum, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
   
   // console.log('athlete: ', athlete);
   return (
