@@ -111,13 +111,12 @@ const AthleteSearch = ({data1}) => {
           </select>
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
-          {/* <div className='SearchedTeamsContainer'>
-          {filteredTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
-          </div> */}
-          {searchStatus ? <div className='no-search-founded'>
+          {searchStatus ? 
+          <div className='no-search-founded'>
             {/* <h2 className="no-match-text">Sorry there is no available teams with those specs, please try again!</h2> */}
             <h2 className="search-invitation-text">Search and discover for your next Team ⚽️⚽️⚽️</h2>
-          </div> : <div className='SearchedTeamsContainer'>
+            </div> :
+            <div className='SearchedTeamsContainer'>
           {filteredTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
           </div>}
       </section>
