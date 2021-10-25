@@ -19,7 +19,8 @@ const AthleteSearch = ({userData}) => {
   const [teamId, setTeamId] = useState("");
   const [queryTest, setQueryTest] = useState("");
   const [searchStatus, setSearchStatus] = useState(true);
-  const [userZipCode, setUserZipCode] = useState(userData)
+  const [userZipCode, setUserZipCode] = useState(userData);
+  const [zipCodeRadius, setZipCodeRadius] = useState({})
 
   // MUTATION Function
   // const [createMatch, {error}] = useMutation(CREATE_MATCH);
@@ -87,7 +88,9 @@ const AthleteSearch = ({userData}) => {
 
     fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${userZipCode.zipCode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
       .then(res => res.json())
-      .then(data => console.log('ZipCodeData: ', data))
+      .then(data => setZipCodeRadius)
+      .then(console.log(zipCodeRadius))
+      // .then(data => console.log('ZipCodeData: ', data));
   }
 
   return (
