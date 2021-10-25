@@ -42,8 +42,8 @@ const AthleteSearch = ({data1}) => {
 
   const {error, loading, data} = useQuery(LOAD_ALL_CLUBS);
   useEffect(() => {
-    // console.log('testing query for teams:', data)
     setAllTeams(data)
+    // console.log('allTeams:', allTeams)
   }, [data])
 
 
@@ -60,12 +60,12 @@ const AthleteSearch = ({data1}) => {
   }
 
   const findTeams = () => {
-    // if (allTeams) {
-    //   setFilteredTeams(allTeams.allClubs.filter(team => team.teamName.includes(teamName)))
-    //   console.log('filteredTeams:', filteredTeams)
-    // }
+
     const teams = allTeams.allClubs;
-    console.log(teams)
+    console.log('teams:', teams)
+    setFilteredTeams(teams.filter(team => team.name.includes(teamName)))
+    console.log(teamName)
+    console.log(filteredTeams)
   }
 
   const getId = (choseTeamId) => {
