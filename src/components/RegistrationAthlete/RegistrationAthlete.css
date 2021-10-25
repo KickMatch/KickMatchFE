@@ -1,9 +1,102 @@
 .registration-athlete-page {
-  padding: 40px;
+  font-family: Oxygen;
+  padding: 20px 40px 40px 40px;
 }
 
-.athlete-form {
-  margin-top: 10px;
+.registration-athlete-header {
+  text-align: center;
+  padding: 2px;
+  border: 2px;
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.1);
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.athlete-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 5px;
+  margin-bottom: 30px;
+} 
+
+.athlete-form label {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 } 
+
+.athlete-form input[type = text],
+.athlete-form input[type = number],
+.athlete-form select {
+  box-sizing: border-box;
+  width: 300px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.1);
+  border-radius: 10px;
+} 
+
+.talents-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.athlete-form input[type = checkbox] {
+  margin: 10px 10px 0px 5px;
+}
+
+.checkbox-label {
+  position: relative;
+  padding-left:30px;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  width:0; 
+  height:0;
+}
+
+.checkbox-label span {
+  position: absolute;
+  top:0;
+  left:0;
+  width:20px; 
+  height:20px;
+  background-color: #ddd;
+  transition: .3s background-color; 
+}
+
+.checkbox-label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.checkbox-label:hover span {
+  background-color: #ccc;
+}
+
+.checkbox-label input:checked ~ span {
+  background-color: #2eaadc;
+}
+
+.checkbox-label input:checked ~ span:after {
+  display:block;
+}
+
+.awards-container {
+  margin-top: 40px;
+}
+
+#awards-input {
+  width: 600px;
+}
