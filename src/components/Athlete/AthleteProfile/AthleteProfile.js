@@ -8,18 +8,10 @@ import { useQuery } from '@apollo/client';
 
 const AthleteProfile = ({athlete}) => {
   const { url } = useRouteMatch()
+  const { id, email, name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLast, fortyDash, verticalJump, jugglingRecord, talents, awards} = athlete
+  const {error, loading, data} = useQuery(LOAD_TALENT(id))
 
-  const {error, loading, data} = useQuery(LOAD_TALENT(2))
-
-  console.log('data inside useQuery: ', data);
-  console.log('athlete inside useQuery: ', athlete);
-
-
-
-  const { email, name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLast, fortyDash, verticalJump, jugglingRecord, talents, awards} = athlete
-  
   const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
-
 
   return (
     <>
