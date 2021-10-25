@@ -8,7 +8,7 @@ import './AthleteStatContainer.css'
 const AthleteStatContainer = ({athlete}) => {
   const { path, url } = useRouteMatch()
 
-  const { firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, zipCode, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
+  const { name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLs, fortyDash, verticalJump, jugglingRecord, talents} = athlete
   
   const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
 
@@ -18,8 +18,7 @@ const AthleteStatContainer = ({athlete}) => {
         <div className='image-container'>
           <img alt='avatar' className='avatar' src={avatar} />
           <span className='name-container'>
-            <h2 className='firstName'> {firstName}</h2> 
-            <h2 className='lastName'> {lastName}</h2> 
+            <h2 className='firstName'> {name}</h2> 
           </span>
         </div>
         <span className='attribute-container'>
@@ -31,16 +30,15 @@ const AthleteStatContainer = ({athlete}) => {
           <h3>Primary Position: {primaryPosition}</h3>
           <h3>Secondary Position: {secondaryPosition}</h3>
           <h3>Dominat Foot: {dominantFoot}</h3>
-          <h3>Zipcode: {zipCode}</h3>
+          <h3>Zipcode: {zipcode}</h3>
         </span>
       </aside>
       <aside className='stat-card'>
-        <h3>Goals Last Season: {goalsMadeLast}</h3>
-        <h3>Vertical Jump: {vertJump}</h3>
-        <h3>40 Yard Dash: {fortyYard}</h3>
-        <h3>Personal Juggling Record: {personJugRec}</h3>
-        <h3>Talents: <ul>{handleMap(talents)}</ul></h3>
-        <h3>Awards: <ul> {handleMap(awards)} </ul></h3>
+        <h3>Goals Last Season: {goalsMadeLs}</h3>
+        <h3>Vertical Jump: {verticalJump}</h3>
+        <h3>40 Yard Dash: {fortyDash}</h3>
+        <h3>Personal Juggling Record: {jugglingRecord}</h3>
+        <h3>Talents: <ul>{talents}</ul></h3>
       </aside>
     </section>
   )
