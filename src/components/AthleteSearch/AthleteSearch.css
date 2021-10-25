@@ -77,3 +77,22 @@
 .select-radius-location {
   /* margin-top: %; */
 }
+
+.no-search-founded {
+  text-align: center;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  width: 70%;
+}
+
+.no-match-text {
+  margin: 20%;
+  font-size: 350%;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.search-invitation-text {
+  margin: 20%;
+  font-size: 350%;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
