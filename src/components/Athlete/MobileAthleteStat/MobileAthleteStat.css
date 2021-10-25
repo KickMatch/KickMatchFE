@@ -1,15 +1,20 @@
-main {
+.mobile-player-stat-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
 }
 
 .mobile-name-container {
-  display: flex;
+  color:white;
 }
 
 .mobile-avatar {
   height: 20em;
+}
+
+.mobile-player-attributes {
+  color: white
 }
 
 .mobile-att-stat-container {
@@ -25,12 +30,15 @@ main {
   line-height: 0em;
   align-items: center;
   margin-bottom: 5px;
+  color: white;
 }
 
 .talent-award-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-weight: normal;
+  /* font-size:3vw; */
 }
 
 /****************** Carousel Styling  *******************/

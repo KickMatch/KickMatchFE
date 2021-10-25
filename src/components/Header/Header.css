@@ -9,10 +9,14 @@
 
 .links-div {
   display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .hover-span {
-  /* display: flex; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .hover-span:hover { 
@@ -31,8 +35,8 @@
   display: flex;
   margin-right: 3vw;
   text-decoration: none;
-  font-size:2vw;
-  text-align: center;
+  font-size:3vw;
+  /* text-align: center; */
   /* color: grey; */
 }
 

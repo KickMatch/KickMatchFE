@@ -38,7 +38,7 @@ const MobileAthleteStat = ({ athlete }) => {
         <span className='mobile-avatar-container'>
           <img alt='avatar' className='mobile-avatar' src={avatar} />
         </span>
-        <span className=''>
+        <span className='mobile-player-attributes'>
           <h1>{height} | {weight} | {age}</h1>
         </span>
         <span className='mobile-attribute-container container' >
@@ -51,11 +51,13 @@ const MobileAthleteStat = ({ athlete }) => {
           <p>Goals Last Season: {goalsMadeLast}</p>
           <p>Vertical Jump: {vertJump}</p>
           <p>40 Yard Dash: {fortyYard}</p>
-          <p>Personal Juggling Record: {personJugRec}</p>
+          <p>Juggling Record: {personJugRec}</p>
         </span>
         <span className='talent-award-container container' >
-        <h4>Talents: <ul>{handleMap(talents)}</ul></h4>
-        <h4>Awards: <ul> {handleMap(awards)} </ul></h4>
+          <h4>Talents: </h4> <ul> {handleMap(talents)} </ul>
+        </span>
+        <span className='talent-award-container container' >
+          <h4>Awards: </h4> <ul> {handleMap(awards)} </ul>
         </span>
         <CarouselComp />
         <Bio data={athlete}/>
