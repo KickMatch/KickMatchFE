@@ -69,7 +69,7 @@ const RegistrationAthlete = () => {
       <section className='athlete-form'>
         <section className='athlete-stats'>
           <label>Full Name -
-            <input type='text' name='firstName' value={registrationAthlete.name} onChange={e => handleChange(e)}></input>
+            <input type='text' name='name' value={registrationAthlete.name} onChange={e => handleChange(e)}></input>
           </label>
           <label>Email - 
             <input type='text' name='email' value={registrationAthlete.email} onChange={e => handleChange(e)}></input>
@@ -116,19 +116,19 @@ const RegistrationAthlete = () => {
             </select>
           </label>
           <label>Zip Code -
-            <input type='text' name='zipCode' value={registrationAthlete.zipcode} onChange={e => handleChange(e)}></input>
+            <input type='text' name='zipcode' value={registrationAthlete.zipcode} onChange={e => handleChange(e)}></input>
           </label>
           <label>Goals Made Last Season - 
-          <input type='number' name='goalsMadeLast' value={registrationAthlete.goalsMadeLs} onChange={e => handleChange(e)}></input>
+          <input type='number' name='goalsMadeLs' value={registrationAthlete.goalsMadeLs} onChange={e => handleChange(e)}></input>
           </label>
           <label>Vertical Jump (in) - 
-          <input type='number' step='0.1' name='vertJump' value={registrationAthlete.verticalJump} onChange={e => handleChange(e)}></input>
+          <input type='number' step='0.1' name='verticalJump' value={registrationAthlete.verticalJump} onChange={e => handleChange(e)}></input>
           </label>
           <label>40 Yard Dash (sec) - 
-          <input type='number' step='0.01' name='fortyYard' value={registrationAthlete.forthyDash} onChange={e => handleChange(e)}></input>
+          <input type='number' step='0.01' name='forthyDash' value={registrationAthlete.forthyDash} onChange={e => handleChange(e)}></input>
           </label>
           <label>Personal Juggling Record (# of kicks) - 
-          <input type='number' name='personJugRec' value={registrationAthlete.jugglingRecord} onChange={e => handleChange(e)}></input>
+          <input type='number' name='jugglingRecord' value={registrationAthlete.jugglingRecord} onChange={e => handleChange(e)}></input>
           </label>
         </section>
         <label>Talents - Limit to Three
