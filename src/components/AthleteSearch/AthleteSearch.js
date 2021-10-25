@@ -12,7 +12,7 @@ import { useMutation } from '@apollo/client';
 
 const AthleteSearch = ({data1}) => {
   const {id} = useParams();
-  const [allTeams, setAllTeams] = useState(teamsMockData);
+  const [allTeams, setAllTeams] = useState({});
   const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
   const [teamLocation, setTeamLocation] = useState("");
@@ -42,14 +42,15 @@ const AthleteSearch = ({data1}) => {
 
   const {error, loading, data} = useQuery(LOAD_ALL_CLUBS);
   useEffect(() => {
-    console.log('testing query for teams:', data)
+    // console.log('testing query for teams:', data)
+    setAllTeams(data)
   }, [data])
 
 
   const getFormInfo = (event) => {
     event.preventDefault();
-    getData();
-    findTeams()
+    getData(); // Function to have a location radius
+    findTeams(); // Function to filter teams based on the user text filter
     clearInputs();
   }
 
@@ -59,8 +60,12 @@ const AthleteSearch = ({data1}) => {
   }
 
   const findTeams = () => {
-  setFilteredTeams(allTeams.filter(team => team.teamName.includes(teamName)))
-  // console.log('filteredTeams:', filteredTeams)
+    // if (allTeams) {
+    //   setFilteredTeams(allTeams.allClubs.filter(team => team.teamName.includes(teamName)))
+    //   console.log('filteredTeams:', filteredTeams)
+    // }
+    const teams = allTeams.allClubs;
+    console.log(teams)
   }
 
   const getId = (choseTeamId) => {
@@ -105,7 +110,7 @@ const AthleteSearch = ({data1}) => {
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
         <div className='SearchedTeamsContainer'>
-          <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>
+          {/* <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/> */}
           {/* <button onClick={getuserId}>Interested</button> */}
         </div>
       </section>
