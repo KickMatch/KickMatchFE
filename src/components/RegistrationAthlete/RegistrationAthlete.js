@@ -29,9 +29,34 @@ const RegistrationAthlete = () => {
     talents: '',
     awards: 'best gooly'
   });
+
+  const [createTalent, {error}] = useMutation(CREATE_TALENT);
   
   const registerTalent = () => {
     console.log(registrationAthlete)
+    createTalent({
+      variables: {
+        id: ,
+        name: ,
+        age: ,
+        height: ,
+        weigth: ,
+        primaryPosition: ,
+        secondaryPosition: ,
+        videoUrl: ,
+        zipcode: ,
+        email: ,
+        dominantFoot: ,
+        goalsMadeLs: ,
+        verticalJump: ,
+        forthyDash: ,
+        jugglingRecord: ,
+        talents: 
+      }
+    })
+    if (error) {
+      console.log(error)
+    }
   }
 
   const handleChange = (e) => {
