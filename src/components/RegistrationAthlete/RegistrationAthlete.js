@@ -1,6 +1,6 @@
 import { StoreWriter } from '@apollo/client/cache/inmemory/writeToStore';
-import React, { useState, useEffect } from 'react';
 import './RegistrationAthlete.css';
+import React, { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { CREATE_TALENT } from '../../GraphQL/Mutations';
 import { useMutation } from '@apollo/client';
