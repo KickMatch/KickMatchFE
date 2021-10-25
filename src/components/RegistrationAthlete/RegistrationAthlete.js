@@ -33,25 +33,24 @@ const RegistrationAthlete = () => {
   const [createTalent, {error}] = useMutation(CREATE_TALENT);
   
   const registerTalent = () => {
-    console.log(registrationAthlete)
+    // console.log(registrationAthlete)
     createTalent({
       variables: {
-        id: ,
-        name: ,
-        age: ,
-        height: ,
-        weigth: ,
-        primaryPosition: ,
-        secondaryPosition: ,
-        videoUrl: ,
-        zipcode: ,
-        email: ,
-        dominantFoot: ,
-        goalsMadeLs: ,
-        verticalJump: ,
-        forthyDash: ,
-        jugglingRecord: ,
-        talents: 
+        name: registrationAthlete.name,
+        age: registrationAthlete.age,
+        height: registrationAthlete.height,
+        weigth: registrationAthlete.weigth,
+        primaryPosition: registrationAthlete.primaryPosition,
+        secondaryPosition: registrationAthlete.secondaryPosition,
+        videoUrl: registrationAthlete.videoUrl,
+        zipcode: registrationAthlete.zipcode,
+        email: registrationAthlete.email,
+        dominantFoot: registrationAthlete.dominantFoot,
+        goalsMadeLs: registrationAthlete.goalsMadeLs,
+        verticalJump: registrationAthlete.verticalJump,
+        forthyDash: registrationAthlete.forthyDash,
+        jugglingRecord: registrationAthlete.jugglingRecord,
+        talents: registrationAthlete.talents
       }
     })
     if (error) {
