@@ -1,6 +1,9 @@
 import { StoreWriter } from '@apollo/client/cache/inmemory/writeToStore';
 import React, { useState, useEffect } from 'react';
 import './RegistrationAthlete.css';
+import { useQuery, gql } from '@apollo/client';
+import { CREATE_TALENT } from '../../GraphQL/Mutations';
+import { useMutation } from '@apollo/client';
 
 const positionList = ['Goalie', 'Fullback', 'Sweeper/Stopper', 'Center Midfielder', 'Outside Midfielder', 'Striker'];
 

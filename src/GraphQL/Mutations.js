@@ -4,9 +4,10 @@ export const CREATE_MATCH = gql `
   mutation createMatch($sportClubId: Int! $talentId: Int!) {
     createMatch(input: {sportClubId: $sportClubId talentId: $talentId}) {
       match {
-        sportClubId
+        sportClubId,
         talentId
       }
+      errors
     }
   }
 `
@@ -25,7 +26,7 @@ export const CREATE_TALENT = gql `
     $dominantFoot: String!
     $goalsMadeLs: Int!
     $verticalJump: Int!
-    $forthyDash: !Int
+    $forthyDash: Int!
     $jugglingRecord: Int!
     $talents: String!
     ) {
@@ -45,7 +46,27 @@ export const CREATE_TALENT = gql `
       forthyDash: $forthyDash
       jugglingRecord: $jugglingRecord
       talents: $talents
-      )
+      }
+    ) {
+      talent {
+        id,
+        name,
+        age,
+        height,
+        weigth,
+        primaryPosition,
+        secondaryPosition,
+        videoUrl,
+        zipcode,
+        email,
+        dominantFoot,
+        goalsMadeLs,
+        verticalJump,
+        forthyDash,
+        jugglingRecord,
+        talents
+      }
+      errors
     }
   }
 `
