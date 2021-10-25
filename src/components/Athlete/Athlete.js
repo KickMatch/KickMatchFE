@@ -6,6 +6,10 @@ import MobileAthleteStat from './MobileAthleteStat/MobileAthleteStat'
 import { useEffect, useState } from 'react';
 import { useWindowWidth } from '@react-hook/window-size'
 import { Carousel } from 'react-responsive-carousel';
+import soccer from '../../assets/soccer4.png';
+import soccer1 from '../../assets/soccer1.png';
+import soccer2 from '../../assets/soccer2.png';
+import soccer3 from '../../assets/soccer3.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 const Athlete = ({ data }) => {
@@ -23,7 +27,7 @@ const Athlete = ({ data }) => {
   }
 
   const CarouselComp = () => {
-    const { images } = data
+    const images = [soccer, soccer1, soccer2, soccer3]
     
     return (
       <>
