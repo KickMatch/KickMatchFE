@@ -110,7 +110,7 @@ const AthleteSearch = ({data1}) => {
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
         <div className='SearchedTeamsContainer'>
-          <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>
+          {allTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
         </div>
       </section>
     </section>
