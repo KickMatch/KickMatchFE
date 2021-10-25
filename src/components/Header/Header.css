@@ -1,7 +1,5 @@
 .header {
   display: flex;
-  /* flex-direction: row; */
-  /* margin-top: -5px; */
   justify-content: space-between;
   align-items: center;
   background-color: black;
@@ -27,17 +25,11 @@
   width: 25%;
 }
 
-.header-logo:hover {
-  /* cursor: pointer; */
-}
-
 .header-text {
   display: flex;
   margin-right: 3vw;
   text-decoration: none;
   font-size:3vw;
-  /* text-align: center; */
-  /* color: grey; */
 }
 
 .header-text:hover {
