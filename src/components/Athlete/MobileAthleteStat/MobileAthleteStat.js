@@ -1,7 +1,8 @@
-import './MobileAthleteStat.css';
 import avatar from '../../../assets/avatar.png'
 import { Carousel } from 'react-responsive-carousel';
+import Bio from '../../Bio/Bio';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import './MobileAthleteStat.css';
 
 const MobileAthleteStat = ({ athlete }) => {
 
@@ -55,6 +56,7 @@ const MobileAthleteStat = ({ athlete }) => {
           <p>Personal Juggling Record: {personJugRec}</p>
         </span>
         <CarouselComp />
+        <Bio data={athlete}/>
       </main>
   )
 }
