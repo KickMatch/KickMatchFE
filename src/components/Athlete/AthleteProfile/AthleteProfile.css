@@ -19,28 +19,26 @@
 } 
 
 .player-card {
-  line-height: 0rem;
-  width: 30%;
-  height: 100%;
-  border-radius: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  line-height: 0rem;
+  width: 32%;
+  height: 100%;
+  border-radius: 5%;
   background-color: rgb(128,128,128, 0.5);
 }
 
 .stat-card {
-  height: 100%;
-  line-height: 0rem;
-  width: 30%;
-  border-radius: 5%;
-  color: greenyellow;
-  border: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  color: greenyellow;
+  line-height: 0rem;
+  height: 100%;
+  width: 25%;
+  border-radius: 5%;
   background-color: rgb(128,128,128, 0.5);
-  overflow: wrap;
+  padding-left: 2em;
 }
 
 .image-container { 
