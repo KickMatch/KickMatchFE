@@ -9,24 +9,30 @@ const positionList = ['Goalie', 'Fullback', 'Sweeper/Stopper', 'Center Midfielde
 
 const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
 
+
 const RegistrationAthlete = () => {
   const [registrationAthlete, setRegistrationAthlete] = useState({
     name: '', 
-    email: '',
-    height: 0, 
-    weight: 0, 
     age: 0,
+    height: '', 
+    weight: 0, 
     primaryPosition: '',
     secondaryPosition: '',
+    videoUrl: 'youtube.com/football/1',
+    zipcode: 0,
+    email: '',
     dominantFoot: '',
-    zipCode: 0,
-    goalsMadeLast: 0,
-    vertJump: 0.0,
-    fortyYard: 0.00,
-    personJugRec: 0,
-    talents: [],
-    awards: '',
+    goalsMadeLs: 0,
+    verticalJump: 0.0,
+    forthyDash: 0.00,
+    jugglingRecord: 0,
+    talents: '',
+    awards: 'best gooly'
   });
+  
+  const registerTalent = () => {
+    console.log(registrationAthlete)
+  }
 
   const handleChange = (e) => {
     setRegistrationAthlete(otherState => ({ ...otherState, [e.target.name]: e.target.value}))
@@ -135,6 +141,7 @@ const RegistrationAthlete = () => {
         <input id='awards-input' type='text' name='awards' value={registrationAthlete.awards} onChange={e => handleChange(e)}></input>
         </label>
         </div>
+        <button className='registration-btn' onClick={registerTalent}>Register</button>
       </section>
     </section>
   );
