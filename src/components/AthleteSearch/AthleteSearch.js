@@ -64,11 +64,16 @@ const AthleteSearch = ({userData}) => {
     
     const findTeams = () => {
       
-      const teams = allTeams.allClubs;
-      setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
+      // const teams = allTeams.allClubs;
+      // setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
       // console.log('teams:', teams)
       // console.log('teamName:', teamName)
       // console.log('filteredTeams:',filteredTeams)
+
+      const teams = allTeams.allClubs;
+      const teamByName = teams.filter(team => team.name.includes(teamName) || teamName === 'All')
+      const teamsByRadius = zipCodeRadius;
+      console.log(zipCodeRadius)
     }
     
     const getId = (choseTeamId) => {
@@ -88,9 +93,9 @@ const AthleteSearch = ({userData}) => {
 
     fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${userZipCode.zipCode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
       .then(res => res.json())
-      .then(data => setZipCodeRadius)
-      .then(console.log(zipCodeRadius))
-      // .then(data => console.log('ZipCodeData: ', data));
+      // .then(data => setZipCodeRadius(data))
+      // .then(console.log(zipCodeRadius))
+      .then(data => console.log('ZipCodeData: ', data));
   }
 
   return (
