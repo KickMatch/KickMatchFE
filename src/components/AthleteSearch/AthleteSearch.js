@@ -50,6 +50,7 @@ const AthleteSearch = ({data1}) => {
 
   const getFormInfo = (event) => {
     event.preventDefault();
+    setSearchStatus(false)
     getData(); // Function to have a location radius
     findTeams(); // Function to filter teams based on the user text filter
     clearInputs();
@@ -113,9 +114,11 @@ const AthleteSearch = ({data1}) => {
           {/* <div className='SearchedTeamsContainer'>
           {filteredTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
           </div> */}
-          {!teamName && <div className='no-search-founded'>
+          {searchStatus ? <div className='no-search-founded'>
             {/* <h2 className="no-match-text">Sorry there is no available teams with those specs, please try again!</h2> */}
             <h2 className="search-invitation-text">Search and discover for your next Team ⚽️⚽️⚽️</h2>
+          </div> : <div className='SearchedTeamsContainer'>
+          {filteredTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
           </div>}
       </section>
     </section>
