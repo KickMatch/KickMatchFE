@@ -96,3 +96,13 @@
   font-size: 350%;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+..login-label {
+  color: #B06AB3;
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.4s ease all;
+  pointer-events: none;
+}
