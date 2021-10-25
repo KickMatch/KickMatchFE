@@ -1,11 +1,35 @@
 import './MobileAthleteStat.css';
 import avatar from '../../../assets/avatar.png'
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 const MobileAthleteStat = ({ athlete }) => {
 
   const { playerNum, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
   
-  // console.log('athlete: ', athlete);
+
+  // console.log(athlete);
+  const CarouselComp = () => {
+    const { images } = athlete
+    
+    return (
+      <>
+        <Carousel interval={5000} autoPlay={true} centerMode={true} centerSlidePercentage={50} infiniteLoop={true} showThumbs={false} className='main-slide' showArrows={true} onClickItem={e => console.log(e)}>
+            {
+              images.map((image, index) => {
+                return(
+                  <div key={index}>
+                    <img className='caro-img' src={image} />
+                  </div>
+                )
+              })
+            }
+        </Carousel>
+      </>
+    );
+  };
+
+
   return (
       <main className='mobile-player-stat-container'>
         <span className='mobile-name-container'>
@@ -30,16 +54,9 @@ const MobileAthleteStat = ({ athlete }) => {
           <p>40 Yard Dash: {fortyYard}</p>
           <p>Personal Juggling Record: {personJugRec}</p>
         </span>
+        <CarouselComp />
       </main>
   )
 }
 
 export default MobileAthleteStat;
-
-// function handleResize() {
-//   console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
-
-// }
-
-// window.addEventListener('resize', handleResize)
-// })

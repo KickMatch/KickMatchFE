@@ -12,3 +12,17 @@
   height: 4px;
   width: 65vw;
 }
+
+/****************** Carousel Styling  *******************/
+
+.main-slide {
+  width: 65vw;
+}
+
+.carousel .slider-wrapper {
+  width: 50%;
+}
+
+.caro-img {
+  height: 15rem;
+}

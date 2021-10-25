@@ -1,7 +1,8 @@
-/* main {
+main {
   display: flex;
-
-} */
+  flex-direction: column;
+  align-items: center;
+}
 
 .mobile-player-stat-container {
   
@@ -15,11 +16,9 @@
   height: 20em;
 }
 
-/* .mobile-player-stats-attributes-container {
+.mobile-att-stat-container {
   display: flex;
-  justify-content: space-around;
-  border: 2px solid red;
-} */
+}
 
 .mobile-attribute-container {
   display: flex;
@@ -29,6 +28,7 @@
   border-radius: 5%;
   line-height: 0em;
   align-items: center;
+  margin-bottom: 5px;
   /* border: 2px solid red; */
 }
 
@@ -40,5 +40,20 @@
   border-radius: 5%;
   line-height: 0em;
   align-items: center;  
+  margin-bottom: 5px;
   /* border: 2px solid blue; */
+}
+
+/****************** Carousel Styling  *******************/
+
+.main-slide {
+  width: 100%;
+}
+
+.carousel .slider-wrapper {
+  width: 100%;
+}
+
+.caro-img {
+  height: 10rem;
 }
