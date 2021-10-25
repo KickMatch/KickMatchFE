@@ -25,7 +25,7 @@ export const LOAD_ALL_TALENT = gql `
 
   // export const LOAD_TALENT = gql `
   //   query {
-  //     Talent(id:) {
+  //     talent(id:) {
   //       id,
   //       name,
   //       age,
@@ -85,6 +85,9 @@ export const LOAD_ALL_CLUBS = gql `
 //   }
 // }
 // `
+
+
+
 
 // export const CREATE_TALENT = gql `
 // query {
