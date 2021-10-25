@@ -5,22 +5,19 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './MobileAthleteStat.css';
 
 const MobileAthleteStat = ({ athlete }) => {
-
   const { playerNum, firstName, lastName, age, height, primaryPosition, secondaryPosition, dominantFoot, location, weight, goalsMadeLast, fortyYard, vertJump, personJugRec, talents, awards} = athlete
   
-
-  // console.log(athlete);
   const CarouselComp = () => {
     const { images } = athlete
     
     return (
       <>
-        <Carousel interval={5000} autoPlay={true} centerMode={true} centerSlidePercentage={50} infiniteLoop={true} showThumbs={false} className='main-slide' showArrows={true} onClickItem={e => console.log(e)}>
+        <Carousel interval={5000} autoPlay={true} centerMode={true} centerSlidePercentage={50} infiniteLoop={true} showThumbs={false} className='mobile-main-slide' showArrows={true} onClickItem={e => console.log(e)}>
             {
               images.map((image, index) => {
                 return(
                   <div key={index}>
-                    <img className='caro-img' src={image} />
+                    <img className='mobile-caro-img' src={image} />
                   </div>
                 )
               })
@@ -30,6 +27,7 @@ const MobileAthleteStat = ({ athlete }) => {
     );
   };
 
+  const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
 
   return (
       <main className='mobile-player-stat-container'>
@@ -43,22 +41,26 @@ const MobileAthleteStat = ({ athlete }) => {
         <span className=''>
           <h1>{height} | {weight} | {age}</h1>
         </span>
-        <span className='mobile-attribute-container' >
+        <span className='mobile-attribute-container container' >
           <p>Zipcode: {location}</p>
           <p>Primary Position: {primaryPosition}</p>
           <p>Secondary Position: {secondaryPosition}</p>
           <p>Dominat Foot: {dominantFoot}</p>
         </span>
-        <span className='mobile-stat-container' >
+        <span className='mobile-stat-container container' >
           <p>Goals Last Season: {goalsMadeLast}</p>
           <p>Vertical Jump: {vertJump}</p>
           <p>40 Yard Dash: {fortyYard}</p>
           <p>Personal Juggling Record: {personJugRec}</p>
         </span>
+        <span className='talent-award-container container' >
+        <h4>Talents: <ul>{handleMap(talents)}</ul></h4>
+        <h4>Awards: <ul> {handleMap(awards)} </ul></h4>
+        </span>
         <CarouselComp />
         <Bio data={athlete}/>
       </main>
   )
-}
+};
 
 export default MobileAthleteStat;
