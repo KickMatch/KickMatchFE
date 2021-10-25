@@ -103,6 +103,7 @@ const AthleteSearch = ({data1}) => {
             value={teamName}
             onChange={(event) => setTeamName(event.target.value)}
           />
+          <label for="userInput" class="login-label"></label>
           <select className="select-radius-location" onChange={(event) => setTeamLocation(event.target.value)}>
             <option value='20'>20 Miles</option>
             <option value='50'>50 Miles</option>
