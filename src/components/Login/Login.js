@@ -71,7 +71,7 @@ const Login = ({ getUser }) => {
       <section className='login-section'>
         <div className='login-containers'>
           <h2 className='login-container-heading'>Athlete Login</h2>
-          {allAthletes && athleteLoginButtons}
+          {athleteLoginButtons}
           <Link to='/registration-athlete'>
             <button className='login-buttons register-buttons'>New Athlete</button>
           </Link>
