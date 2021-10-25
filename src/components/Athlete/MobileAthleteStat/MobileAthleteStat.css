@@ -1,0 +1,52 @@
+.mobile-player-stat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+.mobile-name-container {
+  color:white;
+}
+
+.mobile-avatar {
+  height: 20em;
+  border-radius: 5%;
+}
+
+.mobile-player-attributes {
+  color: white
+}
+
+.mobile-att-stat-container {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(128,128,128, 0.5);
+  width: 70%;
+  border-radius: 5%;
+  line-height: 0em;
+  align-items: center;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.talent-award-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/****************** Carousel Styling  *******************/
+
+.mobile-main-slide {
+  width: 70%;
+  margin-bottom: 5px;
+}
+
+.mobile-caro-img {
+  height: 8rem;
+}

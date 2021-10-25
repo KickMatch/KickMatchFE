@@ -1,8 +1,41 @@
-header {
+.header {
   display: flex;
-  border: 2px solid red;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
 }
 
-h1 {
-  margin: 5px;
+.links-div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hover-span {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hover-span:hover { 
+  background-color: grey;
+}
+
+.header-logo {
+  width: 25%;
+}
+
+.header-text {
+  display: flex;
+  margin-right: 3vw;
+  text-decoration: none;
+  font-size:2vw;
+}
+
+.header-text:hover {
+  color: white;
+}
+
+.header-active {
+  color: white;
 }

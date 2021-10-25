@@ -1,0 +1,28 @@
+.athlete-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.divider {
+  margin: 13px 0 13px 0;
+  background-color: white;
+  height: 4px;
+  width: 65vw;
+}
+
+/****************** Carousel Styling  *******************/
+
+.main-slide {
+  width: 65vw;
+}
+
+.carousel .slider-wrapper {
+  width: 50%;
+}
+
+.caro-img {
+  height: 20rem;
+}

@@ -4,6 +4,10 @@ import './Login.css';
 import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
 import { useQuery, gql } from '@apollo/client';
 import { useState, useEffect } from 'react';
+import soccer from '../../assets/soccer4.png';
+import soccer1 from '../../assets/soccer1.png';
+import soccer2 from '../../assets/soccer2.png';
+import soccer3 from '../../assets/soccer3.png';
 
 const Login = ({ getUser }) => {
 

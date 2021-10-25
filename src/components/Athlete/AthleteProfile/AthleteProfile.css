@@ -1,18 +1,17 @@
 .player-stat-container {
   position: relative; 
-  width: 65vw; 
-  height: 40vh;
+  width: 65vw;
   display: flex; 
   justify-content: space-around; 
   z-index: 1;
 } 
 
-.player-stat-container::after {
+.player-stat-container::before {
   content: ""; 
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: url('../../assets/soccer_background.png');
+  background-image: url('../../../assets/soccer_background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 60% 37%; 
@@ -20,25 +19,26 @@
 } 
 
 .player-card {
-  line-height: 0rem;
-  width: 30%;
-  border-radius: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  line-height: 0rem;
+  width: 32%;
+  height: 100%;
+  border-radius: 5%;
   background-color: rgb(128,128,128, 0.5);
 }
 
 .stat-card {
-  line-height: 0rem;
-  width: 30%;
-  border-radius: 5%;
-  color: greenyellow;
-  border: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  color: greenyellow;
+  line-height: 0rem;
+  height: 100%;
+  width: 25%;
+  border-radius: 5%;
   background-color: rgb(128,128,128, 0.5);
+  padding-left: 2em;
 }
 
 .image-container { 
@@ -49,7 +49,7 @@
 
 .avatar {
   height: 14rem;
-  border-radius: 50%;
+  border-radius: 25%;
 }
 
 .name-container {
@@ -61,6 +61,10 @@
   line-height: 1rem;
   color: firebrick;
   margin-left: 3rem;
+}
+
+.paragraph {
+  word-break: break-all;
 }
 
 .edit-profile {
