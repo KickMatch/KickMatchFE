@@ -18,6 +18,7 @@ const AthleteSearch = ({data1}) => {
   const [teamLocation, setTeamLocation] = useState("");
   const [teamId, setTeamId] = useState("");
   const [queryTest, setQueryTest] = useState("");
+  const [searchStatus, setSearchStatus] = useState(true);
 
   // MUTATION Function
   // const [createMatch, {error}] = useMutation(CREATE_MATCH);
@@ -112,11 +113,9 @@ const AthleteSearch = ({data1}) => {
           {/* <div className='SearchedTeamsContainer'>
           {filteredTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
           </div> */}
-          {!filteredTeams ? <div className='no-search-founded'>
+          {!teamName && <div className='no-search-founded'>
             {/* <h2 className="no-match-text">Sorry there is no available teams with those specs, please try again!</h2> */}
             <h2 className="search-invitation-text">Search and discover for your next Team ⚽️⚽️⚽️</h2>
-          </div> : <div className='SearchedTeamsContainer'>
-          {filteredTeams && <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/>}
           </div>}
       </section>
     </section>
