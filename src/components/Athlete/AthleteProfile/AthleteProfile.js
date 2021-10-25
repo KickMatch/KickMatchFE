@@ -9,11 +9,9 @@ import { useQuery } from '@apollo/client';
 const AthleteProfile = ({athlete}) => {
   const { url } = useRouteMatch()
 
-  const {error, loading, data} = useQuery(LOAD_TALENT, {
-    variables: {id: 2}
-  });
+  const {error, loading, data} = useQuery(LOAD_TALENT(2))
 
-  // console.log('data inside useQuery: ', data);
+  console.log('data inside useQuery: ', data);
   console.log('athlete inside useQuery: ', athlete);
 
 

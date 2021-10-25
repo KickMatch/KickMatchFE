@@ -23,9 +23,9 @@ export const LOAD_ALL_TALENT = gql `
     }
   `
 
-  export const LOAD_TALENT = gql `
-    query talent($id: Integer) {
-      talent(id: $id) {
+  export const LOAD_TALENT = (id)=> gql `
+    query talent {
+      talent(id: ${id}) {
         id,
         name,
         age,
