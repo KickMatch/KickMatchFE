@@ -12,13 +12,13 @@ const TeamProfile = ({teamInfo, getId}) => {
       <div className='teamContactInfo'>
         <img className='team-prof-logo' src='https://upload.wikimedia.org/wikipedia/commons/4/4f/United_States_women%27s_national_soccer_team_logo.svg'></img>
         <p className='team-prof-title'><b>Team Name:</b></p>
-        <p className='team-prof-info'>{teamInfo.name}</p>
+          <p className='team-prof-info'>{teamInfo.name}</p>
         <p className='team-prof-title'><b>Location:</b></p>
-        <p className='team-prof-info'>{teamInfo.location}</p>
+          <p className='team-prof-info'>{teamInfo.location}</p>
         <p className='team-prof-title'><b>Contact Info:</b></p>
-        <p className='team-prof-info'>{teamInfo.email}</p>
-        <p className='team-prof-info'>{teamInfo.phone}</p>
-        <p className='team-prof-info'>{teamInfo.zipcode}</p>
+          <p className='team-prof-info'>{teamInfo.email}</p>
+          <p className='team-prof-info'>{teamInfo.phone}</p>
+          <p className='team-prof-info'>{teamInfo.zipcode}</p>
       </div>
       <div className='teamSportingInfo'>
         <p className='team-prof-title'><b>League:</b></p>
