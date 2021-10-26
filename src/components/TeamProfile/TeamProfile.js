@@ -8,6 +8,7 @@ const TeamProfile = ({teamInfo, getId}) => {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const getIdTeam = () => {
+    setIsDisabled(true);
     setMatchBtn(true);
     getId(teamInfo.id)
   }
@@ -34,7 +35,7 @@ const TeamProfile = ({teamInfo, getId}) => {
           <p className='team-prof-info'>{teamInfo.coachResume}</p>
         <p className='team-prof-title'><b>Currently Looking:</b></p>
           <p className='team-prof-info'><i>{teamInfo.currentlyLooking}</i></p>
-      <button className='match-btn' onClick={getIdTeam}>{!matchBtn ? <p className="match-btn">I am interested</p> : <p className="match-btn">Saved Team!</p>}</button>
+      <button className='match-btn' disabled={isDisabled} onClick={getIdTeam}>{!matchBtn ? <p className="match-btn">I am interested</p> : <p className="match-btn">Saved Team!</p>}</button>
       </div>
     </section>
   );
