@@ -120,23 +120,27 @@ const AthleteSearch = ({userData}) => {
     <section>
       <Header />
       <section className='AthleteSearch'>
-          <p className='search-all'>Type <b>All</b> to search by all teams !</p>
         <form className='AthleteForm'>
           <h3 className="search-text">Search by:</h3>
-          <input
-            className= 'team-name-search'
-            type='text'
-            placeholder='Sport Club Name'
-            name='sportClub'
-            value={teamName}
-            onChange={(event) => setTeamName(event.target.value)}
-          />
-          <select className="select-radius-location" onChange={(event) => setTeamLocation(event.target.value)}>
-            <option value='20'>20 Miles</option>
-            <option value='50'>50 Miles</option>
-            <option value='100'>100 Miles</option>
-            <option value='150'>150 or more</option>
-          </select>
+          <div className='input-team-search-container'>
+            <input
+              className= 'team-name-search'
+              type='text'
+              placeholder='Sport Club Name'
+              name='sportClub'
+              value={teamName}
+              onChange={(event) => setTeamName(event.target.value)}
+            />
+            <label className='search-all'>Type <b>All</b> for all teams !</label>
+          </div>
+          <div className='input-team-select-container'>
+            <select className="select-radius-location" onChange={(event) => setTeamLocation(event.target.value)}>
+              <option value='20'>20 Miles</option>
+              <option value='50'>50 Miles</option>
+              <option value='100'>100 Miles</option>
+              <option value='150'>150 or more</option>
+            </select>
+          </div>
           <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
           {searchStatus ? 
