@@ -169,7 +169,7 @@ const RegistrationAthlete = () => {
         : 
           <>
             <button className='register-button' disabled>Register</button>
-            <p className='not-completed' >All fields must be completed.</p>
+            <p className='not-completed' >All fields must be completed!</p>
           </>
         } 
       </section>
