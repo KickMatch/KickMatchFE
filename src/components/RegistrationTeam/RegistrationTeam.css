@@ -1,6 +1,9 @@
 .registration-team-page {
+  min-height: 100vh;
+  max-height: max;
   font-family: Oxygen;
   padding: 20px 40px 40px 40px;
+  background-color: white;
 }
 
 .registration-team-header {
@@ -28,7 +31,7 @@
 .team-form input[type = text],
 .team-form select {
   box-sizing: border-box;
-  width: 300px;
+  width: 90%;
   margin-top: 10px;
   padding: 10px;
   border: 0;
@@ -55,16 +58,16 @@
 .checkbox-label input {
   position: absolute;
   opacity: 0;
-  width:0; 
-  height:0;
+  width: 0; 
+  height: 0;
 }
 
 .checkbox-label span {
   position: absolute;
-  top:0;
-  left:0;
-  width:20px; 
-  height:20px;
+  top: 0;
+  left: 0;
+  width: 20px; 
+  height: 20px;
   background-color: #ddd;
   transition: .3s background-color; 
 }
@@ -91,4 +94,33 @@
 
 .checkbox-label input:checked ~ span:after {
   display:block;
+}
+
+@media screen and (max-width: 900px) {
+  .team-form label {
+    margin-top: 40px;
+  } 
+
+  .team-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .team-form label {
+    margin-top: 40px;
+  } 
+
+  .team-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .positions-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
