@@ -47,7 +47,7 @@ const AthleteSearch = ({userData}) => {
   const getFormInfo = (event) => {
     event.preventDefault();
     setSearchStatus(false);
-    getData(); 
+    // getData(); 
     findTeams(); 
     clearInputs();
   }
@@ -61,40 +61,28 @@ const AthleteSearch = ({userData}) => {
     
     console.log(zipCodeRadius.dataList)
     const teams = allTeams.allClubs;
-    setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
-    // console.log('teams:', teams)
-    // console.log('teamName:', teamName)
-    // console.log('filteredTeams:',filteredTeams)
-
-    // const teams = allTeams.allClubs;
-    // const teamByName = teams.filter(team => team.name.includes(teamName) || teamName === 'All')
-    // console.log(teamByName)
-    // const teamsByRadius = zipCodeRadius;
-    // console.log(zipCodeRadius)
+    setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All' || teamName === ''))
   }
     
     
   const getData = () => {
-  // console.log(typeof athleteInfo.zipcode.toString())
   console.log('userZipCode:', athleteInfo.zipcode)
   console.log('teamLocation:', typeof teamLocation)
 
-  // const teams = allTeams.allClubs;
-  // const filterInputs = setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
+  const teams = allTeams.allClubs;
+  const filterInputs = setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
   // console.log(filteredTeams)
   
   const apiKey = 'W9C9POYVGMP5IHH4X8E9'
   fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${athleteInfo.zipcode}&maximumradius=${parseInt(teamLocation)}&minimumradius=0&country=US&key=${apiKey}`)
     .then(res => res.json())
-    .then(data => matchCodes(data))
+    .then(data => matchCodes(data, filteredTeams))
   }
 
-  const matchCodes = (dataCodes) => {
-    const teams = allTeams.allClubs;
-    setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All' || teamName === ''))
-
+  const matchCodes = (dataCodes, filteredTeamsZ) => {
     console.log(dataCodes.DataList)
-    console.log(filteredTeams)
+    console.log(filteredTeamsZ)
+
     let matchedZipCodes = [];
     return dataCodes.DataList.forEach((acc, allZipCode) => {
       filteredTeams.forEach(nameTeams => {
@@ -103,8 +91,6 @@ const AthleteSearch = ({userData}) => {
           console.log(matchedZipCodes)
         }
       })
-
-      // setMatchedCodes(acc);
     })
   }
 
