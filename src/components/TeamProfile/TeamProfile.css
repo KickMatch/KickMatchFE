@@ -94,3 +94,9 @@
   transform: scale(1.04);
   transition: 0.3s ease-in-out;
 }
+
+.match-btn {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  padding: 0;
+}

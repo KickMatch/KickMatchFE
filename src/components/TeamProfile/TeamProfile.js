@@ -33,7 +33,7 @@ const TeamProfile = ({teamInfo, getId}) => {
           <p className='team-prof-info'>{teamInfo.coachResume}</p>
         <p className='team-prof-title'><b>Currently Looking:</b></p>
           <p className='team-prof-info'><i>{teamInfo.currentlyLooking}</i></p>
-      <button className='match-btn' onClick={getIdTeam}>{!matchBtn ? <p className="match-btn">I am interested</p> : <p className="match-btn">You saved the team !</p>}</button>
+      <button className='match-btn' onClick={getIdTeam}>{!matchBtn ? <p className="match-btn">I am interested</p> : <p className="match-btn">Saved Team!</p>}</button>
       </div>
     </section>
   );
