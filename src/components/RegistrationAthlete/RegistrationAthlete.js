@@ -34,26 +34,26 @@ const RegistrationAthlete = () => {
   
   const registerTalent = () => {
     // console.log(registrationAthlete)
-    // createTalent({
-    //   variables: {
-    //     name: registrationAthlete.name,
-    //     age: registrationAthlete.age,
-    //     height: registrationAthlete.height,
-    //     weight: registrationAthlete.weight,
-    //     primaryPosition: registrationAthlete.primaryPosition,
-    //     secondaryPosition: registrationAthlete.secondaryPosition,
-    //     videoUrl: registrationAthlete.videoUrl,
-    //     zipcode: registrationAthlete.zipcode,
-    //     email: registrationAthlete.email,
-    //     dominantFoot: registrationAthlete.dominantFoot,
-    //     goalsMadeLs: registrationAthlete.goalsMadeLs,
-    //     verticalJump: registrationAthlete.verticalJump,
-    //     fortyDash: registrationAthlete.forthyDash,
-    //     jugglingRecord: registrationAthlete.jugglingRecord,
-    //     talents: registrationAthlete.talents,
-    //     awards: registrationAthlete.awards
-    //   }
-    // })
+    createTalent({
+      variables: {
+        name: registrationAthlete.name,
+        age: registrationAthlete.age,
+        height: registrationAthlete.height,
+        weight: registrationAthlete.weight,
+        primaryPosition: registrationAthlete.primaryPosition,
+        secondaryPosition: registrationAthlete.secondaryPosition,
+        videoUrl: registrationAthlete.videoUrl,
+        zipcode: registrationAthlete.zipcode,
+        email: registrationAthlete.email,
+        dominantFoot: registrationAthlete.dominantFoot,
+        goalsMadeLs: registrationAthlete.goalsMadeLs,
+        verticalJump: registrationAthlete.verticalJump,
+        fortyDash: registrationAthlete.fortyDash,
+        jugglingRecord: registrationAthlete.jugglingRecord,
+        talents: registrationAthlete.talents,
+        awards: registrationAthlete.awards
+      }
+    })
     createTalent({
       variables: {
         name: 'Alessadnro de Piero',
@@ -170,7 +170,7 @@ const RegistrationAthlete = () => {
           <input type='number' step='0.1' name='verticalJump' value={registrationAthlete.verticalJump} onChange={e => handleChange(e)}></input>
           </label>
           <label>40 Yard Dash (sec) - 
-          <input type='number' step='0.01' name='forthyDash' value={registrationAthlete.forthyDash} onChange={e => handleChange(e)}></input>
+          <input type='number' step='0.01' name='fortyDash' value={registrationAthlete.forthyDash} onChange={e => handleChange(e)}></input>
           </label>
           <label>Personal Juggling Record (# of kicks) - 
           <input type='number' name='jugglingRecord' value={registrationAthlete.jugglingRecord} onChange={e => handleChange(e)}></input>
