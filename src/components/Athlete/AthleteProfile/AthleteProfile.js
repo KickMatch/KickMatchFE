@@ -26,7 +26,7 @@ const AthleteProfile = ({athlete}) => {
           </div>
           <span className='attribute-container'>
             <p className='edit-profile'><Link to={`${url}/editprofile`} >Edit Profile</Link></p>
-            <h3>{height} | {weight} | {age}</h3>
+            <h3 className='player-stats'>{height} | {weight} | {age}</h3>
             <p className='paragraph'>Primary Position: {primaryPosition}</p>
             <p className='paragraph'>Secondary Position: {secondaryPosition}</p>
             <p className='paragraph'>Dominat Foot: {dominantFoot}</p>
