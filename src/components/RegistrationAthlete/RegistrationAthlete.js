@@ -183,7 +183,7 @@ const RegistrationAthlete = () => {
         </label>
         <div className='awards-container'>
         <label>Awards - 
-        <input id='awards-input' type='text' name='awards' value={registrationAthlete.awards} onChange={e => handleChange(e)}></input>
+        <input className='awards-input' type='text' name='awards' value={registrationAthlete.awards} onChange={e => handleChange(e)}></input>
         </label>
         </div>
         <button className='registration-btn' onClick={registerTalent}>Register</button>
