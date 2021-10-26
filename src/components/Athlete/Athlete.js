@@ -16,7 +16,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Athlete = ({ data }) => {
   const [windowWidth, setWindowWidth] = useState(0)
   const [mobile, setMobile] = useState(false)
-  // const [tablet, setTablet] = useState(false)
+  const [tablet, setTablet] = useState(false)
   const size = useWindowWidth()
   
   
