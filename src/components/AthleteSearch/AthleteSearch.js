@@ -21,7 +21,7 @@ const AthleteSearch = ({userData}) => {
   const [searchStatus, setSearchStatus] = useState(true);
   const [userZipCode, setUserZipCode] = useState(userData);
   const [zipCodeRadius, setZipCodeRadius] = useState({});
-  const [matchBtn, setMatchBtn] = useState(false);
+
 
   // MUTATION Function
   const [createMatch, {error}] = useMutation(CREATE_MATCH);
@@ -74,7 +74,8 @@ const AthleteSearch = ({userData}) => {
     
     const getFormInfo = (event) => {
       event.preventDefault();
-      setSearchStatus(false)
+      setSearchStatus(false);
+      setMatchBtn(true);
       getData(); // Function to have a location radius
       findTeams(); // Function to filter teams based on the user text filter
       clearInputs();
@@ -138,7 +139,7 @@ const AthleteSearch = ({userData}) => {
               <option value='150'>150 or more</option>
             </select>
           </div>
-          <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
+          <button className='SearchBtn' onClick={getFormInfo}>{matchBtn ? <p>I am interested</p> : <p>You saved the team !</p>}</button>
         </form>
           {searchStatus ? 
           <div className='no-search-founded'>
