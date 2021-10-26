@@ -6,7 +6,7 @@ describe('Athlete Register Page', () => {
 
   it('Should have app url when displaying login page', () => {
     cy.url()
-    .should('eq', 'http://localhost:3000/')
+      .should('eq', 'http://localhost:3000/')
   });
 
   
