@@ -1,4 +1,4 @@
-.AthleteSearch {
+.athlete-search {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +7,7 @@
   /* opacity: 0.20; */
 }
 
-.AthleteForm {
+.athlete-form-search {
   border: 2px solid whitesmoke;
   display: flex;
   justify-content: center;
@@ -18,7 +18,7 @@
   padding: 2%;
 }
 
-.AthleteForm:hover {
+.athlete-form-search:hover {
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
   cursor: pointer;
@@ -26,25 +26,25 @@
   background: rgb(32, 38, 36);
 }
 
-.SearchBtn {
+.search-button-team {
   margin: 1%;
   border-radius: 10%;
 }
 
-.SearchBtn:hover {
+.search-button-team:hover {
   color: whitesmoke;
   background: rgb(108, 3, 3);
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
 }
 
-.SearchedTeamsContainer {
+.search-teams-container {
   text-align: center;
   border: 2px solid whitesmoke;
   width: 70%;
 }
 
-.SearchedTeamsContainer:hover {
+.search-teams-container:hover {
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
   cursor: pointer;
@@ -61,14 +61,14 @@
 }
 
 .team-name-search {
-  margin: 2%;
+  /* margin: 2%; */
   background: whitesmoke;
   color: #c6c6c6;
   font-size: 18px;
   /* padding: 10px 10px 10px 5px; */
   border: none;
   border: 3px solid rgb(108, 3, 3);
-  margin-top: 15%;
+  /* margin-top: 1%; */
 }
 
 .team-name-search:focus {

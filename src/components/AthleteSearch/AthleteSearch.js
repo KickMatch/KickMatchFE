@@ -117,8 +117,8 @@ const AthleteSearch = ({userData}) => {
   return (
     <section>
       <Header />
-      <section className='AthleteSearch'>
-        <form className='AthleteForm'>
+      <section className='athlete-search'>
+        <form className='athlete-form-search'>
           <h3 className="search-text">Search by:</h3>
           <div className='search-all'>
             <input
@@ -138,16 +138,16 @@ const AthleteSearch = ({userData}) => {
               <option value='150'>150 or more</option>
             </select>
           </div>
-          <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
+          <button className='search-button-team' onClick={getFormInfo}>Search Teams</button>
         </form>
           {searchStatus ? 
           <div className='no-search-founded'>
             <h2 className="search-invitation-text">Search and discover your next Team ⚽️⚽️⚽️</h2>
-            </div> :
-            <div className='SearchedTeamsContainer'>
-          {filteredTeams ? <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/> : 
-          <h2 className="no-match-text">Sorry there is no available teams with those specs, please try again!</h2>
-          }
+          </div> :
+          <div className='search-teams-container'>
+            {filteredTeams ? <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/> : 
+            <h2 className="no-match-text">Sorry there is no available teams with those specs, please try again!</h2>
+            }
           </div>}
       </section>
     </section>
