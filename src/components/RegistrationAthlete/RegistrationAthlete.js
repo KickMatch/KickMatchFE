@@ -34,46 +34,46 @@ const RegistrationAthlete = () => {
   
   const registerTalent = () => {
     // console.log(registrationAthlete)
-    createTalent({
-      variables: {
-        name: registrationAthlete.name,
-        age: parseInt(registrationAthlete.age),
-        height: registrationAthlete.height,
-        weight: parseInt(registrationAthlete.weigth),
-        primaryPosition: registrationAthlete.primaryPosition,
-        secondaryPosition: registrationAthlete.secondaryPosition,
-        videoUrl: registrationAthlete.videoUrl,
-        zipcode: parseInt(registrationAthlete.zipcode),
-        email: registrationAthlete.email,
-        dominantFoot: registrationAthlete.dominantFoot,
-        goalsMadeLs: parseInt(registrationAthlete.goalsMadeLs),
-        verticalJump: parseInt(registrationAthlete.verticalJump),
-        fortyDash: parseInt(registrationAthlete.forthyDash),
-        jugglingRecord: parseInt(registrationAthlete.jugglingRecord),
-        talents: registrationAthlete.talents,
-        awards: registrationAthlete.awards
-      }
-    })
     // createTalent({
     //   variables: {
-    //     name: 'Facundo Campazo',
-    //     age: 14,
-    //     height: "5,10",
-    //     weight: 190,
-    //     primaryPosition: "foward",
-    //     secondaryPosition: "goalie",
-    //     videoUrl: "youtube.com/football",
-    //     zipcode: 80204,
-    //     email: "campazo@fgmail.com",
-    //     dominantFoot: "left",
-    //     goalsMadeLs: 7,
-    //     verticalJump: 20,
-    //     fortyDash: 8.45,
-    //     jugglingRecord: 7,
-    //     talents: "Ball control and shooting",
-    //     awards: "best player 2019"
+    //     name: registrationAthlete.name,
+    //     age: registrationAthlete.age,
+    //     height: registrationAthlete.height,
+    //     weight: registrationAthlete.weight,
+    //     primaryPosition: registrationAthlete.primaryPosition,
+    //     secondaryPosition: registrationAthlete.secondaryPosition,
+    //     videoUrl: registrationAthlete.videoUrl,
+    //     zipcode: registrationAthlete.zipcode,
+    //     email: registrationAthlete.email,
+    //     dominantFoot: registrationAthlete.dominantFoot,
+    //     goalsMadeLs: registrationAthlete.goalsMadeLs,
+    //     verticalJump: registrationAthlete.verticalJump,
+    //     fortyDash: registrationAthlete.forthyDash,
+    //     jugglingRecord: registrationAthlete.jugglingRecord,
+    //     talents: registrationAthlete.talents,
+    //     awards: registrationAthlete.awards
     //   }
     // })
+    createTalent({
+      variables: {
+        name: 'Alessadnro de Piero',
+        age: 14,
+        height: "5,10",
+        weight: 190,
+        primaryPosition: "foward",
+        secondaryPosition: "back",
+        videoUrl: "youtube.com/football",
+        zipcode: 80204,
+        email: "piero@fgmail.com",
+        dominantFoot: "left",
+        goalsMadeLs: 7,
+        verticalJump: 20,
+        fortyDash: 8.45,
+        jugglingRecord: 7,
+        talents: "Ball control and shooting",
+        awards: "best player 2019"
+      }
+    })
     if (error) {
       console.log(error)
     }
