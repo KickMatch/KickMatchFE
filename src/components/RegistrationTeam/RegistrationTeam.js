@@ -1,10 +1,5 @@
-import { StoreWriter } from '@apollo/client/cache/inmemory/writeToStore';
 import React, { useState, useEffect } from 'react';
 import './RegistrationTeam.css';
-
-const positionList = ['Goalie', 'Fullback', 'Sweeper/Stopper', 'Center Midfielder', 'Outside Midfielder', 'Striker'];
-
-const states = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'];
 
 const RegistrationTeam = () => {
   const [registrationTeam, setRegistrationTeam] = useState({
@@ -24,6 +19,10 @@ const RegistrationTeam = () => {
     state: '',
     zipCode: '',
   }); 
+
+  const positionList = ['Goalie', 'Fullback', 'Sweeper/Stopper', 'Center Midfielder', 'Outside Midfielder', 'Striker'];
+
+  const states = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'];
 
   const handleChange = (e) => {
     setRegistrationTeam(otherState => ({ ...otherState, [e.target.name]: e.target.value}));
@@ -106,6 +105,14 @@ const RegistrationTeam = () => {
             {positionList.map((position, index) => <label className='checkbox-label'><input type='checkbox' name={position} value={position} checked={checkedPosition[index]} onChange={() => handlePosition(index)}></input>{position}<span></span></label>)}
           </div>
         </label>
+        {registrationTeam.name && registrationTeam.location && registrationTeam.email && registrationTeam.phone && registrationTeam.league && registrationTeam.tournaments && registrationTeam.coachResume && registrationTeam.positionsOpen
+        ? <button className='register-button' /*onSubmit={registerTeam}*/>Register</button> 
+        : 
+          <>
+            <button className='register-button' disabled>Register</button>
+            <p className='not-completed' >All fields must be completed.</p>
+          </>
+        } 
       </section>
     </section>
   );
