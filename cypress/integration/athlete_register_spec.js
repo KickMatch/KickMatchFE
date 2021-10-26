@@ -1,7 +1,7 @@
 // describe('Athlete Register Page', () => {
   
 //   beforeEach(() => {
-//     cy.visit('http://localhost:3000/')
+//     cy.visit('https://kick-match-fe.herokuapp.com/')
 //       .get('.new-athlete')
 //       .click()
 //     })
