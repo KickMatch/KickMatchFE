@@ -5,6 +5,7 @@ import { useState } from 'react';
 const TeamProfile = ({teamInfo, getId}) => {  
 
   const [matchBtn, setMatchBtn] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const getIdTeam = () => {
     setMatchBtn(true);
