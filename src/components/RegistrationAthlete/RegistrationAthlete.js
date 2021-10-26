@@ -23,8 +23,8 @@ const RegistrationAthlete = () => {
     email: '',
     dominantFoot: '',
     goalsMadeLs: 0,
-    verticalJump: 0.0,
-    forthyDash: 0.00,
+    verticalJump: 0,
+    forthyDash: 0,
     jugglingRecord: 0,
     talents: '',
     awards: 'best gooly'
@@ -37,19 +37,19 @@ const RegistrationAthlete = () => {
     createTalent({
       variables: {
         name: registrationAthlete.name,
-        age: registrationAthlete.age,
+        age: parseInt(registrationAthlete.age),
         height: registrationAthlete.height,
-        weigth: registrationAthlete.weigth,
+        weigth: parseInt(registrationAthlete.weigth),
         primaryPosition: registrationAthlete.primaryPosition,
         secondaryPosition: registrationAthlete.secondaryPosition,
         videoUrl: registrationAthlete.videoUrl,
-        zipcode: registrationAthlete.zipcode,
+        zipcode: parseInt(registrationAthlete.zipcode),
         email: registrationAthlete.email,
         dominantFoot: registrationAthlete.dominantFoot,
-        goalsMadeLs: registrationAthlete.goalsMadeLs,
-        verticalJump: registrationAthlete.verticalJump,
-        forthyDash: registrationAthlete.forthyDash,
-        jugglingRecord: registrationAthlete.jugglingRecord,
+        goalsMadeLs: parseInt(registrationAthlete.goalsMadeLs),
+        verticalJump: parseInt(registrationAthlete.verticalJump),
+        forthyDash: parseInt(registrationAthlete.forthyDash),
+        jugglingRecord: parseInt(registrationAthlete.jugglingRecord),
         talents: registrationAthlete.talents
       }
     })
