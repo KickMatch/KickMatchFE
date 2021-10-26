@@ -20,7 +20,8 @@ const AthleteSearch = ({userData}) => {
   const [queryTest, setQueryTest] = useState("");
   const [searchStatus, setSearchStatus] = useState(true);
   const [userZipCode, setUserZipCode] = useState(userData);
-  const [zipCodeRadius, setZipCodeRadius] = useState({})
+  const [zipCodeRadius, setZipCodeRadius] = useState({});
+  const [matchBtn, setMatchBtn] = useState(false);
 
   // MUTATION Function
   const [createMatch, {error}] = useMutation(CREATE_MATCH);
