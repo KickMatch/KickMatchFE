@@ -14,8 +14,8 @@ const TeamProfile = ({teamInfo, getId}) => {
   }
 
   return (
-    <section className='teamProfile'>
-      <div className='teamContactInfo'>
+    <section className='team-profile-search'>
+      <div className='team-contact-info'>
         <img className='team-prof-logo' src='https://upload.wikimedia.org/wikipedia/commons/4/4f/United_States_women%27s_national_soccer_team_logo.svg'></img>
         <p className='team-prof-title'><b>Team Name:</b></p>
           <p className='team-prof-info'>{teamInfo.name}</p>
@@ -26,7 +26,7 @@ const TeamProfile = ({teamInfo, getId}) => {
           <p className='team-prof-info'>{teamInfo.phone}</p>
           <p className='team-prof-info'>{teamInfo.zipcode}</p>
       </div>
-      <div className='teamSportingInfo'>
+      <div className='team-general-info'>
         <p className='team-prof-title'><b>League:</b></p>
           <p className='team-prof-info'><i>{teamInfo.league}</i></p>
         <p className='team-prof-title'><b>Tournaments:</b></p>

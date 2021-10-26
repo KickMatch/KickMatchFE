@@ -1,4 +1,4 @@
-.teamProfile {
+.team-profile-search{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2%;
@@ -9,7 +9,7 @@
   margin: 2%;
 }
 
-.teamContactInfo {
+.team-contact-info {
   grid-column-start: 1;
   grid-column-end: 2;
   color: black;
@@ -20,14 +20,14 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 }
 
-.teamContactInfo:hover {
+.team-contact-info:hover {
   opacity: 0.80;
   transform: scale(1.05);
   transition: 0.4s ease-in-out;
   cursor: pointer;
 }
 
-.teamSportingInfo {
+.team-general-info {
   grid-column-start: 2;
   grid-column-end: 4;
   color: black;
@@ -39,7 +39,7 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 }
 
-.teamSportingInfo:hover {
+.team-general-info:hover {
   opacity: 0.80;
   transform: scale(1.05);
   transition: 0.4s ease-in-out;
