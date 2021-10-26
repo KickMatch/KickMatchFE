@@ -75,7 +75,6 @@ const AthleteSearch = ({userData}) => {
     const getFormInfo = (event) => {
       event.preventDefault();
       setSearchStatus(false);
-      setMatchBtn(true);
       getData(); // Function to have a location radius
       findTeams(); // Function to filter teams based on the user text filter
       clearInputs();
@@ -139,7 +138,7 @@ const AthleteSearch = ({userData}) => {
               <option value='150'>150 or more</option>
             </select>
           </div>
-          <button className='SearchBtn' onClick={getFormInfo}>{matchBtn ? <p>I am interested</p> : <p>You saved the team !</p>}</button>
+          <button className='SearchBtn' onClick={getFormInfo}>Search Teams</button>
         </form>
           {searchStatus ? 
           <div className='no-search-founded'>
