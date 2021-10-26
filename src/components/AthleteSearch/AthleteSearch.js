@@ -14,12 +14,13 @@ const AthleteSearch = ({userData}) => {
   const [allTeams, setAllTeams] = useState({});
   const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
-  const [teamLocation, setTeamLocation] = useState("");
+  const [teamLocation, setTeamLocation] = useState(20);
   const [teamId, setTeamId] = useState("");
   const [queryTest, setQueryTest] = useState("");
   const [searchStatus, setSearchStatus] = useState(true);
-  const [userZipCode, setUserZipCode] = useState(userData);
+  const [athleteInfo, setAthleteInfo] = useState(userData);
   const [zipCodeRadius, setZipCodeRadius] = useState({});
+  const [matchedCodes, setMatchedCodes] = useState([])
   const [createMatch, {error}] = useMutation(CREATE_MATCH);
 
   
@@ -58,6 +59,7 @@ const AthleteSearch = ({userData}) => {
     
   const findTeams = () => {
     
+    console.log(zipCodeRadius.dataList)
     const teams = allTeams.allClubs;
     setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
     // console.log('teams:', teams)
@@ -73,16 +75,37 @@ const AthleteSearch = ({userData}) => {
     
     
   const getData = () => {
-    // console.log(typeof userZipCode.zipcode.toString())
-  // console.log('userZipCode:', userZipCode.zipCode)
-  // const zipcode = '80202'
-  const apiKey = 'W9C9POYVGMP5IHH4X8E9'
+  // console.log(typeof athleteInfo.zipcode.toString())
+  console.log('userZipCode:', athleteInfo.zipcode)
+  console.log('teamLocation:', typeof teamLocation)
 
-  // fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${userZipCode.zipcode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
-  //   .then(res => res.json())
-  //   .then(data => setZipCodeRadius(data))
-    // .then(console.log(zipCodeRadius))
-    // .then(data => console.log('ZipCodeData: ', data));
+  // const teams = allTeams.allClubs;
+  // const filterInputs = setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
+  // console.log(filteredTeams)
+  
+  const apiKey = 'W9C9POYVGMP5IHH4X8E9'
+  fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${athleteInfo.zipcode}&maximumradius=${parseInt(teamLocation)}&minimumradius=0&country=US&key=${apiKey}`)
+    .then(res => res.json())
+    .then(data => matchCodes(data))
+  }
+
+  const matchCodes = (dataCodes) => {
+    const teams = allTeams.allClubs;
+    setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All' || teamName === ''))
+
+    console.log(dataCodes.DataList)
+    console.log(filteredTeams)
+    let matchedZipCodes = [];
+    return dataCodes.DataList.forEach((acc, allZipCode) => {
+      filteredTeams.forEach(nameTeams => {
+        if (allZipCode.Code(nameTeams.zipcode.toString)) {
+          matchedZipCodes.push(nameTeams)
+          console.log(matchedZipCodes)
+        }
+      })
+
+      // setMatchedCodes(acc);
+    })
   }
 
   return (
@@ -113,8 +136,6 @@ const AthleteSearch = ({userData}) => {
         </form>
           {searchStatus ? 
           <div className='no-search-founded'>
-            {/* <h2 className="search-invitation-text">Search and discover your next Team ⚽️⚽️⚽️</h2> */}
-            {/* <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/> */}
             {allTeams && <TeamProfileContainer filteredTeams={allTeams.allClubs} getId={getId}/>}
 
           </div> :
