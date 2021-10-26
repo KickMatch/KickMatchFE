@@ -1,14 +1,8 @@
-import { StoreWriter } from '@apollo/client/cache/inmemory/writeToStore';
-import './RegistrationAthlete.css';
 import React, { useState, useEffect } from 'react';
-import { useQuery, gql } from '@apollo/client';
+import './RegistrationAthlete.css';
 import { CREATE_TALENT } from '../../GraphQL/Mutations';
 import { useMutation } from '@apollo/client';
-
-const positionList = ['Goalie', 'Fullback', 'Sweeper/Stopper', 'Center Midfielder', 'Outside Midfielder', 'Striker'];
-
-const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
-
+import Error from '../Error/Error';
 
 const RegistrationAthlete = () => {
   const [registrationAthlete, setRegistrationAthlete] = useState({
@@ -19,21 +13,24 @@ const RegistrationAthlete = () => {
     primaryPosition: '',
     secondaryPosition: '',
     videoUrl: 'youtube.com/football/1',
-    zipcode: 0,
+    zipcode: null,
     email: '',
     dominantFoot: '',
     goalsMadeLs: 0,
     verticalJump: 0,
-    forthyDash: 0,
+    fortyDash: 0,
     jugglingRecord: 0,
     talents: '',
-    awards: 'best gooly'
+    awards: ''
   });
+
+  const positionList = ['Goalie', 'Fullback', 'Sweeper/Stopper', 'Center Midfielder', 'Outside Midfielder', 'Striker'];
+  
+  const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
 
   const [createTalent, {error}] = useMutation(CREATE_TALENT);
   
   const registerTalent = () => {
-    // console.log(registrationAthlete)
     createTalent({
       variables: {
         name: registrationAthlete.name,
@@ -54,28 +51,8 @@ const RegistrationAthlete = () => {
         awards: registrationAthlete.awards
       }
     })
-    createTalent({
-      variables: {
-        name: 'Alessadnro de Piero',
-        age: 14,
-        height: "5,10",
-        weight: 190,
-        primaryPosition: "foward",
-        secondaryPosition: "back",
-        videoUrl: "youtube.com/football",
-        zipcode: 80204,
-        email: "piero@fgmail.com",
-        dominantFoot: "left",
-        goalsMadeLs: 7,
-        verticalJump: 20,
-        fortyDash: 8.45,
-        jugglingRecord: 7,
-        talents: "Ball control and shooting",
-        awards: "best player 2019"
-      }
-    })
     if (error) {
-      console.log(error)
+      < Error />
     }
   }
 
@@ -113,14 +90,14 @@ const RegistrationAthlete = () => {
       </header>
       <section className='athlete-form'>
         <section className='athlete-stats'>
-          <label>Full Name -
+          <label>Full Name ('David Beckham')-
             <input type='text' name='name' value={registrationAthlete.name} onChange={e => handleChange(e)}></input>
           </label>
           <label>Email - 
             <input type='text' name='email' value={registrationAthlete.email} onChange={e => handleChange(e)}></input>
           </label>
-          <label>Height (in) - 
-            <input type='number' name='height' value={registrationAthlete.height} onChange={e => handleChange(e)}></input>
+          <label>Height (5'11") - 
+            <input type='text' name='height' value={registrationAthlete.height} onChange={e => handleChange(e)}></input>
           </label>
           <label>Weight (lbs) - 
             <input type='number' name='weight' value={registrationAthlete.weight} onChange={e => handleChange(e)}></input>
@@ -161,16 +138,16 @@ const RegistrationAthlete = () => {
             </select>
           </label>
           <label>Zip Code -
-            <input type='text' name='zipcode' value={registrationAthlete.zipcode} onChange={e => handleChange(e)}></input>
+            <input type='number' name='zipcode' value={registrationAthlete.zipcode} onChange={e => handleChange(e)}></input>
           </label>
           <label>Goals Made Last Season - 
           <input type='number' name='goalsMadeLs' value={registrationAthlete.goalsMadeLs} onChange={e => handleChange(e)}></input>
           </label>
           <label>Vertical Jump (in) - 
-          <input type='number' step='0.1' name='verticalJump' value={registrationAthlete.verticalJump} onChange={e => handleChange(e)}></input>
+          <input type='number' name='verticalJump' value={registrationAthlete.verticalJump} onChange={e => handleChange(e)}></input>
           </label>
           <label>40 Yard Dash (sec) - 
-          <input type='number' step='0.01' name='fortyDash' value={registrationAthlete.forthyDash} onChange={e => handleChange(e)}></input>
+          <input type='number' name='fortyDash' value={registrationAthlete.fortyDash} onChange={e => handleChange(e)}></input>
           </label>
           <label>Personal Juggling Record (# of kicks) - 
           <input type='number' name='jugglingRecord' value={registrationAthlete.jugglingRecord} onChange={e => handleChange(e)}></input>
@@ -186,7 +163,14 @@ const RegistrationAthlete = () => {
         <input className='awards-input' type='text' name='awards' value={registrationAthlete.awards} onChange={e => handleChange(e)}></input>
         </label>
         </div>
-        <button className='registration-btn' onClick={registerTalent}>Register</button>
+        {registrationAthlete.name && registrationAthlete.age && registrationAthlete.height && registrationAthlete.weight && registrationAthlete.primaryPosition && registrationAthlete.secondaryPosition && registrationAthlete.videoUrl && registrationAthlete.zipcode && registrationAthlete.email && registrationAthlete.dominantFoot && registrationAthlete.goalsMadeLs && registrationAthlete.verticalJump && registrationAthlete.fortyDash && registrationAthlete.jugglingRecord && registrationAthlete.talents && registrationAthlete.awards
+        ? <button className='register-button' onSubmit={registerTalent} >Register</button> 
+        : 
+          <>
+            <button className='register-button' disabled>Register</button>
+            <p className='not-completed' >All fields must be completed.</p>
+          </>
+        } 
       </section>
     </section>
   );
