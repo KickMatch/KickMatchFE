@@ -1,7 +1,7 @@
 // describe('Login Page', () => {
   
 //   beforeEach(() => {
-//     cy.visit('http://localhost:3000/')
+//     cy.visit('https://kick-match-fe.herokuapp.com/')
 //     })
 
 //   it('Should have app url when displaying login page', () => {
