@@ -22,9 +22,17 @@ const AthleteSearch = ({userData}) => {
   const [userZipCode, setUserZipCode] = useState(userData);
   const [zipCodeRadius, setZipCodeRadius] = useState({})
 
+  // MUTATION Function
   const [createMatch, {error}] = useMutation(CREATE_MATCH);
 
   const getId = (choseTeamId) => {
+    // This function will help in order to sne dan object for the post request
+    // setTeamId(choseTeamId)
+    // const matchObj = {
+    //   talent_id: parseInt(id),
+    //   sport_club_id: choseTeamId
+    // }
+    // console.log('Obj to send to create a match:', matchObj)
     createMatch({
       variables: {
         sportClubId: parseInt(choseTeamId),
@@ -35,19 +43,8 @@ const AthleteSearch = ({userData}) => {
       console.log(error)
     }
 
-    // This function will help in order to sne dan object for the post request
-    // setTeamId(choseTeamId)
-    // const matchObj = {
-    //   talent_id: parseInt(id),
-    //   sport_club_id: choseTeamId
-    // }
-    // console.log('Obj to send to create a match:', matchObj)
-
-    // console.log(typeof id)
-    // console.log(id)
-    // console.log(typeof choseTeamId)
-    // console.log(choseTeamId)
-
+    console.log(choseTeamId)
+    console.log(id)
   }
 
   const addMatch = () => {
@@ -122,7 +119,7 @@ const AthleteSearch = ({userData}) => {
       <section className='AthleteSearch'>
         <form className='AthleteForm'>
           <h3 className="search-text">Search by:</h3>
-          <div className='input-team-search-container'>
+          <div className='search-all'>
             <input
               className= 'team-name-search'
               type='text'
@@ -131,7 +128,6 @@ const AthleteSearch = ({userData}) => {
               value={teamName}
               onChange={(event) => setTeamName(event.target.value)}
             />
-            <label className='search-all'>Type <b>All</b> for all teams !</label>
           </div>
           <div className='input-team-select-container'>
             <select className="select-radius-location" onChange={(event) => setTeamLocation(event.target.value)}>
