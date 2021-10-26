@@ -1,6 +1,9 @@
 .registration-athlete-page {
+  min-height: 100vh;
+  max-height: max;
   font-family: Oxygen;
   padding: 20px 40px 40px 40px;
+  background-color: white;
 }
 
 .registration-athlete-header {
@@ -29,7 +32,7 @@
 .athlete-form input[type = number],
 .athlete-form select {
   box-sizing: border-box;
-  width: 300px;
+  width: 90%;
   margin-top: 10px;
   padding: 10px;
   border: 0;
@@ -48,23 +51,23 @@
 
 .checkbox-label {
   position: relative;
-  padding-left:30px;
+  padding-left: 30px;
   cursor: pointer;
 }
 
 .checkbox-label input {
   position: absolute;
   opacity: 0;
-  width:0; 
-  height:0;
+  width: 0; 
+  height: 0;
 }
 
 .checkbox-label span {
   position: absolute;
-  top:0;
-  left:0;
-  width:20px; 
-  height:20px;
+  top: 0;
+  left: 0;
+  width: 20px; 
+  height: 20px;
   background-color: #ddd;
   transition: .3s background-color; 
 }
@@ -97,6 +100,47 @@
   margin-top: 40px;
 }
 
-#awards-input {
-  width: 600px;
+.awards-input {
+  width: 70%;
+}
+
+@media screen and (max-width: 900px) {
+  .athlete-form label {
+    margin-top: 40px;
+  } 
+  
+  .athlete-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .awards-container {
+    margin-top: 80px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .athlete-form label {
+    margin-top: 40px;
+  } 
+
+  .athlete-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .talents-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .awards-container {
+    margin-top: 80px;
+  }
+
+  .awards-input {
+    width: 90%;
+  }
 }
