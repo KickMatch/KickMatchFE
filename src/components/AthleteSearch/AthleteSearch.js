@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { LOAD_ALL_TALENT, LOAD_ALL_CLUBS } from '../../GraphQL/Queries';
+import { LOAD_ALL_CLUBS } from '../../GraphQL/Queries';
 import { CREATE_MATCH } from '../../GraphQL/Mutations';
 import { useMutation } from '@apollo/client';
 
@@ -21,19 +21,10 @@ const AthleteSearch = ({userData}) => {
   const [searchStatus, setSearchStatus] = useState(true);
   const [userZipCode, setUserZipCode] = useState(userData);
   const [zipCodeRadius, setZipCodeRadius] = useState({});
-
-
-  // MUTATION Function
   const [createMatch, {error}] = useMutation(CREATE_MATCH);
 
+  
   const getId = (choseTeamId) => {
-    // This function will help in order to sne dan object for the post request
-    // setTeamId(choseTeamId)
-    // const matchObj = {
-    //   talent_id: parseInt(id),
-    //   sport_club_id: choseTeamId
-    // }
-    // console.log('Obj to send to create a match:', matchObj)
     createMatch({
       variables: {
         sportClubId: parseInt(choseTeamId),
@@ -43,75 +34,56 @@ const AthleteSearch = ({userData}) => {
     if (error) {
       console.log(error)
     }
-
     console.log(choseTeamId)
     console.log(id)
   }
-
-  const addMatch = () => {
-    createMatch({
-      variables: {
-        sportClubId: teamId,
-        talentId: id
-      }
-    })
-    if (error) {
-      console.log(error)
-    }
+    
+  const {loading, data} = useQuery(LOAD_ALL_CLUBS);
+  useEffect(() => {
+    setAllTeams(data)
+  }, [data])
+    
+    
+  const getFormInfo = (event) => {
+    event.preventDefault();
+    setSearchStatus(false);
+    getData(); 
+    findTeams(); 
+    clearInputs();
   }
   
-  // const {error, loading, data} = useQuery(LOAD_ALL_TALENT); 
-  // useEffect(() => {
-    //   console.log('testing query for athletes:', data)
-    // }, [data])
+  const clearInputs = () => {
+    setTeamLocation("");
+    setTeamName("");
+  }
     
-    const {loading, data} = useQuery(LOAD_ALL_CLUBS);
-    useEffect(() => {
-      setAllTeams(data)
-      // console.log('allTeams:', allTeams)
-    }, [data])
+  const findTeams = () => {
     
-    
-    const getFormInfo = (event) => {
-      event.preventDefault();
-      setSearchStatus(false);
-      getData(); // Function to have a location radius
-      findTeams(); // Function to filter teams based on the user text filter
-      clearInputs();
-    }
-    
-    const clearInputs = () => {
-      setTeamLocation("");
-      setTeamName("");
-    }
-    
-    const findTeams = () => {
-      
-      const teams = allTeams.allClubs;
-      setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
-      // console.log('teams:', teams)
-      // console.log('teamName:', teamName)
-      // console.log('filteredTeams:',filteredTeams)
+    const teams = allTeams.allClubs;
+    setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
+    // console.log('teams:', teams)
+    // console.log('teamName:', teamName)
+    // console.log('filteredTeams:',filteredTeams)
 
-      // const teams = allTeams.allClubs;
-      // const teamByName = teams.filter(team => team.name.includes(teamName) || teamName === 'All')
-      // console.log(teamByName)
-      // const teamsByRadius = zipCodeRadius;
-      // console.log(zipCodeRadius)
-    }
+    // const teams = allTeams.allClubs;
+    // const teamByName = teams.filter(team => team.name.includes(teamName) || teamName === 'All')
+    // console.log(teamByName)
+    // const teamsByRadius = zipCodeRadius;
+    // console.log(zipCodeRadius)
+  }
     
     
-    const getData = () => {
-      // console.log(typeof userZipCode.zipcode.toString())
-    // console.log('userZipCode:', userZipCode.zipCode)
-    // const zipcode = '80202'
-    const apiKey = 'W9C9POYVGMP5IHH4X8E9'
+  const getData = () => {
+    // console.log(typeof userZipCode.zipcode.toString())
+  // console.log('userZipCode:', userZipCode.zipCode)
+  // const zipcode = '80202'
+  const apiKey = 'W9C9POYVGMP5IHH4X8E9'
 
-    // fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${userZipCode.zipcode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
-    //   .then(res => res.json())
-    //   .then(data => setZipCodeRadius(data))
-      // .then(console.log(zipCodeRadius))
-      // .then(data => console.log('ZipCodeData: ', data));
+  // fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${userZipCode.zipcode}&maximumradius=${teamLocation}&minimumradius=0&country=US&key=${apiKey}`)
+  //   .then(res => res.json())
+  //   .then(data => setZipCodeRadius(data))
+    // .then(console.log(zipCodeRadius))
+    // .then(data => console.log('ZipCodeData: ', data));
   }
 
   return (
