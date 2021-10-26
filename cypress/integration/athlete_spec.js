@@ -1,11 +1,12 @@
 describe('Athlete Page', () => {
 
-  beforeEach(() => {
+  // beforeEach(() => {
     it('User should see header', () => {
       cy
         .visit('https://kick-match-fe.herokuapp.com/')
         expect(true).to.be.true
     })
+    
   //   cy
   //     .visit('http://localhost:3000/')
   //     .get('[href="/athlete/1"] > .login-buttons').click()
