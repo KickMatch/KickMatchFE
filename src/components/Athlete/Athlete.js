@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import AthleteProfile from './AthleteProfile/AthleteProfile';
 import Bio from '../Bio/Bio'
 import MobileAthleteStat from './MobileAthleteStat/MobileAthleteStat'
+import MobileHeader from '../MobileHeader/MobileHeader';
 import { useEffect, useState } from 'react';
 import { useWindowWidth } from '@react-hook/window-size'
 import { Carousel } from 'react-responsive-carousel';
@@ -20,13 +21,12 @@ const Athlete = ({ data }) => {
   
   
   const handleWindow = () => {
-
     setWindowWidth(size)
-    windowWidth >= 600 ? setMobile(false) : setMobile(true)
+    windowWidth >= 767 ? setMobile(false) : setMobile(true)
     // windowWidth <= 1024 ? setTablet(false) : setTablet(true)
   }
 
-  const CarouselComp = () => {
+  const CarouselComp = () => { //carousel component
     const images = [soccer, soccer1, soccer2, soccer3]
     
     return (
@@ -52,7 +52,7 @@ const Athlete = ({ data }) => {
   
   return (
     <>
-      <Header />
+      {!mobile ? <Header /> : <MobileHeader />}
         {
           !mobile ? 
             <main className='athlete-main'>
