@@ -34,19 +34,19 @@ const RegistrationAthlete = () => {
     createTalent({
       variables: {
         name: registrationAthlete.name,
-        age: registrationAthlete.age,
+        age: parseInt(registrationAthlete.age),
         height: registrationAthlete.height,
-        weight: registrationAthlete.weight,
+        weight: parseInt(registrationAthlete.weight),
         primaryPosition: registrationAthlete.primaryPosition,
         secondaryPosition: registrationAthlete.secondaryPosition,
         videoUrl: registrationAthlete.videoUrl,
-        zipcode: registrationAthlete.zipcode,
+        zipcode: parseInt(registrationAthlete.zipcode),
         email: registrationAthlete.email,
         dominantFoot: registrationAthlete.dominantFoot,
-        goalsMadeLs: registrationAthlete.goalsMadeLs,
-        verticalJump: registrationAthlete.verticalJump,
-        fortyDash: registrationAthlete.fortyDash,
-        jugglingRecord: registrationAthlete.jugglingRecord,
+        goalsMadeLs: parseInt(registrationAthlete.goalsMadeLs),
+        verticalJump: parseInt(registrationAthlete.verticalJump),
+        fortyDash: parseInt(registrationAthlete.fortyDash),
+        jugglingRecord: parseInt(registrationAthlete.jugglingRecord),
         talents: registrationAthlete.talents,
         awards: registrationAthlete.awards
       }
@@ -139,7 +139,7 @@ const RegistrationAthlete = () => {
             </select>
           </label>
           <label>Zip Code -
-            <input type='number' name='zipcode' value={registrationAthlete.zipcode} onChange={e => handleChange(e)}></input>
+            <input type='text' name='zipcode' value={registrationAthlete.zipcode} onChange={e => handleChange(e)}></input>
           </label>
           <label>Goals Made Last Season - 
           <input type='number' name='goalsMadeLs' value={registrationAthlete.goalsMadeLs} onChange={e => handleChange(e)}></input>
@@ -165,7 +165,7 @@ const RegistrationAthlete = () => {
         </label>
         </div>
         {registrationAthlete.name && registrationAthlete.age && registrationAthlete.height && registrationAthlete.weight && registrationAthlete.primaryPosition && registrationAthlete.secondaryPosition && registrationAthlete.videoUrl && registrationAthlete.zipcode && registrationAthlete.email && registrationAthlete.dominantFoot && registrationAthlete.goalsMadeLs && registrationAthlete.verticalJump && registrationAthlete.fortyDash && registrationAthlete.jugglingRecord && registrationAthlete.talents && registrationAthlete.awards
-        ? <button className='register-button' onSubmit={registerTalent} >Register</button> 
+        ? <button className='register-button' onClick={registerTalent} >Register</button> 
         : 
           <>
             <button className='register-button' disabled>Register</button>
