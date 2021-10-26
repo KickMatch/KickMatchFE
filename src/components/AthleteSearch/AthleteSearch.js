@@ -120,6 +120,7 @@ const AthleteSearch = ({userData}) => {
     <section>
       <Header />
       <section className='AthleteSearch'>
+          <p className='search-all'>Type <b>All</b> to search by all teams !</p>
         <form className='AthleteForm'>
           <h3 className="search-text">Search by:</h3>
           <input
