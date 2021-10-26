@@ -45,7 +45,7 @@ const Login = ({ getUser }) => {
   
   let athleteLoginButtons ;
   if (allAthletes) {
-    const athleteArr = allAthletes.allTalent.slice(0, 3)
+    const athleteArr = allAthletes.allTalent
     athleteLoginButtons = athleteArr.map(athlete => {
       return (
           <Link to={`/athlete/${athlete.id}`} key={athlete.id}>
