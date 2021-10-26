@@ -69,6 +69,18 @@
   opacity: 0.80;
 }
 
+.team-prof-info-email {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:100%;
+  color: rgb(107, 3, 3);
+  font-weight: bold;
+  margin: 3%;
+}
+
+.team-prof-info-email:hover {
+  opacity: 0.80;
+}
+
 .match-btn {
   color: rgb(108, 3, 3);
   background: whitesmoke; 

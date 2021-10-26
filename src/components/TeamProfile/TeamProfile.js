@@ -20,7 +20,7 @@ const TeamProfile = ({teamInfo, getId}) => {
         <p className='team-prof-title'><b>Location:</b></p>
           <p className='team-prof-info'>{teamInfo.location}</p>
         <p className='team-prof-title'><b>Contact Info:</b></p>
-          <p className='team-prof-info'>{teamInfo.email}</p>
+          <p className='team-prof-info-email'>{teamInfo.email}</p>
           <p className='team-prof-info'>{teamInfo.phone}</p>
           <p className='team-prof-info'>{teamInfo.zipcode}</p>
       </div>
