@@ -25,16 +25,17 @@ export const CREATE_TALENT = gql `
     $email: String!
     $dominantFoot: String!
     $goalsMadeLs: Int!
-    $verticalJump: Int!
-    $forthyDash: Int!
+    $verticalJump: Float!
+    $fortyDash: Float!
     $jugglingRecord: Int!
     $talents: String!
+    $awards: String!
     ) {
     createTalent( input: {
       name: $name
       age: $age
       height: $height
-      weigth: $weight
+      weight: $weight
       primaryPosition: $primaryPosition
       secondaryPosition: $secondaryPosition
       videoUrl: $videoUrl
@@ -43,31 +44,37 @@ export const CREATE_TALENT = gql `
       dominantFoot: $dominantFoot
       goalsMadeLs: $goalsMadeLs
       verticalJump: $verticalJump
-      forthyDash: $forthyDash
+      fortyDash: $fortyDash
       jugglingRecord: $jugglingRecord
       talents: $talents
+      awards: $awards
       }
     ) {
       talent {
         id,
-        name,
-        age,
-        height,
-        weigth,
-        primaryPosition,
-        secondaryPosition,
-        videoUrl,
-        zipcode,
-        email,
-        dominantFoot,
-        goalsMadeLs,
-        verticalJump,
-        forthyDash,
-        jugglingRecord,
-        talents
+        name
       }
-      errors
     }
   }
 `
+
+
+// talent {
+//   id,
+//   name,
+//   age,
+//   height,
+//   weigth,
+//   primaryPosition,
+//   secondaryPosition,
+//   videoUrl,
+//   zipcode,
+//   email,
+//   dominantFoot,
+//   goalsMadeLs,
+//   verticalJump,
+//   forthyDash,
+//   jugglingRecord,
+//   talents
+// }
 
