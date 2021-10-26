@@ -8,8 +8,6 @@ import { useQuery, gql } from '@apollo/client';
 import { LOAD_ALL_CLUBS } from '../../GraphQL/Queries';
 import { CREATE_MATCH } from '../../GraphQL/Mutations';
 import { useMutation } from '@apollo/client';
-import Login from '../Login/Login';
-
 
 const AthleteSearch = ({userData}) => {
   const {id} = useParams();
@@ -117,6 +115,7 @@ const AthleteSearch = ({userData}) => {
           <div className='no-search-founded'>
             {/* <h2 className="search-invitation-text">Search and discover your next Team ⚽️⚽️⚽️</h2> */}
             {/* <TeamProfileContainer filteredTeams={filteredTeams} getId={getId}/> */}
+            {allTeams && <TeamProfileContainer filteredTeams={allTeams.allClubs} getId={getId}/>}
 
           </div> :
           <div className='search-teams-container'>
