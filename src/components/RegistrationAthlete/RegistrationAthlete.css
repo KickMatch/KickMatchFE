@@ -104,6 +104,61 @@
   width: 70%;
 }
 
+.register-button {
+  font-size: 20px;
+  margin-top: 20px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #34E3AC;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 20px 10px;
+  min-width: 20ch;
+  min-height: 44px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.register-button:hover,
+.register-button:focus {
+  background: #3AFDF6;
+}
+
+.register-button:hover,
+.register-button:focus {
+  background: #3AFDF6;
+}
+
+.register-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.register-button:active {
+  transform: scale(0.99);
+}
+
+.register-button {
+  background: #3AFDF6;
+}
+
+.register-button:hover,
+.register-button:focus {
+  background: #34E3AC;
+}
+
+.register-button:disabled {
+  background: grey;
+}
+
+.not-completed {
+  margin-top: 20px;
+  color: rgb(209, 22, 22);
+  font-style: italic;
+}
+
 @media screen and (max-width: 900px) {
   .athlete-form label {
     margin-top: 40px;
