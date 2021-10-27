@@ -8,7 +8,6 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router';
 import './AthleteMatches.css';
 import Loading from '../Loading/Loading';
-import MobileAthleteStat from '../Athlete/MobileAthleteStat/MobileAthleteStat';
 
 
 const AthleteMatches = () => {
@@ -36,10 +35,10 @@ const AthleteMatches = () => {
 
   const handleMap = arr => arr.map((item, index) => {
     return(
-        <ul className='match-ul mobile' key={index}>
-          <li className='match-list mobile'>Team Name: {item.name}</li>
-          <li className='match-list mobile'>Email: {item.email}</li>
-          <li className='match-list mobile'>ZipCode: {item.zipcode}</li>
+        <ul className={`match-ul ${!mobile ? '' : 'mobile'}`} key={index}>
+          <li className={`match-list ${!mobile ? '' : 'mobile'}`} >Team Name: {item.name}</li>
+          <li className={`match-list ${!mobile ? '' : 'mobile'}`} >Email: {item.email}</li>
+          <li className={`match-list ${!mobile ? '' : 'mobile'}`} >ZipCode: {item.zipcode}</li>
         </ul>
     )
   })
@@ -64,17 +63,14 @@ const AthleteMatches = () => {
     return (
       <>
       <main className='match-main'>
-        {/* <h1>Your Matches</h1> */}
         <section className='match-container'>{handleMap(teams)}</section>
       </main>
-        {/* <h1 style={{'color': 'white'}}>AthleteMatchesContainer</h1> */}
       </>
     )
   }
 
 
   const determineComponent = () => {
-    // !mobile ? <AthleteMatchesContainer /> : <MobileAthleteMatchesContainer />
     if(!mobile){return <AthleteMatchesContainer/>}else{return <MobileAthleteMatchesContainer/>}
   }
 
