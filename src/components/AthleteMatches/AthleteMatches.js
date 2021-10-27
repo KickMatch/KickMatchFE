@@ -34,18 +34,28 @@ const AthleteMatches = () => {
 
   const handleMap = arr => arr.map((item, index) => {
     return(
-        <ul className='match-ul' key={index}>
-          <li className='match-list'>Email: {item.email}</li>
-          <li className='match-list'>Name: {item.name}</li>
-          <li className='match-list'>ZipCode: {item.zipcode}</li>
+        <ul className={`match-ul ${!mobile ? '' : 'mobile'}`} key={index}>
+          <li className={`match-list ${!mobile ? '' : 'mobile'}`} >Team Name: {item.name}</li>
+          <li className={`match-list ${!mobile ? '' : 'mobile'}`} >Email: {item.email}</li>
+          <li className={`match-list ${!mobile ? '' : 'mobile'}`} >ZipCode: {item.zipcode}</li>
         </ul>
     )
   })
-
+  
   useEffect(() => {
     handleWindow()
     handlePageLoad()
-   }, [windowWidth, size, data])
+  }, [windowWidth, size, data])
+
+  const MobileAthleteMatchesContainer = () => {
+
+    return (
+      <main className='match-main'>
+        <h1 className='match-header-mobile'>Your Matches</h1>
+        <section className='match-container mobile'>{handleMap(teams)}</section>
+      </main>
+    )
+  }
 
   const AthleteMatchesContainer = () => {
 
@@ -58,10 +68,15 @@ const AthleteMatches = () => {
     )
   }
 
+
+  const determineComponent = () => {
+    if(!mobile){return <AthleteMatchesContainer/>}else{return <MobileAthleteMatchesContainer/>}
+  }
+
    return (
     <>
       {!mobile ? <Header /> : <MobileHeader />}
-      {pageLoading ? <Loading /> : <AthleteMatchesContainer/> }
+      {pageLoading ? <Loading /> : determineComponent() }
     </>
   );
 }

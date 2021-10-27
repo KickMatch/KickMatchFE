@@ -18,6 +18,22 @@
   border: 2px solid white;
 }
 
-.match-ul li {
+.match-ul {
   font-size: 1.4vw;
+}
+
+/**************   MOBILE **************/
+
+.match-header-mobile {
+  display: flex;
+  justify-content: center;
+}
+
+.match-container.mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.match-list.mobile {
+  font-size: 5.4vw;
 }
