@@ -8,6 +8,7 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router';
 import './AthleteMatches.css';
 import Loading from '../Loading/Loading';
+import MobileAthleteStat from '../Athlete/MobileAthleteStat/MobileAthleteStat';
 
 
 const AthleteMatches = () => {
@@ -15,6 +16,7 @@ const AthleteMatches = () => {
   const [mobile, setMobile] = useState(false)
   const [teams, setTeams] = useState({})
   const [pageLoading, setPageLoading] = useState(true)
+
   const { id } = useParams()
   const { data } = useQuery(ATHLETE_MATCHES(id))
   const size = useWindowWidth()
@@ -34,34 +36,52 @@ const AthleteMatches = () => {
 
   const handleMap = arr => arr.map((item, index) => {
     return(
-        <ul className='match-ul' key={index}>
-          <li className='match-list'>Email: {item.email}</li>
-          <li className='match-list'>Name: {item.name}</li>
-          <li className='match-list'>ZipCode: {item.zipcode}</li>
+        <ul className='match-ul mobile' key={index}>
+          <li className='match-list mobile'>Team Name: {item.name}</li>
+          <li className='match-list mobile'>Email: {item.email}</li>
+          <li className='match-list mobile'>ZipCode: {item.zipcode}</li>
         </ul>
     )
   })
-
+  
   useEffect(() => {
     handleWindow()
     handlePageLoad()
-   }, [windowWidth, size, data])
+  }, [windowWidth, size, data])
+
+  const MobileAthleteMatchesContainer = () => {
+
+    return (
+      <main className='match-main'>
+        <h1 className='match-header-mobile'>Your Matches</h1>
+        <section className='match-container mobile'>{handleMap(teams)}</section>
+      </main>
+    )
+  }
 
   const AthleteMatchesContainer = () => {
 
     return (
       <>
       <main className='match-main'>
+        {/* <h1>Your Matches</h1> */}
         <section className='match-container'>{handleMap(teams)}</section>
       </main>
+        {/* <h1 style={{'color': 'white'}}>AthleteMatchesContainer</h1> */}
       </>
     )
+  }
+
+
+  const determineComponent = () => {
+    // !mobile ? <AthleteMatchesContainer /> : <MobileAthleteMatchesContainer />
+    if(!mobile){return <AthleteMatchesContainer/>}else{return <MobileAthleteMatchesContainer/>}
   }
 
    return (
     <>
       {!mobile ? <Header /> : <MobileHeader />}
-      {pageLoading ? <Loading /> : <AthleteMatchesContainer/> }
+      {pageLoading ? <Loading /> : determineComponent() }
     </>
   );
 }
