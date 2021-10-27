@@ -23,28 +23,39 @@ export const LOAD_ALL_TALENT = gql `
     }
   `
 
-  export const LOAD_TALENT = (id)=> gql `
-    query talent {
-      talent(id: ${id}) {
-        id,
-        name,
-        age,
-        height,
-        weight,
-        videoUrl,
-        zipcode,
-        email,
-        dominantFoot,
-        goalsMadeLs,
-        verticalJump,
-        fortyDash,
-        jugglingRecord,
-        talents,
-        primaryPosition,
-        secondaryPosition
-      }
+export const LOAD_TALENT = (id) => gql `
+  query talent {
+    talent(id: ${id}) {
+      id,
+      name,
+      age,
+      height,
+      weight,
+      videoUrl,
+      zipcode,
+      email,
+      dominantFoot,
+      goalsMadeLs,
+      verticalJump,
+      fortyDash,
+      jugglingRecord,
+      talents,
+      primaryPosition,
+      secondaryPosition
     }
-  `
+  }
+`
+
+export const ATHLETE_MATCHES = (id) => gql `
+  query matchTalent {
+    matchTalent(id: ${id}) {
+      id,
+      name,
+      email,
+      zipcode 
+    }
+  }
+`
 
 export const LOAD_ALL_CLUBS = gql `
   query {
@@ -111,4 +122,5 @@ export const LOAD_ALL_CLUBS = gql `
 //   }
 // }
 // `
+
 
