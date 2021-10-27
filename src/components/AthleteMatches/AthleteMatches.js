@@ -18,19 +18,6 @@ const AthleteMatches = () => {
   const { id } = useParams()
   const { data } = useQuery(ATHLETE_MATCHES(id))
   const size = useWindowWidth()
-  
-  const handlePageLoad = () => {
-    if(data){
-      setPageLoading(false);
-      setTeams(data.matchTalent);
-    }
-  }
-
-  const handleWindow = () => {
-    setWindowWidth(size)
-    handlePageLoad()
-    windowWidth >= 767 ? setMobile(false) : setMobile(true)
-  }
 
   const handleMap = arr => arr.map((item, index) => {
     return(
@@ -43,8 +30,14 @@ const AthleteMatches = () => {
   })
   
   useEffect(() => {
-    handleWindow()
-    handlePageLoad()
+    setWindowWidth(size)
+    windowWidth >= 767 ? setMobile(false) : setMobile(true)
+
+    if(data){
+      setPageLoading(false);
+      setTeams(data.matchTalent);
+    }
+    
   }, [windowWidth, size, data])
 
   const MobileAthleteMatchesContainer = () => {

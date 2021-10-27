@@ -2,27 +2,32 @@ import './AthleteSearch.css';
 import TeamProfileContainer from '../TeamProfileContainer/TeamProfileContainer';
 import React from 'react';
 import Header from '../Header/Header';
+import MobileHeader from '../MobileHeader/MobileHeader';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { LOAD_ALL_CLUBS } from '../../GraphQL/Queries';
 import { CREATE_MATCH } from '../../GraphQL/Mutations';
-import { useMutation } from '@apollo/client';
+import { useWindowWidth } from '@react-hook/window-size'
 
 const AthleteSearch = ({userData}) => {
   const {id} = useParams();
   const [allTeams, setAllTeams] = useState({});
   const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
-  const [teamLocation, setTeamLocation] = useState(20);
-  const [teamId, setTeamId] = useState("");
-  const [queryTest, setQueryTest] = useState("");
   const [searchStatus, setSearchStatus] = useState(true);
-  const [athleteInfo, setAthleteInfo] = useState(userData);
-  const [zipCodeRadius, setZipCodeRadius] = useState({});
-  const [matchedCodes, setMatchedCodes] = useState([])
+  const [windowWidth, setWindowWidth] = useState(0)
+  const [mobile, setMobile] = useState(false)
+  const [teamLocation, setTeamLocation] = useState(20);
+  // const [zipCodeRadius, setZipCodeRadius] = useState({});
+  // const [teamId, setTeamId] = useState("");
+  // const [queryTest, setQueryTest] = useState("");
+  // const [athleteInfo, setAthleteInfo] = useState(userData);
+  // const [matchedCodes, setMatchedCodes] = useState([])
+
   const [createMatch, {error}] = useMutation(CREATE_MATCH);
 
+  const size = useWindowWidth()
   
   const getId = (choseTeamId) => {
     createMatch({
@@ -38,64 +43,62 @@ const AthleteSearch = ({userData}) => {
     console.log(id)
   }
     
-  const {loading, data} = useQuery(LOAD_ALL_CLUBS);
+  const { data} = useQuery(LOAD_ALL_CLUBS);
+
   useEffect(() => {
+    setWindowWidth(size)
+    windowWidth >= 767 ? setMobile(false) : setMobile(true)
     setAllTeams(data)
-  }, [data])
-    
+  }, [data, windowWidth, size])
     
   const getFormInfo = (event) => {
     event.preventDefault();
     setSearchStatus(false);
-    // getData(); 
     findTeams(); 
     clearInputs();
   }
   
   const clearInputs = () => {
-    setTeamLocation("");
     setTeamName("");
   }
     
   const findTeams = () => {
-    
-    console.log(zipCodeRadius.dataList)
     const teams = allTeams.allClubs;
     setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All' || teamName === ''))
   }
     
     
-  const getData = () => {
-  console.log('userZipCode:', athleteInfo.zipcode)
-  console.log('teamLocation:', typeof teamLocation)
+  // const getData = () => {
+  // console.log('userZipCode:', athleteInfo.zipcode)
+  // console.log('teamLocation:', typeof teamLocation)
 
-  const teams = allTeams.allClubs;
-  const filterInputs = setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
-  // console.log(filteredTeams)
+  // const teams = allTeams.allClubs;
+  // const filterInputs = setFilteredTeams(teams.filter(team => team.name.includes(teamName) || teamName === 'All'))
+  // // console.log(filteredTeams)
   
-  const apiKey = 'W9C9POYVGMP5IHH4X8E9'
-  fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${athleteInfo.zipcode}&maximumradius=${parseInt(teamLocation)}&minimumradius=0&country=US&key=${apiKey}`)
-    .then(res => res.json())
-    .then(data => matchCodes(data, filteredTeams))
-  }
+  // const apiKey = 'W9C9POYVGMP5IHH4X8E9'
+  // fetch(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${athleteInfo.zipcode}&maximumradius=${parseInt(teamLocation)}&minimumradius=0&country=US&key=${apiKey}`)
+  //   .then(res => res.json())
+  //   .then(data => matchCodes(data, filteredTeams))
+  // }
 
-  const matchCodes = (dataCodes, filteredTeamsZ) => {
-    console.log(dataCodes.DataList)
-    console.log(filteredTeamsZ)
+  // const matchCodes = (dataCodes, filteredTeamsZ) => {
+  //   console.log(dataCodes.DataList)
+  //   console.log(filteredTeamsZ)
 
-    let matchedZipCodes = [];
-    return dataCodes.DataList.forEach((acc, allZipCode) => {
-      filteredTeams.forEach(nameTeams => {
-        if (allZipCode.Code(nameTeams.zipcode.toString)) {
-          return matchedZipCodes.push(nameTeams)
-        }
-      })
-    })
-  }
-
+  //   let matchedZipCodes = [];
+  //   return dataCodes.DataList.forEach((acc, allZipCode) => {
+  //     filteredTeams.forEach(nameTeams => {
+  //       if (allZipCode.Code(nameTeams.zipcode.toString)) {
+  //         return matchedZipCodes.push(nameTeams)
+  //       }
+  //     })
+  //   })
+  // }
+  
   return (
     <section>
-      <Header />
+      {!mobile ? <Header /> : <MobileHeader />}
       <section className='athlete-search'>
         <form className='athlete-form-search'>
           <h3 className="search-text">Search by:</h3>
