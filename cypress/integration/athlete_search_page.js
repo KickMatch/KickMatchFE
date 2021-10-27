@@ -20,4 +20,9 @@ describe('Athlete Search Page', () => {
     cy.get('.header').get('.header-active > .header-text').contains('Search')
   });
 
+  it('Athlete Search page should contain a header with the logo and a nav bar, showing that the search button is selected', () => {
+    cy.get('.header').get('.header-logo')
+    cy.get('.header').get('.header-active > .header-text').contains('Search')
+  });
+
 });
