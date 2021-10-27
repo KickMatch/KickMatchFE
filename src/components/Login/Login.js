@@ -5,13 +5,13 @@ import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 
-const Login = ({ getUser }) => {
+const Login = ({ getUser, submitted }) => {
   const [allAthletes, setAllAthletes] = useState(null);
   const {error, loading, data} = useQuery(LOAD_ALL_TALENT); 
 
   useEffect(() => {
     setAllAthletes(data)
-  }, [data])
+  }, [data, submitted])
 
   const teams = [
     {name: 'Denver FC', id: 1},
@@ -23,12 +23,12 @@ const Login = ({ getUser }) => {
 
   if (allAthletes) {
     const athleteArr = allAthletes.allTalent
-
+    console.log(allAthletes)
     athleteLoginButtons = athleteArr.map(athlete => {
       return (
         <Link to={`/athlete/${athlete.id}`} key={athlete.id}>
-          <button className='login-buttons' onClick={(e) => getUser(athlete)}>
-            {`${athlete.name}`}
+          <button className='login-buttons' id={athlete.name}onClick={(e) => getUser(athlete)}>
+            {athlete.name}
           </button>
         </Link>
       )
@@ -53,14 +53,14 @@ const Login = ({ getUser }) => {
           <h2 className='login-container-heading'>Athlete Login</h2>
           {athleteLoginButtons}
           <Link to='/registration-athlete'>
-            <button className='login-buttons register-buttons'>New Athlete</button>
+            <button className='login-buttons register-buttons' id='new-athlete'>New Athlete</button>
           </Link>
         </div>
         <div className='login-containers'>
           <h2 className='login-container-heading'>Team Login</h2>
           {teamLoginButtons}
           <Link to='/registration-team'>
-            <button className='login-buttons register-buttons'>New Team</button>
+            <button className='login-buttons register-buttons' id='new-team'>New Team</button>
           </Link>
         </div>
       </section>
