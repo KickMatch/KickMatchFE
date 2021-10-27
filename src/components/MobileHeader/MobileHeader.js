@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './MobileHeader.css'
 
@@ -10,6 +10,7 @@ const MobileHeader = () => { //MobileHeader component
   const handleToggle = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
+
   return(
     <header className='hamburger'>
       <div onClick={handleToggle} className='hamburger-header'>
