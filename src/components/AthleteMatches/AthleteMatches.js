@@ -34,7 +34,7 @@ const AthleteMatches = () => {
 
   const handleMap = arr => arr.map((item, index) => {
     return(
-        <ul className='match-ul' key={index}>
+        <ul key={index}>
           <li className='match-list'>Email: {item.email}</li>
           <li className='match-list'>Name: {item.name}</li>
           <li className='match-list'>ZipCode: {item.zipcode}</li>
@@ -49,16 +49,16 @@ const AthleteMatches = () => {
 
   const AthleteMatchesContainer = () => {
 
-    return (
+    return ( // Container rendered underneath header
       <>
       <main className='match-main'>
-        <section className='match-container'>{handleMap(teams)}</section>
+        <div>{handleMap(teams)}</div>
       </main>
       </>
     )
   }
 
-   return (
+   return ( //Rendered to page
     <>
       {!mobile ? <Header /> : <MobileHeader />}
       {pageLoading ? <Loading /> : <AthleteMatchesContainer/> }
