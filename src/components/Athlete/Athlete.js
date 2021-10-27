@@ -16,14 +16,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Athlete = ({ data }) => {
   const [windowWidth, setWindowWidth] = useState(0)
   const [mobile, setMobile] = useState(false)
-  const [tablet, setTablet] = useState(false)
   const size = useWindowWidth()
   
   
   const handleWindow = () => {
     setWindowWidth(size)
     windowWidth >= 767 ? setMobile(false) : setMobile(true)
-    // windowWidth <= 1024 ? setTablet(false) : setTablet(true)
   }
 
   const CarouselComp = () => { //carousel component
@@ -36,7 +34,7 @@ const Athlete = ({ data }) => {
               images.map((image, index) => {
                 return(
                   <div key={index}>
-                    <img className='caro-img' src={image} />
+                    <img alt='carousel' className='caro-img' src={image} />
                   </div>
                 )
               })
