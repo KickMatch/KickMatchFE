@@ -38,4 +38,10 @@ describe('Athlete Search Page', () => {
       .get('.search-button-team').contains('Search Teams')
   });
 
+  it('Athlete Search page should contain a carousel with all the teams available in the app', () => {
+    cy.get('.no-search-founded').should('exist')
+      .get('.matchCarousel').should('exist')
+      .get('.TeamProfileContainer').should('exist')
+  });
+
 });
