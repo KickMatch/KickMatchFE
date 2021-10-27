@@ -15,10 +15,10 @@ const AthleteSearch = ({userData}) => {
   const [allTeams, setAllTeams] = useState({});
   const [filteredTeams, setFilteredTeams] = useState([]);
   const [teamName, setTeamName] = useState("");
-  const [teamLocation, setTeamLocation] = useState(20);
   const [searchStatus, setSearchStatus] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0)
   const [mobile, setMobile] = useState(false)
+  const [teamLocation, setTeamLocation] = useState(20);
   // const [zipCodeRadius, setZipCodeRadius] = useState({});
   // const [teamId, setTeamId] = useState("");
   // const [queryTest, setQueryTest] = useState("");
@@ -44,16 +44,12 @@ const AthleteSearch = ({userData}) => {
   }
     
   const { data} = useQuery(LOAD_ALL_CLUBS);
+
   useEffect(() => {
-    handleWindow()
+    setWindowWidth(size)
+    windowWidth >= 767 ? setMobile(false) : setMobile(true)
     setAllTeams(data)
   }, [data, windowWidth, size])
-
-  const handleWindow = () => {
-  setWindowWidth(size)
-  windowWidth >= 767 ? setMobile(false) : setMobile(true)
-}
-    
     
   const getFormInfo = (event) => {
     event.preventDefault();
@@ -63,7 +59,6 @@ const AthleteSearch = ({userData}) => {
   }
   
   const clearInputs = () => {
-    setTeamLocation("");
     setTeamName("");
   }
     
