@@ -18,12 +18,6 @@ const Athlete = ({ data }) => {
   const [mobile, setMobile] = useState(false)
   const size = useWindowWidth()
   
-  
-  const handleWindow = () => {
-    setWindowWidth(size)
-    windowWidth >= 767 ? setMobile(false) : setMobile(true)
-  }
-
   const CarouselComp = () => { //carousel component
     const images = [soccer, soccer1, soccer2, soccer3]
     
@@ -45,7 +39,10 @@ const Athlete = ({ data }) => {
   };
 
   useEffect(() => {
-    handleWindow()
+    // const handleWindow = () => {
+      setWindowWidth(size)
+      windowWidth >= 767 ? setMobile(false) : setMobile(true)
+    // }
   }, [windowWidth, size])
   
   return (
