@@ -25,4 +25,10 @@ describe('Athlete Search Page', () => {
     cy.get('.header').get('.header-active > .header-text').contains('Search')
   });
 
+  it('Athlete Search page should contain a form with the inputs and team cards with available teams to show', () => {
+    cy.get('.athlete-search')
+      .get('.athlete-form-search').should('exist')
+      .get('.no-search-founded').should('exist')
+  });
+
 });
