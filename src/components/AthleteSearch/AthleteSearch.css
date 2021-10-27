@@ -131,4 +131,12 @@
   .search-button-team {
     margin: 1%;
   }
+
+  .no-search-founded {
+    width: 95%;
+  }
+
+  .search-teams-container {
+    width: 95%;
+  }
 }
