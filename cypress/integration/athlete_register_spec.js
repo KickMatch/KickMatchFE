@@ -9,8 +9,8 @@ describe('Athlete Register Page', () => {
 
   it('Should have athlete registration url when displaying athlete registration page', () => {
     cy.url()
-      // .should('eq', 'https://kick-match-fe.herokuapp.com/registration-athlete')
-      .should('eq', 'http://localhost:3000/')
+      .should('eq', 'https://kick-match-fe.herokuapp.com/registration-athlete')
+      // .should('eq', 'http://localhost:3000/registration-athlete')
   });
 
   it('Should be able to render the page heading', () => {
@@ -52,38 +52,39 @@ describe('Athlete Register Page', () => {
   });
 
   it('Should be able to add text to the registration inputs', () => {
-    cy.get('input[name="name"]')
-      .type('William')
-    cy.get('input[name="email"]')
+    cy.get('input[name=name]')
+      .type('Dachshund')
+    cy.get('input[name=email]')
       .type('huh@gmail.com')
-    cy.get('input[name="height"]')
+    cy.get('input[name=height]')
       .type('6\'3')
-    cy.get('input[name="weight"]')
+    cy.get('input[name=weight]')
       .type('165')
-    cy.get('input[name="age"]')
-      .type('15')
-    cy.get('input[name="primaryPosition"]')
-      .type('First Base')
-    cy.get('input[name="secondaryPosition"]')
-      .type('Lineman')
-    cy.get('input[name="dominantFoot"]')
-      .type('Neither')
-    cy.get('input[name="zipcode"]')
+    cy.get('select[name=age]')
+      .select('15')
+    cy.get('select[name=primaryPosition]')
+      .select('Goalie')
+    cy.get('select[name=secondaryPosition]')
+      .select('Fullback')
+    cy.get('select[name=dominantFoot]')
+      .select('Right')
+    cy.get('input[name=zipcode]')
       .type('80013')
-    cy.get('input[name="goalsMadeLs"]')
+    cy.get('input[name=goalsMadeLs]')
       .type('0')
-    cy.get('input[name="verticalJump"]')
+    cy.get('input[name=verticalJump]')
       .type('1')
-    cy.get('input[name="fortyDash"]')
+    cy.get('input[name=fortyDash]')
       .type('50')
-    cy.get('input[name="jugglingRecord"]')
+    cy.get('input[name=jugglingRecord]')
       .type('30')
-    cy.get('input[name="talents"]')
-      .type('Handstands')
-    cy.get('input[name="awards"]')
+    cy.get('input[name=Defensive]')
+      .check()
+    cy.get('input[name=awards]')
       .type('Being tall')
-    cy.get('button')
+    cy.get('.register-button')
       .click()
+      .wait(10000)
     cy.intercept('POST', 'https://frozen-waters-94259.herokuapp.com/graphql', req => {
       if (req.body.operationName === 'talent') {
         req.alias = 'talentQuery';
@@ -92,7 +93,7 @@ describe('Athlete Register Page', () => {
             data: {
               talent: {
                 id: '1',
-                name: 'William',
+                name: 'Dachshund',
                 email: 'huh@gmail.com',
                 height: '6\'3',
                 weight: 165,
@@ -117,11 +118,11 @@ describe('Athlete Register Page', () => {
         })
       }
     });
-
-    cy.contains('William')
-      .contains('165')
-      .contains('15')
-      .contains('First Base')
+    cy.get('.register-button')
+      .click()
+    cy.reload()
+    cy.get('#Dachshund')
+      .contains('Dachshund')
   });
 
 })
