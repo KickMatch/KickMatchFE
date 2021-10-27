@@ -1,17 +1,20 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import Header from '../Header/Header';
 import './Error.css';
 
-const Error = ({ message, page }) => {
+const Error = ( ) => {
   const history = useHistory()
   
   return (
+    <>
+    <Header />
     <div className='error-container'>
-      {page && <h2 className='error-heading'>We've encountered an error in retrieving the {page}.</h2>}
-      <p className='error-message'>{message}</p>
-      <iframe className='error' src="https://giphy.com/embed/qxYkv4GuyYbbG"></iframe>
+      <h2 style={{'color':'white'}} className='error-message'>There is a probelm accessing this page, please check your URL or go back.</h2>
+      <iframe title="errorFrame" className='error' src="https://giphy.com/embed/qxYkv4GuyYbbG"></iframe>
       <button onClick={e => history.goBack()}>Go Back</button>
     </div>
+    </>
   );
 }
 

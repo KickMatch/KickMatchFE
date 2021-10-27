@@ -108,3 +108,35 @@
 .input-team-select-container {
   padding-left: 2%;
 }
+
+/* Queries for mobile version */
+@media screen and (max-width: 600px) {
+  .athlete-form-search {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-text {
+    padding: 5%;
+  }
+
+  .team-name-search {
+    margin: 2%;
+  }
+
+  .select-radius-location {
+    margin: 3% 1% 2% -3%;
+  }
+
+  .search-button-team {
+    margin: 1%;
+  }
+
+  .no-search-founded {
+    width: 95%;
+  }
+
+  .search-teams-container {
+    width: 95%;
+  }
+}

@@ -6,7 +6,7 @@ const Loading = () => {
   
   return (
     <div className='loading-container'>
-      <iframe className='loading-gif' src='https://giphy.com/embed/WvuTFk2IN7jxoLVDkP'></iframe>
+      <iframe title="loadingFrame" className='loading-gif' src='https://giphy.com/embed/WvuTFk2IN7jxoLVDkP'></iframe>
     </div>
   );
 }
