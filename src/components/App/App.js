@@ -19,12 +19,15 @@ import AthleteMatches from '../AthleteMatches/AthleteMatches';
 
 const App = () => {
   const [user, setUser] = useState({})
+  const [submitted, setSubmitted] = useState(false);
 
   const getUser = (user) => {
     setUser(user)
   }
 
-    
+  useEffect(() => {
+    setSubmitted(false)
+  }, [submitted])
 
   return (
     
@@ -32,10 +35,10 @@ const App = () => {
         {/* <PrintQuery /> */}
         <Switch>
           <Route exact path='/' 
-            render={() => <Login getUser={getUser} />}
+            render={() => <Login getUser={getUser} submitted={submitted}/>}
           />
           <Route exact path='/registration-athlete' 
-            component={RegistrationAthlete}
+            render={() => <RegistrationAthlete setSubmitted={setSubmitted}/> }
           />
           <Route exact path='/registration-team' 
             component={RegistrationTeam}
