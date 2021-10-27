@@ -6,7 +6,7 @@
 - [Contributors](#contributors)
 - [Tools Utilized](#framework)
 - [Setup](#setup)
-- [GraphQL](#graphql)
+- [Wireframes](#wireframes)
 
 <hr style="border:2px solid black"> </hr>
 
@@ -79,97 +79,19 @@ This repository contains our backend Rails app; Checkout the [frontend repositor
 
 ### Setup
 
-1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Set up the database: `rails db:{drop,create,migrate,seed}`
+* On the top right corner of this page, click the **Fork** button.
+- clone the repository to your computer `git clone <URL>`
+- Run git clone - git clone [remote-address] [what you want to name the repo]
+  replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
+- cd into the repository `cd <repo-name>`
+- Run `npm install`
+- Run `npm start ` 
 
-Example wireframes to follow are found [here](www.time.gov) <-- Enter URL for wireframes here
+### Wireframes
 
-Find the [project spec here](https://mod4.turing.edu/projects/capstone/)
+<img width="1362" alt="Login : Registration (Wireframes)" src="https://user-images.githubusercontent.com/78002374/139163789-7ad88bc5-e215-4cdb-950c-fe0b8684da47.png">
 
-#### [Schema Design](https://dbdiagram.io)
-
-<p align="center">
-  <img width="865" alt="Screen Shot 2021-10-26 at 09 30 01" src="https://user-images.githubusercontent.com/57773546/139141287-7d8919a4-2576-4dc1-aa56-30ca3d458d93.png">
-</p>
-
-<hr style="border:2px solid black"> </hr>
-
-### GraphQL
-
-##### ```/graphql```
-Endpoints use a __`POST`__ method, utilizing GraphQL to perform queries and create mutations of data. Queries must be sent in the __request body__ as shown below.
-
-##### Query example:
-Get all players (talents) registered on the app:
-```
-{
-    allTalent {
-        id
-        name
-        age
-        height
-        weight
-        primaryPosition
-        secondaryPosition
-        videoUrl
-        zipcode
-        email
-        dominantFoot
-        goalsMadeLs
-        verticalJump
-        fortyDash
-        jugglingRecord
-        primaryPosition
-        secondaryPosition
-        awards
-      }
-    }
-```
-
-#### To see all queries and muations, please visit [our Wiki page here](https://github.com/kick-match/kick-match-be/wiki/GraphQL-Enpoint).
-
-#### <ins>Project Configurations</ins>
-
-* Ruby Version
-    ```bash
-    $ ruby -v
-    ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin20]
-    ```
-
-* [System Dependencies](https://github.com/Bhjones45/kick-match-be/blob/main/Gemfile)
-    ```bash
-    $ rails -v
-    Rails 5.2.6
-    ```
-
-* Database Creation
-    ```bash
-    $ rails db:{drop,create,migrate,seed}
-    Created database 'kick-match-be_development'
-    Created database 'kick-match-be_test'
-    ```
-
-* How to run the test suite:
-    ```bash
-    $ bundle exec rspec -fd
-    ```
-
-* [Local Deployment](http://localhost:3000), for testing:
-    ```bash
-    $ rails s
-  => Booting Puma
-  => Rails 5.2.6 application starting in development
-  => Run `rails server -h` for more startup options
-  Puma starting in single mode...
-  * Version 3.12.6 (ruby 2.7.2-p137), codename: Llamas in Pajamas
-  * Min threads: 5, max threads: 5
-  * Environment: development
-  * Listening on tcp://localhost:3000
-  Use Ctrl-C to stop
-    ```
-
-* [Heroku Deployment - https://tikiarte-be.herokuapp.com/](https://frozen-waters-94259.herokuapp.com/), for production
+<img width="1364" alt="Profile : Matches (Wireframes)" src="https://user-images.githubusercontent.com/78002374/139163813-a759876b-8954-44a1-a74b-5ae81d0ea819.png">
 
 #### Future Features
-1. ADD ANY GOALS/STETCH TECH WE'D LIKE TO ADD
+1. Create experience and workflow for the Sport Club user flow.
