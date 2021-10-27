@@ -3,21 +3,8 @@
   color: white;
 }
 
-.match-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .athlete-match-cards {
   display: flex;
   border: solid 2px white;
   margin: 10px;
-}
-
-.match-ul {
-  border: 2px solid white;
-}
-
-.match-ul li {
-  font-size: 1.4vw;
 }
