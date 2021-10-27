@@ -112,3 +112,23 @@
   font-size: large;
   padding: 0;
 }
+
+/* Queries for mobile version */
+@media screen and (max-width: 500px) {
+
+  .team-profile-search {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team-contact-info {
+    margin: 10%;
+    width: 100%;
+  }
+
+  /* .team-contact-info {
+    display: flex;
+    flex-direction: column;
+  } */
+
+}
