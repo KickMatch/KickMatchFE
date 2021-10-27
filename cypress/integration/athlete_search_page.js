@@ -44,4 +44,13 @@ describe('Athlete Search Page', () => {
       .get('.TeamProfileContainer').should('exist')
   });
 
+  it('Athlete Search page should contain a card to display the team data', () => {
+    cy.get('.no-search-founded').should('exist')
+      .get('.team-profile-search').should('exist')
+      .get('.team-contact-info').should('exist')
+      .get('.team-prof-logo').should('exist')
+      .get('.team-prof-info').should('exist')
+      .get('.team-prof-info-email').contains('denfutbol@gmail.com')
+  });
+
 });
