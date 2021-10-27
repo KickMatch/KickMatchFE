@@ -122,8 +122,9 @@
   }
 
   .team-contact-info {
-    margin: 10%;
-    width: 100%;
+    /* margin: 10%; */
+    padding: 5%;
+    /* width: 50%; */
   }
 
   /* .team-contact-info {
