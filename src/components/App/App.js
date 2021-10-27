@@ -13,7 +13,7 @@ import TeamInterestedAthletes from '../TeamInterestedAthletes/TeamInterestedAthl
 import TeamProfile from '../TeamProfile/TeamProfile';
 import TeamSearch from '../TeamSearch/TeamSearch';
 import AthleteSearch from '../AthleteSearch/AthleteSearch';
-import AthleteInterestedTeams from '../AthleteInterestedTeams/AthleteInterestedTeams';
+import AthleteMatches from '../AthleteMatches/AthleteMatches';
 // import Athlete from '../Athlete/Athlete'
 
 
@@ -42,7 +42,7 @@ const App = () => {
           />
           <Route exact path='/athlete/:id' render={() => <Athlete data={user}/> }/>
           <Route exact path='/athlete/:id/search' render={() => <AthleteSearch userData={user}/> } />
-          <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteInterestedTeams /> } />
+          <Route exact path='/athlete/:id/interested-teams' render={() => <AthleteMatches /> } />
         
           {/* <Route exact path='/team' render={() => <Team />} /> */}
             <Route exact path='/team/:id/profile' render={() => <TeamProfile /> } />
