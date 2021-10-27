@@ -9,7 +9,7 @@ const Error = ({ message, page }) => {
     <div className='error-container'>
       {page && <h2 className='error-heading'>We've encountered an error in retrieving the {page}.</h2>}
       <p className='error-message'>{message}</p>
-      <iframe className='error' src="https://giphy.com/embed/qxYkv4GuyYbbG"></iframe>
+      <iframe title="errorFrame" className='error' src="https://giphy.com/embed/qxYkv4GuyYbbG"></iframe>
       <button onClick={e => history.goBack()}>Go Back</button>
     </div>
   );
