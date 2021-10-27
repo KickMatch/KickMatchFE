@@ -114,7 +114,7 @@
 }
 
 /* Queries for mobile version */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 
   .team-profile-search {
     display: flex;
