@@ -31,4 +31,11 @@ describe('Athlete Search Page', () => {
       .get('.no-search-founded').should('exist')
   });
 
+  it('Athlete Search page should contain a form with the inputs teams by name and location', () => {
+    cy.get('.athlete-form-search').get('h3').contains('Search by')
+      .get('.team-name-search').should('exist')
+      .get('.input-team-select-container').should('exist')
+      .get('.search-button-team').contains('Search Teams')
+  });
+
 });
