@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
+import Loading from '../Loading/Loading';
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 
@@ -10,7 +11,9 @@ const Login = ({ getUser, submitted }) => {
   const {error, loading, data} = useQuery(LOAD_ALL_TALENT); 
 
   useEffect(() => {
-    setAllAthletes(data)
+    if (!loading && data) {
+      setAllAthletes(data)
+    }
   }, [data, submitted])
 
   const teams = [
@@ -46,25 +49,29 @@ const Login = ({ getUser, submitted }) => {
   });
   
   return (
-    <section className='login-page'>
-      <h1 className='login-heading'>Kick Match</h1>
-      <section className='login-section'>
-        <div className='login-containers'>
-          <h2 className='login-container-heading'>Athlete Login</h2>
-          {athleteLoginButtons}
-          <Link to='/registration-athlete'>
-            <button className='login-buttons register-buttons' id='new-athlete'>New Athlete</button>
-          </Link>
-        </div>
-        <div className='login-containers'>
-          <h2 className='login-container-heading'>Team Login</h2>
-          {teamLoginButtons}
-          <Link to='/registration-team'>
-            <button className='login-buttons register-buttons' id='new-team'>New Team</button>
-          </Link>
-        </div>
+    <>
+    {loading ? <Loading /> : 
+      <section className='login-page'>
+        <h1 className='login-heading'>Kick Match</h1>
+        <section className='login-section'>
+          <div className='login-containers'>
+            <h2 className='login-container-heading'>Athlete Login</h2>
+            {athleteLoginButtons}
+            <Link to='/registration-athlete'>
+              <button className='login-buttons register-buttons' id='new-athlete'>New Athlete</button>
+            </Link>
+          </div>
+          <div className='login-containers'>
+            <h2 className='login-container-heading'>Team Login</h2>
+            {teamLoginButtons}
+            <Link to='/registration-team'>
+              <button className='login-buttons register-buttons' id='new-team'>New Team</button>
+            </Link>
+          </div>
+        </section>
       </section>
-    </section>
+    }
+    </>
   );
 }
 
