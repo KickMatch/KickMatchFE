@@ -15,7 +15,6 @@ const AthleteMatches = () => {
   const [mobile, setMobile] = useState(false)
   const [teams, setTeams] = useState({})
   const [pageLoading, setPageLoading] = useState(true)
-
   const { id } = useParams()
   const { data } = useQuery(ATHLETE_MATCHES(id))
   const size = useWindowWidth()
