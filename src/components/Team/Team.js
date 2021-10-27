@@ -1,8 +1,5 @@
 import React from 'react';
 import './Team.css';
-const test = () => {
-  console.log('test');
-}
 
 const Team = () => {
 
