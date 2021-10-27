@@ -87,8 +87,7 @@ const AthleteSearch = ({userData}) => {
     return dataCodes.DataList.forEach((acc, allZipCode) => {
       filteredTeams.forEach(nameTeams => {
         if (allZipCode.Code(nameTeams.zipcode.toString)) {
-          matchedZipCodes.push(nameTeams)
-          console.log(matchedZipCodes)
+          return matchedZipCodes.push(nameTeams)
         }
       })
     })
