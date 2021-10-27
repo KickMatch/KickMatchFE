@@ -106,7 +106,7 @@ const RegistrationAthlete = ({ setSubmitted }) => {
           </label>
           <label>Age - 
             <select name='age' value={registrationAthlete.age} onChange={e => handleChange(e)}>
-              <option value='' disabled>- Select One-</option>
+              <option value=''>- Select One-</option>
               <option value='8'>8</option>
               <option value='9'>9</option>
               <option value='10'>10</option>
