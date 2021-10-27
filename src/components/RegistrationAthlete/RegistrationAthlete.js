@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './RegistrationAthlete.css';
 import { CREATE_TALENT } from '../../GraphQL/Mutations';
 import { useMutation } from '@apollo/client';
 import Error from '../Error/Error';
 
-const RegistrationAthlete = () => {
+const RegistrationAthlete = ({ setSubmitted }) => {
   const [registrationAthlete, setRegistrationAthlete] = useState({
     name: '', 
     age: 0,
@@ -31,6 +32,7 @@ const RegistrationAthlete = () => {
   const [createTalent, {error}] = useMutation(CREATE_TALENT);
   
   const registerTalent = () => {
+    setSubmitted(true)
     createTalent({
       variables: {
         name: registrationAthlete.name,
@@ -164,8 +166,12 @@ const RegistrationAthlete = () => {
         <input className='awards-input' type='text' name='awards' value={registrationAthlete.awards} onChange={e => handleChange(e)}></input>
         </label>
         </div>
-        {registrationAthlete.name && registrationAthlete.age && registrationAthlete.height && registrationAthlete.weight && registrationAthlete.primaryPosition && registrationAthlete.secondaryPosition && registrationAthlete.videoUrl && registrationAthlete.zipcode && registrationAthlete.email && registrationAthlete.dominantFoot && registrationAthlete.goalsMadeLs && registrationAthlete.verticalJump && registrationAthlete.fortyDash && registrationAthlete.jugglingRecord && registrationAthlete.talents && registrationAthlete.awards
-        ? <button className='register-button' onClick={registerTalent} >Register</button> 
+        {
+        registrationAthlete.name && registrationAthlete.age && registrationAthlete.height && registrationAthlete.weight && registrationAthlete.primaryPosition && registrationAthlete.secondaryPosition && registrationAthlete.videoUrl && registrationAthlete.zipcode && registrationAthlete.email && registrationAthlete.dominantFoot && registrationAthlete.goalsMadeLs && registrationAthlete.verticalJump && registrationAthlete.fortyDash && registrationAthlete.jugglingRecord && registrationAthlete.talents && registrationAthlete.awards
+        ? 
+        <Link to='/'>
+          <button className='register-button' onClick={registerTalent} >Register</button> 
+        </Link>
         : 
           <>
             <button className='register-button' disabled>Register</button>
