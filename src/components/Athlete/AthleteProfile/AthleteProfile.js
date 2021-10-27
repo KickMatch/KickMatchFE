@@ -8,7 +8,7 @@ import { useQuery } from '@apollo/client';
 
 const AthleteProfile = ({athlete}) => {
   const { url } = useRouteMatch()
-  const { id, email, name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLast, fortyDash, verticalJump, jugglingRecord, talents, awards} = athlete
+  const { id, email, name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLs, fortyDash, verticalJump, jugglingRecord, talents, awards} = athlete
   const {error, loading, data} = useQuery(LOAD_TALENT(id))
 
   const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
@@ -35,7 +35,7 @@ const AthleteProfile = ({athlete}) => {
           </span>
         </aside>
         <aside className='stat-card'>
-          <p className='paragraph'>Goals Last Season: {goalsMadeLast}</p>
+          <p className='paragraph'>Goals Last Season: {goalsMadeLs}</p>
           <p className='paragraph'>Vertical Jump: {verticalJump}</p>
           <p className='paragraph'>40 Yard Dash: {fortyDash}</p>
           <p className='paragraph'>Personal Juggling Record: {jugglingRecord}</p>
