@@ -110,7 +110,7 @@
 }
 
 /* Queries for mobile version */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .athlete-form-search {
     display: flex;
     flex-direction: column;
