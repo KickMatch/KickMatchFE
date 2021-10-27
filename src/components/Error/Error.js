@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import Header from '../Header/Header';
 import './Error.css';
 
-const Error = ({  }) => {
+const Error = ( ) => {
   const history = useHistory()
   
   return (
