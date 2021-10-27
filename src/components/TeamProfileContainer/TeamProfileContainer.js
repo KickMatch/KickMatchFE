@@ -21,7 +21,6 @@ const TeamProfileContainer = ({filteredTeams, getId}) => {
   return (
     <section className='TeamProfileContainer'>
       {filteredTeams ? renderTeamsProfiles() : <h2>Sorry no teams find it !</h2>}
-      {/* {renderTeamsProfiles()} */}
     </section>
   );
 }

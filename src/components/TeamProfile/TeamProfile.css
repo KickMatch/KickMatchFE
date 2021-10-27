@@ -122,14 +122,16 @@
   }
 
   .team-contact-info {
-    /* margin: 10%; */
     padding: 5%;
-    /* width: 50%; */
   }
 
-  /* .team-contact-info {
-    display: flex;
-    flex-direction: column;
-  } */
+   .team-prof-title {
+    font-size:130%;
+    margin: 3%;
+   }
+
+   .team-prof-info {
+    margin: 3%;
+   }
 
 }
