@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 const Login = ({ getUser, submitted }) => {
   const [allAthletes, setAllAthletes] = useState(null);
-  const { data } = useQuery(LOAD_ALL_TALENT); 
+  const { data, loading } = useQuery(LOAD_ALL_TALENT); 
 
   useEffect(() => {
     if (!loading && data) {
