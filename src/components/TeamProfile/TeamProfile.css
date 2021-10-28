@@ -112,3 +112,26 @@
   font-size: large;
   padding: 0;
 }
+
+/* Queries for mobile version */
+@media screen and (max-width: 600px) {
+
+  .team-profile-search {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team-contact-info {
+    padding: 5%;
+  }
+
+   .team-prof-title {
+    font-size:130%;
+    margin: 3%;
+   }
+
+   .team-prof-info {
+    margin: 3%;
+   }
+
+}

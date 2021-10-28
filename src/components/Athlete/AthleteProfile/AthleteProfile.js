@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom';
 import { useRouteMatch } from 'react-router';
 import './AthleteProfile.css'
 import avatar from '../../../assets/avatar.png'
-import { LOAD_TALENT } from '../../../GraphQL/Queries';
-import { useQuery } from '@apollo/client';
+// import { LOAD_TALENT } from '../../../GraphQL/Queries';
+// import { useQuery } from '@apollo/client';
 
 
 const AthleteProfile = ({athlete}) => {
   const { url } = useRouteMatch()
-  const { id, email, name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLast, fortyDash, verticalJump, jugglingRecord, talents, awards} = athlete
-  const {error, loading, data} = useQuery(LOAD_TALENT(id))
-
-  const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
+  const { email, name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLs, fortyDash, verticalJump, jugglingRecord } = athlete
+  
+  // const { data } = useQuery(LOAD_TALENT(id))
+  // const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
 
   return (
     <>
@@ -20,8 +20,7 @@ const AthleteProfile = ({athlete}) => {
           <div className='image-container'>
             <img alt='avatar' className='avatar' src={avatar} />
             <span className='name-container'>
-              <h2 className='firstName'> {name}</h2> 
-              {/* <h2 className='lastName'> {lastName}</h2>  */}
+              <h2 className='firstName'> {name}</h2>
             </span>
           </div>
           <span className='attribute-container'>
@@ -35,7 +34,7 @@ const AthleteProfile = ({athlete}) => {
           </span>
         </aside>
         <aside className='stat-card'>
-          <p className='paragraph'>Goals Last Season: {goalsMadeLast}</p>
+          <p className='paragraph'>Goals Last Season: {goalsMadeLs}</p>
           <p className='paragraph'>Vertical Jump: {verticalJump}</p>
           <p className='paragraph'>40 Yard Dash: {fortyDash}</p>
           <p className='paragraph'>Personal Juggling Record: {jugglingRecord}</p>

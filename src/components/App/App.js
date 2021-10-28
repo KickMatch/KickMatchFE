@@ -4,17 +4,14 @@ import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Athlete from '../Athlete/Athlete';
 import Error from '../Error/Error';
-import Loading from '../Loading/Loading';
 import Login from '../Login/Login';
 import RegistrationAthlete from '../RegistrationAthlete/RegistrationAthlete';
 import RegistrationTeam from '../RegistrationTeam/RegistrationTeam';
-import Team from '../Team/Team';
 import TeamInterestedAthletes from '../TeamInterestedAthletes/TeamInterestedAthletes';
 import TeamProfile from '../TeamProfile/TeamProfile';
 import TeamSearch from '../TeamSearch/TeamSearch';
 import AthleteSearch from '../AthleteSearch/AthleteSearch';
 import AthleteMatches from '../AthleteMatches/AthleteMatches';
-// import Athlete from '../Athlete/Athlete'
 
 
 const App = () => {

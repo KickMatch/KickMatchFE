@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 const Login = ({ getUser, submitted }) => {
   const [allAthletes, setAllAthletes] = useState(null);
-  const {error, loading, data} = useQuery(LOAD_ALL_TALENT); 
+  const { data } = useQuery(LOAD_ALL_TALENT); 
 
   useEffect(() => {
     if (!loading && data) {
@@ -26,7 +26,7 @@ const Login = ({ getUser, submitted }) => {
 
   if (allAthletes) {
     const athleteArr = allAthletes.allTalent
-    console.log(allAthletes)
+    
     athleteLoginButtons = athleteArr.map(athlete => {
       return (
         <Link to={`/athlete/${athlete.id}`} key={athlete.id}>

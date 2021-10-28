@@ -9,19 +9,19 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './MobileAthleteStat.css';
 
 const MobileAthleteStat = ({ athlete }) => {
-  const { playerNum, name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLs, fortyDash, verticalJump, jugglingRecord, talents, awards} = athlete
+  const { name, age, height, primaryPosition, secondaryPosition, dominantFoot, zipcode, weight, goalsMadeLs, fortyDash, verticalJump, jugglingRecord } = athlete
   
   const CarouselComp = () => {
     const images = [soccer, soccer1, soccer2, soccer3]
     
     return (
       <>
-        <Carousel interval={5000} autoPlay={true} centerMode={true} centerSlidePercentage={50} infiniteLoop={true} showThumbs={false} className='mobile-main-slide' showArrows={true} onClickItem={e => console.log(e)}>
+        <Carousel interval={5000} autoPlay={true} centerMode={true} centerSlidePercentage={50} infiniteLoop={true} showThumbs={false} className='mobile-main-slide' showArrows={true}>
             {
               images.map((image, index) => {
                 return(
                   <div key={index}>
-                    <img className='mobile-caro-img' src={image} />
+                    <img alt='carousel' className='mobile-caro-img' src={image} />
                   </div>
                 )
               })
@@ -31,7 +31,7 @@ const MobileAthleteStat = ({ athlete }) => {
     );
   };
 
-  const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
+  // const handleMap = arr => arr.map((item, index) => <li key={index} className='list'>{item}</li>)
 
   return (
       <main className='mobile-player-stat-container'>
