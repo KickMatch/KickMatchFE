@@ -62,8 +62,8 @@ describe('Login Page', () => {
 
   it('Should have app url when displaying login page', () => {
     cy.url()
-      // .should('eq', 'https://kick-match-fe.herokuapp.com/')
-      .should('eq', 'http://localhost:3000/')
+      .should('eq', 'https://kick-match-fe.herokuapp.com/')
+      // .should('eq', 'http://localhost:3000/')
 
   });
 

@@ -1,8 +1,8 @@
 describe('Athlete Register Page', () => {
   
   beforeEach(() => {
-    // cy.visit('https://kick-match-fe.herokuapp.com/')
-    cy.visit('http://localhost:3000/')
+    cy.visit('https://kick-match-fe.herokuapp.com/')
+    // cy.visit('http://localhost:3000/')
       .get('#new-athlete')
       .click()
     })
