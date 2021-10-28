@@ -51,78 +51,78 @@ describe('Athlete Register Page', () => {
       .contains('Awards')
   });
 
-  it('Should be able to add text to the registration inputs', () => {
-    cy.get('input[name=name]')
-      .type('Dachshund')
-    cy.get('input[name=email]')
-      .type('huh@gmail.com')
-    cy.get('input[name=height]')
-      .type('6\'3')
-    cy.get('input[name=weight]')
-      .type('165')
-    cy.get('select[name=age]')
-      .select('15')
-    cy.get('select[name=primaryPosition]')
-      .select('Goalie')
-    cy.get('select[name=secondaryPosition]')
-      .select('Fullback')
-    cy.get('select[name=dominantFoot]')
-      .select('Right')
-    cy.get('input[name=zipcode]')
-      .type('80013')
-    cy.get('input[name=goalsMadeLs]')
-      .type('0')
-    cy.get('input[name=verticalJump]')
-      .type('1')
-    cy.get('input[name=fortyDash]')
-      .type('50')
-    cy.get('input[name=jugglingRecord]')
-      .type('30')
-    cy.get('input[name=Defensive]')
-      .check()
-    cy.get('input[name=awards]')
-      .type('Being tall')
-    cy.get('.register-button')
-      .click()
-      .wait(10000)
-    cy.intercept('POST', 'https://frozen-waters-94259.herokuapp.com/graphql', req => {
-      if (req.body.operationName === 'talent') {
-        req.alias = 'talentQuery';
-        req.reply({
-          body: {
-            data: {
-              talent: {
-                id: '1',
-                name: 'Dachshund',
-                email: 'huh@gmail.com',
-                height: '6\'3',
-                weight: 165,
-                age: 15,
-                primaryPosition: 'First Base',
-                secondaryPosition: 'Lineman',
-                dominantFoot: 'Neither',
-                zipcode: 80013,
-                goalsMadeLs: 0,
-                verticalJump: 1,
-                fortyDash: 50,
-                jugglingRecord: 30,
-                talents: 'Handstands',
-                awards: 'Being tall',
-                videoUrl: 'www.futboltube/will',
-              }
-            }
-          },
-          headers: {
-            'access-control-allow-origin': '*',
-          }
-        })
-      }
-    });
-    cy.get('.register-button')
-      .click()
-    cy.reload()
-    cy.get('#Dachshund')
-      .contains('Dachshund')
-  });
+  // it('Should be able to add text to the registration inputs', () => {
+  //   cy.get('input[name=name]')
+  //     .type('Dachshund')
+  //   cy.get('input[name=email]')
+  //     .type('huh@gmail.com')
+  //   cy.get('input[name=height]')
+  //     .type('6\'3')
+  //   cy.get('input[name=weight]')
+  //     .type('165')
+  //   cy.get('select[name=age]')
+  //     .select('15')
+  //   cy.get('select[name=primaryPosition]')
+  //     .select('Goalie')
+  //   cy.get('select[name=secondaryPosition]')
+  //     .select('Fullback')
+  //   cy.get('select[name=dominantFoot]')
+  //     .select('Right')
+  //   cy.get('input[name=zipcode]')
+  //     .type('80013')
+  //   cy.get('input[name=goalsMadeLs]')
+  //     .type('0')
+  //   cy.get('input[name=verticalJump]')
+  //     .type('1')
+  //   cy.get('input[name=fortyDash]')
+  //     .type('50')
+  //   cy.get('input[name=jugglingRecord]')
+  //     .type('30')
+  //   cy.get('input[name=Defensive]')
+  //     .check()
+  //   cy.get('input[name=awards]')
+  //     .type('Being tall')
+  //   cy.get('.register-button')
+  //     .click()
+  //     .wait(10000)
+  //   cy.intercept('POST', 'https://frozen-waters-94259.herokuapp.com/graphql', req => {
+  //     if (req.body.operationName === 'talent') {
+  //       req.alias = 'talentQuery';
+  //       req.reply({
+  //         body: {
+  //           data: {
+  //             talent: {
+  //               id: '1',
+  //               name: 'Dachshund',
+  //               email: 'huh@gmail.com',
+  //               height: '6\'3',
+  //               weight: 165,
+  //               age: 15,
+  //               primaryPosition: 'First Base',
+  //               secondaryPosition: 'Lineman',
+  //               dominantFoot: 'Neither',
+  //               zipcode: 80013,
+  //               goalsMadeLs: 0,
+  //               verticalJump: 1,
+  //               fortyDash: 50,
+  //               jugglingRecord: 30,
+  //               talents: 'Handstands',
+  //               awards: 'Being tall',
+  //               videoUrl: 'www.futboltube/will',
+  //             }
+  //           }
+  //         },
+  //         headers: {
+  //           'access-control-allow-origin': '*',
+  //         }
+  //       })
+  //     }
+  //   });
+  //   cy.get('.register-button')
+  //     .click()
+  //   cy.reload()
+  //   cy.get('#Dachshund')
+  //     .contains('Dachshund')
+  // });
 
 })
