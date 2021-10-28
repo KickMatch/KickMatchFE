@@ -94,4 +94,4 @@ This repository contains our backend Rails app; Checkout the [frontend repositor
 <img width="1364" alt="Profile : Matches (Wireframes)" src="https://user-images.githubusercontent.com/78002374/139163813-a759876b-8954-44a1-a74b-5ae81d0ea819.png">
 
 #### Future Features
-1. Create experience and workflow for the Sport Club user flow.
+1. Complete the userflow for the Sport Club experience.
