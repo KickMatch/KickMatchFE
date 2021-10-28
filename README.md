@@ -12,8 +12,8 @@
 
 ### Overview
 
-DESCRIPTION OF APP HERE.
-This repository contains our backend Rails app; Checkout the [frontend repository](https://github.com/kick-match/kick-match-fe)
+The purpose of Kick Match is to help soccer playing kids 8-18yrs old and their guardians find competitive soccer clubs in their area. In the same way that LinkedIn helps connect individuals with talent and experience with a employer that is in need of those skills, Kick Match connects talented athletes with soccer clubs looking for a particular position or skill.  
+This repository contains our front end React app; Checkout the [backend repository](https://github.com/kick-match/kick-match-be). 
 
 
 #### Libraries
@@ -60,11 +60,11 @@ This repository contains our backend Rails app; Checkout the [frontend repositor
 
 **Steven Berg**
 - [Github](https://github.com/saberg1)
-- [LinkedIn] ()
+- [LinkedIn] (https://www.linkedin.com/in/steven-berg-7b742455)
 
 **William Phelps**
 - [Github](https://github.com/williamphelps13)
-- [LinkedIn]()
+- [LinkedIn](https://www.linkedin.com/in/williamjphelps)
 
 ### Back End Team
 **Dee Hill**
