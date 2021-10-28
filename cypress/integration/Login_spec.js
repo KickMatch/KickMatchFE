@@ -55,8 +55,8 @@ describe('Login Page', () => {
       }
     })
     
-    // cy.visit('https://kick-match-fe.herokuapp.com/')
-    cy.visit('http://localhost:3000/')
+    cy.visit('https://kick-match-fe.herokuapp.com/')
+    // cy.visit('http://localhost:3000/')
     cy.wait(4000)
   })
 
@@ -114,7 +114,7 @@ describe('Login Page', () => {
   });
 
   it('Should be able to click an athlete button and render an athlete page', () => {
-    cy.get('button')
+    cy.get('#Jo')
       .contains('Jo')
       .click()
     cy.contains('Jo')
