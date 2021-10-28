@@ -97,21 +97,21 @@ describe('Login Page', () => {
       .contains('New Team')
   });
 
-  it('Should be able to click the register new athlete button and render the register new athlete page with heading', () => {
-    cy.get('#new-athlete')
-      .click()
-      .wait(4000)
-    cy.get('.registration-athlete-heading')
-      .contains('Create a New Athlete Profile')
-  });
+  // it('Should be able to click the register new athlete button and render the register new athlete page with heading', () => {
+  //   cy.get('#new-athlete')
+  //     .click()
+  //     .wait(4000)
+  //   cy.get('.registration-athlete-heading')
+  //     .contains('Create a New Athlete Profile')
+  // });
 
-  it('Should be able to click the register new team button and render the register new athlete page with heading', () => {
-    cy.get('#new-team')
-      .click()
-    cy.wait(4000)
-    cy.get('.registration-team-heading')
-      .contains('Create a New Team Profile')
-  });
+  // it('Should be able to click the register new team button and render the register new athlete page with heading', () => {
+  //   cy.get('#new-team')
+  //     .click()
+  //   cy.wait(4000)
+  //   cy.get('.registration-team-heading')
+  //     .contains('Create a New Team Profile')
+  // });
 
   it('Should be able to click an athlete button and render an athlete page', () => {
     cy.get('#Jo')
