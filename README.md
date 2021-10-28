@@ -12,7 +12,7 @@
 
 ### Overview
 
-The purpose of Kick Match is to help soccer playing kids 8-18yrs old and their guardians find competitive soccer clubs in their area. In the same way that LinkedIn helps connect individuals with talent and experience with a employer that is in need of those skills, Kick Match connects talented athletes with soccer clubs looking for a particular position or skill.  
+The purpose of Kick Match is to help soccer playing kids 8-18yrs old and their guardians find competitive soccer clubs in their area. In the same way that LinkedIn helps connect individuals with talent and experience with an employer that is in need of those skills, Kick Match connects talented athletes with soccer clubs looking for a particular position or strength.  
 This repository contains our front end React app; Checkout the [backend repository](https://github.com/kick-match/kick-match-be). 
 
 
@@ -60,7 +60,7 @@ This repository contains our front end React app; Checkout the [backend reposito
 
 **Steven Berg**
 - [Github](https://github.com/saberg1)
-- [LinkedIn] (https://www.linkedin.com/in/steven-berg-7b742455)
+- [LinkedIn](https://www.linkedin.com/in/steven-berg-7b742455)
 
 **William Phelps**
 - [Github](https://github.com/williamphelps13)
