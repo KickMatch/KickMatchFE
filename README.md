@@ -56,7 +56,7 @@ This repository contains our backend Rails app; Checkout the [frontend repositor
 ### Front End Team
 **Andrey Bermudez**
 - [Github](https://github.com/Andrey-1992)
-- [LinkedIn] (https://www.linkedin.com/in/andrey-bermudez-83318220b/)
+- [LinkedIn](https://www.linkedin.com/in/andrey-bermudez-83318220b/)
 
 **Steven Berg**
 - [Github](https://github.com/saberg1)
