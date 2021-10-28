@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './RegistrationAthlete.css';
 import { CREATE_TALENT } from '../../GraphQL/Mutations';
+import { LOAD_ALL_TALENT } from '../../GraphQL/Queries';
 import { useMutation } from '@apollo/client';
 import Error from '../Error/Error';
 
 const RegistrationAthlete = ({ setSubmitted }) => {
+  const [registered, setRegistered] = useState(false);
   const [registrationAthlete, setRegistrationAthlete] = useState({
     name: '', 
     age: 0,
@@ -29,10 +31,12 @@ const RegistrationAthlete = ({ setSubmitted }) => {
   
   const talentList = ['Defensive', 'Passing', 'Agility', 'Top Speed', 'Off Ball Movement', 'Taking Free Kicks', 'Taking Corner Kicks', 'Shooting','Leadership', 'Dribbling'];
 
-  const [createTalent, {error}] = useMutation(CREATE_TALENT);
+  const [createTalent, {error}] = useMutation(CREATE_TALENT, {
+    refetchQueries: [LOAD_ALL_TALENT]
+  });
   
-  const registerTalent = () => {
-    setSubmitted(true)
+  const registerTalent = (e) => {
+    e.preventDefault();
     createTalent({
       variables: {
         name: registrationAthlete.name,
@@ -52,10 +56,13 @@ const RegistrationAthlete = ({ setSubmitted }) => {
         talents: registrationAthlete.talents,
         awards: registrationAthlete.awards
       }
+      
     })
     if (error) {
       < Error />
     }
+    setRegistered(true)
+    setSubmitted(true)
   }
 
   const handleChange = (e) => {
@@ -88,9 +95,9 @@ const RegistrationAthlete = ({ setSubmitted }) => {
   return (
     <section className='registration-athlete-page'>
       <header className='registration-athlete-header'>
-        <h1>Create a New Athlete Profile</h1>
+        <h1 className='registration-athlete-heading'>Create a New Athlete Profile</h1>
       </header>
-      <section className='athlete-form'>
+      <form className='athlete-form'>
         <section className='athlete-stats'>
           <label>Full Name ('David Beckham')-
             <input type='text' name='name' value={registrationAthlete.name} onChange={e => handleChange(e)}></input>
@@ -106,7 +113,7 @@ const RegistrationAthlete = ({ setSubmitted }) => {
           </label>
           <label>Age - 
             <select name='age' value={registrationAthlete.age} onChange={e => handleChange(e)}>
-              <option value=''>- Select One-</option>
+              <option value='' >- Select One-</option>
               <option value='8'>8</option>
               <option value='9'>9</option>
               <option value='10'>10</option>
@@ -122,13 +129,13 @@ const RegistrationAthlete = ({ setSubmitted }) => {
           </label>
           <label>Primary Position - 
             <select name='primaryPosition' value={registrationAthlete.primaryPosition} onChange={e => handleChange(e)}>
-              <option value='' disabled>- Select One-</option>
+              <option value='' disabled>- Select One -</option>
               {positionList.map((position, index) => <option key={index} value={position}>{position}</option>)}
             </select>
           </label>
           <label>Secondary Position - 
             <select name='secondaryPosition' value={registrationAthlete.secondaryPosition} onChange={e => handleChange(e)}>
-              <option value='' disabled>- Select One-</option>
+              <option value='' disabled>- Select One -</option>
               {positionList.map((position, index) => <option key={index} value={position}>{position}</option>)}
             </select>
           </label>
@@ -167,18 +174,24 @@ const RegistrationAthlete = ({ setSubmitted }) => {
         </label>
         </div>
         {
-        registrationAthlete.name && registrationAthlete.age && registrationAthlete.height && registrationAthlete.weight && registrationAthlete.primaryPosition && registrationAthlete.secondaryPosition && registrationAthlete.videoUrl && registrationAthlete.zipcode && registrationAthlete.email && registrationAthlete.dominantFoot && registrationAthlete.goalsMadeLs && registrationAthlete.verticalJump && registrationAthlete.fortyDash && registrationAthlete.jugglingRecord && registrationAthlete.talents && registrationAthlete.awards
-        ? 
-        <Link to='/'>
+        registered ?
+          <>
+            <Link to='/'>
+              <button className='register-button'>Back to Login</button> 
+            </Link>
+            <p className='not-completed' >Submitted! Return to Login Page and refresh that page to Login!</p>
+          </>
+          : 
+          registrationAthlete.name && registrationAthlete.age && registrationAthlete.height && registrationAthlete.weight && registrationAthlete.primaryPosition && registrationAthlete.secondaryPosition && registrationAthlete.videoUrl && registrationAthlete.zipcode && registrationAthlete.email && registrationAthlete.dominantFoot && registrationAthlete.goalsMadeLs && registrationAthlete.verticalJump && registrationAthlete.fortyDash && registrationAthlete.jugglingRecord && registrationAthlete.talents && registrationAthlete.awards
+          ? 
           <button className='register-button' onClick={registerTalent} >Register</button> 
-        </Link>
-        : 
+          :
           <>
             <button className='register-button' disabled>Register</button>
             <p className='not-completed' >All fields must be completed!</p>
           </>
         } 
-      </section>
+      </form>
     </section>
   );
 }

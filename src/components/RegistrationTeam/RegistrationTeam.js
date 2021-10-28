@@ -62,7 +62,7 @@ const RegistrationTeam = () => {
   return (
     <section className='registration-team-page'>
       <header className='registration-team-header'>
-        <h1>Create a New Team Profile</h1>
+        <h1 className='registration-team-heading'>Create a New Team Profile</h1>
       </header>
       <section className='team-form'>
         <section className='athlete-stats'>
